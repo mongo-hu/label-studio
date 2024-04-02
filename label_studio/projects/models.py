@@ -60,7 +60,7 @@ logger = logging.getLogger(__name__)
 
 class ProjectManager(models.Manager):
     def for_user(self, user):
-        return self.filter(organization=user.active_organization)
+        return self.filter(created_by=user)
 
     COUNTER_FIELDS = [
         'task_number',
