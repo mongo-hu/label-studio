@@ -32,6 +32,7 @@ def logout(request):
     return redirect('/')
 
 @enforce_csrf_checks
+@pysnooper.snoop(prefix="external_user_signup..........: ")
 def user_signup(request,external=False):
     """Sign up page"""
     user = request.user
