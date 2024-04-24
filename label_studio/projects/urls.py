@@ -17,6 +17,7 @@ _urlpatterns = [
 # reverse for projects:api:name
 _api_urlpatterns = [
     # CRUD
+    path('sync-dataset', api.sync_dataset, name='sync_dataset'),
     path('', api.ProjectListAPI.as_view(), name='project-list'),
     path('<int:pk>/', api.ProjectAPI.as_view(), name='project-detail'),
     # Get next task

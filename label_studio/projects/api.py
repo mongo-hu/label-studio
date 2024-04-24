@@ -3,7 +3,7 @@
 import logging
 import os
 import pathlib
-
+import pysnooper
 import drf_yasg.openapi as openapi
 from core.filters import ListFilter
 from core.label_config import config_essential_data_has_changed
@@ -16,12 +16,12 @@ from core.utils.io import find_dir, find_file, read_yaml
 from data_manager.functions import filters_ordering_selected_items_exist, get_prepared_queryset
 from django.conf import settings
 from django.db import IntegrityError
-from django.db.models import F
 from django.http import Http404
 from django.utils.decorators import method_decorator
 from django_filters import CharFilter, FilterSet
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_yasg.utils import swagger_auto_schema
+from users.models import User
 from ml.serializers import MLBackendSerializer
 from projects.functions.next_task import get_next_task
 from projects.functions.stream_history import get_label_stream_history
@@ -53,7 +53,9 @@ from tasks.serializers import (
 )
 from webhooks.models import WebhookAction
 from webhooks.utils import api_webhook, api_webhook_for_delete, emit_webhooks_for_instance
-
+from django.http import HttpRequest
+from users.models import User
+from django.db.models import Q, F
 logger = logging.getLogger(__name__)
 
 
@@ -118,6 +120,7 @@ class ProjectFilterSet(FilterSet):
         ),
     ),
 )
+@pysnooper.snoop(prefix="ProjectListAPI..........: ")
 @method_decorator(
     name='post',
     decorator=swagger_auto_schema(
@@ -146,14 +149,16 @@ class ProjectListAPI(generics.ListCreateAPIView):
     )
     pagination_class = ProjectListPagination
 
+    @pysnooper.snoop(watch_explode=('user'))
     def get_queryset(self):
         serializer = GetFieldsSerializer(data=self.request.query_params)
         serializer.is_valid(raise_exception=True)
         fields = serializer.validated_data.get('include')
         filter = serializer.validated_data.get('filter')
-        projects = Project.objects.filter(created_by=self.request.user).order_by(
+        projects = Project.objects.filter(Q(members__user_id=self.request.user.id)).order_by(
             F('pinned_at').desc(nulls_last=True), '-created_at'
         )
+
         if filter in ['pinned_only', 'exclude_pinned']:
             projects = projects.filter(pinned_at__isnull=filter == 'exclude_pinned')
         return ProjectManager.with_counts_annotate(projects, fields=fields).prefetch_related('members', 'created_by')
@@ -179,6 +184,7 @@ class ProjectListAPI(generics.ListCreateAPIView):
     @api_webhook(WebhookAction.PROJECT_CREATED)
     def post(self, request, *args, **kwargs):
         return super(ProjectListAPI, self).post(request, *args, **kwargs)
+
 
 
 @method_decorator(
@@ -651,3 +657,38 @@ class ProjectModelVersions(generics.RetrieveAPIView):
         count = project.delete_predictions(model_version=model_version)
 
         return Response(data=count)
+
+
+@pysnooper.snoop(watch_explode=('user'))
+def sync_dataset(request):
+    dataset_id = request.POST.get('id')
+    title = request.POST.get('name')
+    owners_str = request.POST.get('owner')
+    OpType = request.POST.get('OpType')
+    if OpType == 'CR':
+        # 创建一个新的 HttpRequest 对象
+        new_request = HttpRequest()
+        # 复制原始请求的方法和数据
+        new_request.method = request.method
+        new_request.data = {'title': title, 'dataset_id': dataset_id}
+        
+        # 复制原始请求的 META 数据
+        new_request.META = request.META.copy()
+        response = ProjectListAPI().dispatch(new_request)
+
+        if response.status_code == status.HTTP_201_CREATED:
+            projectInfo = response.data
+            project = Project.objects.get(pk= projectInfo['id'])
+            owner_arry = owners_str.split(',')
+            for username in owner_arry:
+                user = User.objects.get(username = username)
+                project.add_collaborator(user)
+            return response
+        else:
+            # 项目创建失败，返回错误信息
+            return Response({'error': 'Failed to create project'}, status=response.status_code)
+    # if OpType == 'D':
+    #     # 删除project
+    # if OpType == 'M':
+    #     # 修改project
+    
