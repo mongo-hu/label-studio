@@ -56,6 +56,7 @@ from webhooks.utils import api_webhook, api_webhook_for_delete, emit_webhooks_fo
 from django.http import HttpRequest
 from users.models import User
 from django.db.models import Q, F
+
 logger = logging.getLogger(__name__)
 
 
@@ -227,7 +228,6 @@ class ProjectAPI(generics.RetrieveUpdateDestroyAPIView):
 
     redirect_route = 'projects:project-detail'
     redirect_kwarg = 'pk'
-
     def get_queryset(self):
         serializer = GetFieldsSerializer(data=self.request.query_params)
         serializer.is_valid(raise_exception=True)
@@ -659,21 +659,20 @@ class ProjectModelVersions(generics.RetrieveAPIView):
         return Response(data=count)
 
 
-@pysnooper.snoop(watch_explode=('user'))
+@pysnooper.snoop(watch_explode=('members', 'owner_arry'))
 def sync_dataset(request):
     dataset_id = request.POST.get('id')
     title = request.POST.get('name')
     owners_str = request.POST.get('owner')
     OpType = request.POST.get('OpType')
+    # 创建一个新的 HttpRequest 对象
+    new_request = HttpRequest()
+    # 复制原始请求的 META 数据
+    new_request.META = request.META.copy()
     if OpType == 'CR':
-        # 创建一个新的 HttpRequest 对象
-        new_request = HttpRequest()
         # 复制原始请求的方法和数据
         new_request.method = request.method
         new_request.data = {'title': title, 'dataset_id': dataset_id}
-        
-        # 复制原始请求的 META 数据
-        new_request.META = request.META.copy()
         response = ProjectListAPI().dispatch(new_request)
 
         if response.status_code == status.HTTP_201_CREATED:
@@ -687,8 +686,37 @@ def sync_dataset(request):
         else:
             # 项目创建失败，返回错误信息
             return Response({'error': 'Failed to create project'}, status=response.status_code)
-    # if OpType == 'D':
-    #     # 删除project
-    # if OpType == 'M':
-    #     # 修改project
-    
+    if OpType == 'D':
+        # 删除project
+        new_request.method = 'DELETE'
+        try:
+            project = Project.objects.get(dataset_id = dataset_id)
+        except Project.DoesNotExist:
+            return Response({'message': 'successfully'}, status=status.HTTP_200_OK)
+        
+        project_id = project.id
+        kwargs = {'pk': project_id}
+        response =  ProjectAPI.as_view()(new_request, **kwargs)
+        return response
+    if OpType == 'M':
+        try:
+            project = Project.objects.get(dataset_id = dataset_id)
+        except Project.DoesNotExist:
+            return Response({'message': 'successfully'}, status=status.HTTP_200_OK)
+        #更新projectMember
+        owner_arry = owners_str.split(',')
+        owner_arry = [username.lower() for username in owner_arry]
+        for username in owner_arry:
+            user = User.objects.get(username = username)
+            if not project.has_collaborator_enabled(user=user):
+                project.add_collaborator(user)
+        for m in project.members.all():
+            if m.user.username.lower() not in owner_arry:
+                m.delete()
+       # 更新project
+        new_request.method = 'PATCH'
+        new_request.data = {'title': title, 'dataset_id': dataset_id} 
+        project_id = project.id
+        kwargs = {'pk': project_id}
+        response =  ProjectAPI.as_view()(new_request, **kwargs)
+        return response
