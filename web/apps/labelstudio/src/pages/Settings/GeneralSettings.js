@@ -48,6 +48,7 @@ export const GeneralSettings = () => {
               name="title"
               label="Project Name"
               labelProps={{ large: true }}
+              readOnly
             />
 
             <TextArea
@@ -55,6 +56,7 @@ export const GeneralSettings = () => {
               label="Description"
               labelProps={{ large: true }}
               style={{ minHeight: 128 }}
+              readOnly
             />
             {isFF(FF_LSDV_E_297) && (
               <Block name="workspace-placeholder">
