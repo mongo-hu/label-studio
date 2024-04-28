@@ -162,5 +162,5 @@ ProjectsPage.routes = ({ store }) => [
 ];
 ProjectsPage.context = ({ openModal, showButton }) => {
   if (!showButton) return null;
-  return <Button onClick={openModal} look="primary" size="compact">Create</Button>;
+  return <Button style={{ display: 'none' }} onClick={openModal} look="primary" size="compact">Create</Button>;
 };
