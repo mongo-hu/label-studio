@@ -659,7 +659,7 @@ class ProjectModelVersions(generics.RetrieveAPIView):
         return Response(data=count)
 
 
-@pysnooper.snoop(watch_explode=('members', 'owner_arry'))
+@pysnooper.snoop(watch_explode=('owner_arry'))
 def sync_dataset(request):
     dataset_id = request.POST.get('id')
     title = request.POST.get('name')
@@ -679,10 +679,14 @@ def sync_dataset(request):
         if response.status_code == status.HTTP_201_CREATED:
             projectInfo = response.data
             project = Project.objects.get(pk= projectInfo['id'])
-            owner_arry = owners_str.split(',')
-            for username in owner_arry:
-                user = User.objects.get(username = username)
-                project.add_collaborator(user)
+            if "*" in owners_str:
+                for user in User.objects.all():
+                   project.add_collaborator(user)
+            else: 
+                owner_arry = owners_str.split(',')
+                for username in owner_arry:
+                    user = User.objects.get(username = username)
+                    project.add_collaborator(user)
             return response
         else:
             # 项目创建失败，返回错误信息
@@ -705,9 +709,14 @@ def sync_dataset(request):
         except Project.DoesNotExist:
             return Response({'message': 'successfully'}, status=status.HTTP_200_OK)
         #更新projectMember
-        if owners_str:
-            owner_arry = owners_str.split(',')
-            owner_arry = [username.lower() for username in owner_arry]
+        owner_arry = []
+        if '*' in owners_str:
+            owner_arry = [user.username for user in User.objects.all()]
+        else:
+            if owners_str:
+                owner_arry = owners_str.split(',')
+
+        if len(owner_arry) > 0 :
             for username in owner_arry:
                 user = User.objects.get(username = username)
                 if not project.has_collaborator_enabled(user=user):
