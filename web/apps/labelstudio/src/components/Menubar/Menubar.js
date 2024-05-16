@@ -16,6 +16,7 @@ import './MenuContent.styl';
 import './MenuSidebar.styl';
 import { ModelsPage } from '../../pages/Organization/Models/ModelsPage';
 import { FF_DIA_835, isFF } from '../../utils/feature-flags';
+import { t } from  "../../language/i18n";
 
 export const MenubarContext = createContext();
 
@@ -141,14 +142,14 @@ export const Menubar = ({
             <Menu>
               <Menu.Item
                 icon={<LsSettings/>}
-                label="Account &amp; Settings"
+                label={t("accountSettings")}
                 href="/user/account"
                 data-external
               />
               {/* <Menu.Item label="Dark Mode"/> */}
               <Menu.Item
                 icon={<LsDoor/>}
-                label="Log Out"
+                label={t("logOut")}
                 href={absoluteURL("/logout")}
                 data-external
               />

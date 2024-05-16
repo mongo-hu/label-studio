@@ -14,8 +14,9 @@ import { DataManagerPage } from '../DataManager/DataManager';
 import { SettingsPage } from '../Settings';
 import './Projects.styl';
 import { EmptyProjectsList, ProjectsList } from './ProjectsList';
-
+import { t } from '../../language/i18n';
 const getCurrentPage = () => {
+  // eslint-disable-next-line no-restricted-globals
   const pageNumberFromURL = new URLSearchParams(location.search).get("page");
 
   return pageNumberFromURL ? parseInt(pageNumberFromURL) : 1;
@@ -30,7 +31,6 @@ export const ProjectsPage = () => {
   const [totalItems, setTotalItems] = useState(1);
   const setContextProps = useContextProps();
   const defaultPageSize = parseInt(localStorage.getItem('pages:projects-list') ?? 30);
-
   const [modal, setModal] = React.useState(false);
   const openModal = setModal.bind(null, true);
   const closeModal = setModal.bind(null, false);
@@ -141,7 +141,7 @@ export const ProjectsPage = () => {
   );
 };
 
-ProjectsPage.title = "Projects";
+ProjectsPage.title = t("Projects");
 ProjectsPage.path = "/projects";
 ProjectsPage.exact = true;
 ProjectsPage.routes = ({ store }) => [
@@ -150,6 +150,7 @@ ProjectsPage.routes = ({ store }) => [
     path: "/:id(\\d+)",
     exact: true,
     component: () => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const params = useRouterParams();
 
       return <Redirect to={`/projects/${params.id}/data`}/>;
@@ -162,5 +163,5 @@ ProjectsPage.routes = ({ store }) => [
 ];
 ProjectsPage.context = ({ openModal, showButton }) => {
   if (!showButton) return null;
-  return <Button style={{ display: 'none' }} onClick={openModal} look="primary" size="compact">Create</Button>;
+  return <Button style={{ display: 'none' }} onClick={openModal} look="primary" size="compact">{t("Create")}</Button>;
 };
