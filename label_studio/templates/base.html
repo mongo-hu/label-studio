@@ -3,8 +3,9 @@
 {% load rules %}
 {% load filters %}
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
 <head>
   <meta charset="utf-8"/>
   <meta name="author" content="Label Studio"/>

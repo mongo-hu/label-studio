@@ -707,7 +707,7 @@ def sync_dataset(request):
         try:
             project = Project.objects.get(dataset_id = dataset_id)
         except Project.DoesNotExist:
-            return Response({'message': 'successfully'}, status=status.HTTP_200_OK)
+            return Response({'message': 'not exist'}, status=status.HTTP_204_NO_CONTENT)
         #更新projectMember
         owner_arry = []
         if '*' in owners_str:
