@@ -10,7 +10,7 @@ import { Elem } from '../../../utils/bem';
 import { useRefresh } from '../../../utils/hooks';
 import { ImportPage } from './Import';
 import { useImportPage } from './useImportPage';
-
+import { t } from '../../../../../../language/i18n';
 export const Inner = () => {
   const history = useHistory();
   const location = useFixedLocation();
@@ -63,12 +63,12 @@ export const Inner = () => {
       bare
     >
       <Modal.Header divided>
-        <Elem block="modal" name="title">Import Data</Elem>
+        <Elem block="modal" name="title">{t("ImportData")}</Elem>
 
         <Space>
-          <Button waiting={waiting} onClick={onCancel}>Cancel</Button>
+          <Button waiting={waiting} onClick={onCancel}>{t("Cancel")}</Button>
           <Button look="primary" onClick={onFinish} waiting={waiting || uploading} disabled={uploadDisabled}>
-            Import
+            {t("Import")}
           </Button>
         </Space>
       </Modal.Header>

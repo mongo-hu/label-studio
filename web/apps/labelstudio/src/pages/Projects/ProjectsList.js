@@ -1,12 +1,11 @@
 import chr from 'chroma-js';
-import { format } from 'date-fns';
 import React, { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { LsBulb, LsCheck, LsEllipsis, LsMinus } from '../../assets/icons';
 import { Button, Dropdown, Menu, Pagination, Userpic } from '../../components';
 import { Block, Elem } from '../../utils/bem';
 import { absoluteURL } from '../../utils/helpers';
-
+import { t } from  "../../../../../language/i18n";
 export const ProjectsList = ({ projects, currentPage, totalItems, loadNextPage, pageSize }) => {
   return (
     <>
@@ -53,6 +52,17 @@ const ProjectCard = ({ project }) => {
       '--background-color': chr(color).alpha(0.2).css(),
     } : {};
   }, [color]);
+  const moment = require('moment');
+
+  require('moment/locale/zh-cn');
+  // 假设project.created_at是一个日期字符串
+  const date = moment(project.created_at);
+
+  // 设置moment的本地化为中文
+  moment.locale('zh-cn');
+
+  // 使用中文格式化模板
+  const formattedDate = date.format('yy年MMMDD日HH:mm');
 
   return (
     <Elem tag={NavLink} name="link" to={`/projects/${project.id}/data`} data-external>
@@ -69,8 +79,8 @@ const ProjectCard = ({ project }) => {
             }}>
               <Dropdown.Trigger content={(
                 <Menu contextual>
-                  <Menu.Item href={`/projects/${project.id}/settings`}>Settings</Menu.Item>
-                  <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>Label</Menu.Item>
+                  <Menu.Item href={`/projects/${project.id}/settings`}>{t("Settings")}</Menu.Item>
+                  <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>{t("Label")}</Menu.Item>
                 </Menu>
               )}>
                 <Button size="small" type="text" icon={<LsEllipsis/>}/>
@@ -104,7 +114,7 @@ const ProjectCard = ({ project }) => {
         </Elem>
         <Elem name="info">
           <Elem name="created-date">
-            {format(new Date(project.created_at), "dd MMM ’yy, HH:mm")}
+            {formattedDate}
           </Elem>
           <Elem name="created-by">
             <Userpic src="#" user={project.created_by} showUsername/>

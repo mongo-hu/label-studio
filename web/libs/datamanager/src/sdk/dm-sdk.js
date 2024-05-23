@@ -133,7 +133,7 @@ export class DataManager {
     delete: true,
     edit: true,
     duplicate: true,
-  }
+  };
 
   /** @type {"dm" | "labelops"} */
   type = "dm";
@@ -509,5 +509,5 @@ export class DataManager {
     return instrumentsList;
   }
   static packJSON = packJSON;
-  static taskToLSFormat = taskToLSFormat
+  static taskToLSFormat = taskToLSFormat;
 }

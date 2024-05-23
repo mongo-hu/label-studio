@@ -12,7 +12,7 @@ import {
   isInLicense,
   LF_CLOUD_STORAGE_FOR_MANAGERS
 } from '../../utils/license-flags';
-
+import { t } from  "../../../../../language/i18n";
 const isAllowCloudStorage = !isInLicense(LF_CLOUD_STORAGE_FOR_MANAGERS);
 
 export const MenuLayout = ({ children, ...routeProps }) => {
@@ -46,7 +46,7 @@ const pages = {
 isAllowCloudStorage && (pages.StorageSettings = StorageSettings);
 
 export const SettingsPage = {
-  title: 'Settings',
+  title: t('Settings'),
   path: '/settings',
   exact: true,
   layout: MenuLayout,

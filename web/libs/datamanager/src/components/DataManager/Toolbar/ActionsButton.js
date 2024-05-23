@@ -15,7 +15,7 @@ import Form from "../../Common/Form/Form";
 import { Menu } from "../../Common/Menu/Menu";
 import { Modal } from "../../Common/Modal/ModalPopup";
 import "./ActionsButton.styl";
-
+import { t }from "../../../../../../language/i18n";
 const isFFLOPSE3 = isFF(FF_LOPS_E_3);
 const isNewUI = isFF(FF_LOPS_E_10);
 const injector = inject(({ store }) => ({
@@ -149,7 +149,7 @@ export const ActionsButton = injector(observer(({ store, size, hasSelected, ...r
       onToggle={(visible) => isFFLOPSE3 && setIsOpen(visible)}
     >
       <Button {...(isNewUI ? { className:"actionButtonPrime" } : {})} size={size} disabled={!hasSelected} {...rest}>
-        {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}${selectedCount > 1 ? "s" : ""}`: "Actions"}
+        {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}${selectedCount > 1 ? "s" : ""}`: t("Actions")}
         {isNewUI ? (
           isOpen ? (
             <FaChevronUp size="12" style={{ marginLeft: 4, marginRight: -7 }} />

@@ -16,7 +16,7 @@ import './MenuContent.styl';
 import './MenuSidebar.styl';
 import { ModelsPage } from '../../pages/Organization/Models/ModelsPage';
 import { FF_DIA_835, isFF } from '../../utils/feature-flags';
-import { t } from  "../../language/i18n";
+import { t } from  "../../../../../language/i18n";
 
 export const MenubarContext = createContext();
 

@@ -6,6 +6,7 @@ import { Filters } from "../Filters/Filters";
 import { Badge } from "./Badge/Badge";
 import { Button } from "./Button/Button";
 import { Dropdown } from "./Dropdown/Dropdown";
+import { t } from "../../../../../language/i18n";
 
 const buttonInjector = inject(({ store }) => {
   const { viewsStore, currentView } = store;
@@ -28,7 +29,7 @@ export const FiltersButton = buttonInjector(observer(
         onClick={() => sidebarEnabled && viewsStore.toggleSidebar()}
         {...rest}
       >
-        Filters {hasFilters && (
+        {t("Filters")} {hasFilters && (
           <Badge size="small" style={{ marginLeft: 5 }}>{activeFiltersNumber}</Badge>
         )}
         {isFF(FF_LOPS_E_10) ? (

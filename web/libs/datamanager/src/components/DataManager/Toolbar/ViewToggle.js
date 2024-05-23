@@ -3,7 +3,7 @@ import { LsGrid, LsList } from "../../../assets/icons";
 import { FF_LOPS_E_10, isFF } from "../../../utils/feature-flags";
 import { RadioGroup } from "../../Common/RadioGroup/RadioGroup";
 import { Tooltip } from "../../Common/Tooltip/Tooltip";
-
+import { t } from "../../../../../../language/i18n";
 const viewInjector = inject(({ store }) => ({
   view: store.currentView,
 }));
@@ -20,12 +20,12 @@ export const ViewToggle = viewInjector(observer(({ view, size, ...rest }) => {
     >
       <RadioGroup.Button value="list">
         <Tooltip title="List view">
-          {isDatasetsFF ? <LsList /> : <span>List</span>}
+          {isDatasetsFF ? <LsList /> : <span>{t("List")}</span>}
         </Tooltip>
       </RadioGroup.Button>
       <RadioGroup.Button value="grid">
         <Tooltip title="Grid view">
-          {isDatasetsFF ? <LsGrid /> : <span>Grid</span>}
+          {isDatasetsFF ? <LsGrid /> : <span>{t("Grid")}</span>}
         </Tooltip>
       </RadioGroup.Button>
     </RadioGroup>
@@ -41,10 +41,10 @@ export const DataStoreToggle = viewInjector(({ view, size, ...rest }) => {
       {...rest}
     >
       <RadioGroup.Button value="tasks">
-        Tasks
+        {t("Tasks")}
       </RadioGroup.Button>
       <RadioGroup.Button value="annotations" disabled>
-        Annotations
+        {t("Annotations")}
       </RadioGroup.Button>
     </RadioGroup>
   );

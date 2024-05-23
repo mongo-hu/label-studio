@@ -9,6 +9,7 @@ import { useFixedLocation, useParams } from '../../providers/RoutesProvider';
 import { BemWithSpecifiContext } from '../../utils/bem';
 import { isDefined } from '../../utils/helpers';
 import "./ExportPage.styl";
+import { t } from '../../../../../language/i18n';
 
 // const formats = {
 //   json: 'JSON',
@@ -149,7 +150,7 @@ export const ExportPage = () => {
 
         history.replace(`${path}${search !== '?' ? search : ''}`);
       }}
-      title="Export data"
+      title={t("Exportdata")}
       style={{ width: 720 }}
       closeOnClickOutside={false}
       allowClose={!downloading}
@@ -183,7 +184,7 @@ export const ExportPage = () => {
             <Elem name="actions">
               <Space>
                 {downloadingMessage && (
-                  "Files are being prepared. It might take some time."
+                  t("downloadingMessage")
                 )}
                 <Elem
                   tag={Button}
@@ -192,7 +193,7 @@ export const ExportPage = () => {
                   onClick={proceedExport}
                   waiting={downloading}
                 >
-                  Export
+                  {t("Export")}
                 </Elem>
               </Space>
             </Elem>
@@ -206,7 +207,7 @@ export const ExportPage = () => {
 const FormatInfo = ({ availableFormats, selected, onClick }) => {
   return (
     <Block name="formats">
-      <Elem name="info">You can export dataset in one of the following formats:</Elem>
+      <Elem name="info">{t("supportedFormatInfo")}</Elem>
       <Elem name="list">
         {availableFormats.map(format => (
           <Elem
@@ -232,11 +233,11 @@ const FormatInfo = ({ availableFormats, selected, onClick }) => {
           </Elem>
         ))}
       </Elem>
-      <Elem name="feedback">
+      {/* <Elem name="feedback">
         Can't find an export format?
         <br/>
         Please let us know in <a className="no-go" href="https://slack.labelstud.io/?source=product-export">Slack</a> or submit an issue to the <a className="no-go" href="https://github.com/heartexlabs/label-studio-converter/issues">Repository</a>
-      </Elem>
+      </Elem> */}
     </Block>
   );
 };

@@ -7,7 +7,7 @@ import { Icon } from "../Common/Icon/Icon";
 import { Tooltip } from "../Common/Tooltip/Tooltip";
 import { FilterLine } from "./FilterLine/FilterLine";
 import "./Filters.styl";
-
+import { t } from "../../../../../language/i18n";
 const injector = inject(({ store }) => ({
   store,
   views: store.viewsStore,
@@ -66,7 +66,7 @@ export const Filters = injector(({ views, currentView, filters }) => {
             />
           ))
         ) : (
-          <Elem name="empty">No filters applied</Elem>
+          <Elem name="empty">{t("NoFiltersApplied")}</Elem>
         )}
       </Elem>
       <Elem name="actions">
@@ -76,15 +76,15 @@ export const Filters = injector(({ views, currentView, filters }) => {
           onClick={() => currentView.createFilter()}
           icon={<FaPlus />}
         >
-          Add {filters.length ? "Another Filter" : "Filter"}
+          {filters.length ? t("AddAnotherFilter") : t("AddFilter")}
         </Button>
 
         {!sidebarEnabled ? (
-          <Tooltip title="Pin to sidebar">
+          <Tooltip title={t("Pintosidebar")}>
             <Button
               type="link"
               size="small"
-              about="Pin to sidebar"
+              about={t("Pintosidebar")}
               onClick={() => views.expandFilters()}
               style={{ display: "inline-flex", alignItems: "center" }}
               icon={<Icon icon={FaCaretSquareRight} size={18} />}

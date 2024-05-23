@@ -932,3 +932,9 @@ msgstr ""
 #: .\label_studio\webhooks\models.py:259
 msgid "Action value"
 msgstr ""
+
+msgid "Account info"
+msgstr "账号信息"
+
+msgid "Phone"
+msgstr "手机号"

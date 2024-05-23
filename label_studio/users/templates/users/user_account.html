@@ -27,7 +27,7 @@
     <form action="{% url 'user-detail' pk=user.pk %}" method="patch" class="user__info">
       <input type="hidden" name="_method" value="patch"/>
 
-      <header>Account info</header>
+      <header>{% translate "Account info" %}</header>
       <ul>
         <li class="field">
           <label for="">E-mail</label>
@@ -42,7 +42,7 @@
           <input type="text" class="ls-input" name="last_name" value="{{user.last_name}}" />
         </li>
         <li class="field">
-          <label for="">Phone</label>
+          <label for="">{%  translate "Phone" %}</label>
           <input type="text" class="ls-input" name="phone" value="{{user.phone}}" />
           <!-- <span>We'll send you sms with code if you change your number</span>
           <span class="error">Incorrect phone number!</span> -->
@@ -77,7 +77,7 @@
         </div> -->
       </div>
       <footer>
-        <p class="secondary">Registered {{ user.date_joined|date:"M j, Y" }}, user ID {{ user.id }}</p>
+        <p class="secondary">{% translate "Registered"%} {{ user.date_joined|date:"M j, Y" }}, user ID {{ user.id }}</p>
         <button class="ls-button ls-button_look_primary" onclick="smart_submit()">{% translate "save" %}</button>
       </footer>
     </form>

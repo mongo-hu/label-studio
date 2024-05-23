@@ -8,15 +8,15 @@ import { Tag } from "../../Common/Tag/Tag";
 import { FilterDropdown } from "../FilterDropdown";
 import "./FilterLine.styl";
 import { FilterOperation } from "./FilterOperation";
-
+import { t } from "../../../../../../language/i18n";
 const { Block, Elem } = BemWithSpecifiContext();
 
 const Conjunction = observer(({ index, view }) => {
   return (
     <FilterDropdown
       items={[
-        { value: "and", label: "And" },
-        { value: "or", label: "Or" },
+        { value: "and", label: t("And") },
+        { value: "or", label: t("Or") },
       ]}
       disabled={index > 1}
       value={view.conjunction}
@@ -43,7 +43,7 @@ export const FilterLine = observer(({
       <GroupWrapper wrap={sidebar}>
         <Elem name="column" mix="conjunction">
           {index === 0 ? (
-            <span style={{ fontSize: 12, paddingRight: 5 }}>Where</span>
+            <span style={{ fontSize: 12, paddingRight: 5 }}>{t("Where")}</span>
           ) : (
             <Conjunction index={index} view={view} />
           )}

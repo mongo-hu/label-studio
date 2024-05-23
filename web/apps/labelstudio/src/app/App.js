@@ -19,7 +19,7 @@ import ErrorBoundary from './ErrorBoundary';
 import { RootPage } from './RootPage';
 import { FF_OPTIC_2, isFF } from '../utils/feature-flags';
 import { ToastProvider, ToastViewport } from '../components/Toast/Toast';
-import '../language/i18n';
+import '../../../../language/i18n';
 
 // eslint-disable-next-line no-restricted-globals
 const baseURL = new URL(APP_SETTINGS.hostname || location.origin);

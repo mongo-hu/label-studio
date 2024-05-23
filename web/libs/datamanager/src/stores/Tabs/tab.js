@@ -16,7 +16,7 @@ import { TabSelectedItems } from "./tab_selected_items";
 import { History } from '../../utils/history';
 import { CustomJSON, StringOrNumberID, ThresholdType } from "../types";
 import { clamp } from "../../utils/helpers";
-
+import { t } from "../../../../../language/i18n";
 const THRESHOLD_MIN = 0;
 const THRESHOLD_MIN_DIFF = 0.001;
 
@@ -24,7 +24,7 @@ export const Tab = types
   .model("View", {
     id: StringOrNumberID,
 
-    title: "Tasks",
+    title: t("Tasks"),
     oldTitle: types.maybeNull(types.string),
 
     key: types.optional(types.string, guidGenerator),
