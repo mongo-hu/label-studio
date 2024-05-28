@@ -191,14 +191,14 @@ export const Menubar = ({
             >
               <Menu>
                 <Menu.Item
-                  label="Projects"
+                  label={t("Projects")}
                   to="/projects"
                   icon={<IconFolder/>}
                   data-external
                   exact
                 />
                 <Menu.Item
-                  label="Organization"
+                  label={t("Organization")}
                   to="/organization"
                   icon={<IconPersonInCircle/>}
                   data-external
@@ -206,7 +206,7 @@ export const Menubar = ({
                 />
                 {isFF(FF_DIA_835) && (
                   <Menu.Item
-                    label="Models"
+                    label={t("Models")}
                     to={ModelsPage.path}
                     icon={<IconModel/>}
                     exact
@@ -215,9 +215,9 @@ export const Menubar = ({
 
                 <Menu.Spacer/>
 
-                <VersionNotifier showNewVersion/>
+                {/* <VersionNotifier showNewVersion/> */}
 
-                <Menu.Item
+                {/* <Menu.Item
                   label="API"
                   href="/docs/api"
                   icon={<IconTerminal/>}
@@ -240,11 +240,11 @@ export const Menubar = ({
                   href="https://slack.labelstud.io/?source=product-menu"
                   icon={<LsSlack/>}
                   target="_blank"
-                />
+                /> */}
 
-                <VersionNotifier showCurrentVersion/>
+                {/* <VersionNotifier showCurrentVersion/>
 
-                <Menu.Divider/>
+                <Menu.Divider/> */}
 
                 <Menu.Item
                   icon={<IconPin/>}
@@ -252,7 +252,7 @@ export const Menubar = ({
                   onClick={sidebarPin}
                   active={sidebarPinned}
                 >
-                  {sidebarPinned ?  "Unpin menu" : "Pin menu"}
+                  {sidebarPinned ?  t("unpinMenu") : t("pinMenu")}
                 </Menu.Item>
 
               </Menu>
