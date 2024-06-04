@@ -18,6 +18,8 @@ urlpatterns = [
     path('user/login/', views.user_login, name='user-login'),
     path('user/signup/', views.user_signup, name='user-signup'),
     path('user/externalSignup/', views.external_user_signup, name='external_user_signup'),
+    path('user/external_logout/', views.external_logout, name='external_logout'),
+    
     
     path('user/account/', views.user_account, name='user-account'),
     url(r'^logout/?$', views.logout, name='logout'),

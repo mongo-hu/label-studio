@@ -15,7 +15,7 @@ import "./PeopleInvitation.styl";
 import { PeopleList } from "./PeopleList";
 import "./PeoplePage.styl";
 import { SelectedUser } from "./SelectedUser";
-
+import { t } from "../../../../../../language/i18n";
 const InvitationModal = ({ link }) => {
   return (
     <Block name="invite">
@@ -115,11 +115,11 @@ export const PeoplePage = () => {
         <Space spread>
           <Space></Space>
 
-          <Space>
+          {/* <Space>
             <Button icon={<LsPlus />} primary onClick={showInvitationModal}>
               Add People
             </Button>
-          </Space>
+          </Space> */}
         </Space>
       </Elem>
       <Elem name="content">
@@ -142,5 +142,5 @@ export const PeoplePage = () => {
   );
 };
 
-PeoplePage.title = "People";
+PeoplePage.title = t("People");
 PeoplePage.path = "/";

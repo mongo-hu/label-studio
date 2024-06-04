@@ -22,8 +22,10 @@ logger = logging.getLogger()
 
 
 @login_required
-def logout(request):
+def logout(request,external=False):
     auth.logout(request)
+    if external:
+        return JsonResponse({'message':'successfully'}, safe=False, status=200)
     if settings.HOSTNAME:
         redirect_url = settings.HOSTNAME
         if not redirect_url.endswith('/'):
@@ -31,8 +33,11 @@ def logout(request):
         return redirect(redirect_url)
     return redirect('/')
 
+@pysnooper.snoop(prefix="external_logout..........: ")
+def external_logout(request):
+    return logout(request, True)
+
 @enforce_csrf_checks
-@pysnooper.snoop(prefix="external_user_signup..........: ")
 def user_signup(request,external=False):
     """Sign up page"""
     user = request.user
