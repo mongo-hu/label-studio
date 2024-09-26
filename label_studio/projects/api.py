@@ -661,7 +661,7 @@ class ProjectModelVersions(generics.RetrieveAPIView):
         return Response(data=count)
 
 
-@pysnooper.snoop(watch_explode=('owner_arry'))
+@pysnooper.snoop(watch_explode=('new_request.data'))
 def sync_dataset(request):
     dataset_id = request.POST.get('id')
     title = request.POST.get('name')
@@ -673,6 +673,8 @@ def sync_dataset(request):
     # 复制原始请求的 META 数据
     new_request.META = request.META.copy()
     if OpType == 'CR':
+        if dataset_id is None:
+            return JsonResponse({'type': 'CR'}, status=status.HTTP_404_NOT_FOUND)
         # 复制原始请求的方法和数据
         new_request.method = request.method
         new_request.data = {'title': title, 'dataset_id': dataset_id, 'description': description}
