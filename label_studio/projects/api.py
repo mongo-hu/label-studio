@@ -848,6 +848,7 @@ def sync_dataset(request):
     title = request.POST.get('name')
     owners_str = request.POST.get('owner')
     OpType = request.POST.get('OpType')
+    description = request.POST.get('description')
     # 创建一个新的 HttpRequest 对象
     new_request = HttpRequest()
     # 复制原始请求的 META 数据
@@ -855,7 +856,7 @@ def sync_dataset(request):
     if OpType == 'CR':
         # 复制原始请求的方法和数据
         new_request.method = request.method
-        new_request.data = {'title': title, 'dataset_id': dataset_id}
+        new_request.data = {'title': title, 'dataset_id': dataset_id, 'description': description}
         response = ProjectListAPI().dispatch(new_request)
 
         if response.status_code == status.HTTP_201_CREATED:
@@ -887,18 +888,19 @@ def sync_dataset(request):
         except Project.DoesNotExist:
             return Response({'message': 'successfully'}, status=status.HTTP_200_OK)
         #更新projectMember
-        owner_arry = owners_str.split(',')
-        owner_arry = [username.lower() for username in owner_arry]
-        for username in owner_arry:
-            user = User.objects.get(username = username)
-            if not project.has_collaborator_enabled(user=user):
-                project.add_collaborator(user)
-        for m in project.members.all():
-            if m.user.username.lower() not in owner_arry:
-                m.delete()
+        if owners_str:
+            owner_arry = owners_str.split(',')
+            owner_arry = [username.lower() for username in owner_arry]
+            for username in owner_arry:
+                user = User.objects.get(username = username)
+                if not project.has_collaborator_enabled(user=user):
+                    project.add_collaborator(user)
+            for m in project.members.all():
+                if m.user.username.lower() not in owner_arry:
+                    m.delete()
        # 更新project
         new_request.method = 'PATCH'
-        new_request.data = {'title': title, 'dataset_id': dataset_id}
+        new_request.data = {'title': title, 'dataset_id': dataset_id, 'description': description}
         project_id = project.id
         kwargs = {'pk': project_id}
         response =  ProjectAPI.as_view()(new_request, **kwargs)
