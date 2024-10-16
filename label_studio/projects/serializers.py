@@ -156,6 +156,7 @@ class ProjectSerializer(FlexFieldsModelSerializer):
             'finished_task_number',
             'queue_total',
             'queue_done',
+            'dataset_id',
         ]
 
     def validate_label_config(self, value):
