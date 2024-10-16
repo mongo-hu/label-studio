@@ -1,7 +1,7 @@
 """This file and its contents are licensed under the Apache License 2.0. Please see the included NOTICE for copyright information and LICENSE for a copy of the license.
 """
 import logging
-
+import pysnooper
 from core.feature_flags import flag_set
 from core.middleware import enforce_csrf_checks
 from core.utils.common import load_func
@@ -15,8 +15,9 @@ from organizations.forms import OrganizationSignupForm
 from organizations.models import Organization
 from rest_framework.authtoken.models import Token
 from users import forms
+from users.models import User
 from users.functions import login, proceed_registration
-
+from django.http import JsonResponse
 logger = logging.getLogger()
 
 
@@ -30,9 +31,8 @@ def logout(request):
         return redirect(redirect_url)
     return redirect('/')
 
-
 @enforce_csrf_checks
-def user_signup(request):
+def user_signup(request,external=False):
     """Sign up page"""
     user = request.user
     next_page = request.GET.get('next')
@@ -63,6 +63,14 @@ def user_signup(request):
 
         if user_form.is_valid():
             redirect_response = proceed_registration(request, user_form, organization_form, next_page)
+            if external:
+                user = User.objects.get(email = request.POST.get('email'))
+                token = Token.objects.get(user=user)
+                data = {
+                    'user': user.email,
+                    'token': token.key
+                }
+                return JsonResponse(data, safe=False, status=200)
             if redirect_response:
                 return redirect_response
 
@@ -89,9 +97,22 @@ def user_signup(request):
         },
     )
 
+@pysnooper.snoop(prefix="external_user_signup..........: ")
+def external_user_signup(request):
+    email = request.POST.get('email')
+    password = request.POST.get('password')
+
+    # 验证用户名和密码
+    user = auth.authenticate(request, email=email, password=password)
+    if user is not None:
+        # 登录成功，允许用户登录
+        return user_login(request,True)
+    else:
+        return user_signup(request,True)
 
 @enforce_csrf_checks
-def user_login(request):
+@pysnooper.snoop()
+def user_login(request, external=False):
     """Login page"""
     user = request.user
     next_page = request.GET.get('next')
@@ -120,7 +141,16 @@ def user_login(request):
             org_pk = Organization.find_by_user(user).pk
             user.active_organization_id = org_pk
             user.save(update_fields=['active_organization'])
-            return redirect(next_page)
+            if not external:
+                return redirect(next_page)
+            else:
+                user = User.objects.get(email = request.POST.get('email'))
+                token = Token.objects.get(user=user)
+                data = {
+                    'user': user.email,
+                    'token': token.key
+                }
+                return JsonResponse(data, safe=False, status=200)
 
     if flag_set('fflag_feat_front_lsdv_e_297_increase_oss_to_enterprise_adoption_short'):
         return render(request, 'users/new-ui/user_login.html', {'form': form, 'next': next_page})

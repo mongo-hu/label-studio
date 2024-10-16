@@ -9,7 +9,7 @@ from users.models import User
 
 EMAIL_MAX_LENGTH = 256
 PASS_MAX_LENGTH = 64
-PASS_MIN_LENGTH = 8
+PASS_MIN_LENGTH = 5
 USERNAME_MAX_LENGTH = 30
 DISPLAY_NAME_LENGTH = 100
 USERNAME_LENGTH_ERR = 'Please enter a username 30 characters or fewer in length'
