@@ -41,9 +41,9 @@ export const EmptyProjectsList = ({ openModal }) => {
         Heidi doesn’t see any projects here!
       </Elem>
       <p>Create one and start labeling your data.</p>
-      <Elem name="action" tag={Button} onClick={openModal} look="primary">
+      {/* <Elem name="action" tag={Button} onClick={openModal} look="primary">
         Create Project
-      </Elem>
+      </Elem> */}
     </Block>
   );
 };
