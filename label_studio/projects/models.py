@@ -82,7 +82,7 @@ class ProjectManager(models.Manager):
     }
 
     def for_user(self, user):
-        return self.filter(organization=user.active_organization)
+        return self.filter(created_by=user)
 
     def with_counts(self, fields=None):
         return self.with_counts_annotate(self, fields=fields)
