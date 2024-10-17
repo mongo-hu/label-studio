@@ -7,15 +7,16 @@ import { Spinner } from "../../components/Spinner/Spinner";
 import { ApiContext } from "../../providers/ApiProvider";
 import { useContextProps } from "../../providers/RoutesProvider";
 import { useAbortController } from "../../hooks/useAbortController";
-import { Block, Elem } from "../../utils/bem";
-import { FF_DEV_2575, isFF } from "../../utils/feature-flags";
-import { CreateProject } from "../CreateProject/CreateProject";
-import { DataManagerPage } from "../DataManager/DataManager";
-import { SettingsPage } from "../Settings";
-import "./Projects.scss";
-import { EmptyProjectsList, ProjectsList } from "./ProjectsList";
+import { Block, Elem } from '../../utils/bem';
+import { FF_DEV_2575, isFF } from '../../utils/feature-flags';
+import { CreateProject } from '../CreateProject/CreateProject';
+import { DataManagerPage } from '../DataManager/DataManager';
+import { SettingsPage } from '../Settings';
+import './Projects.styl';
+import { EmptyProjectsList, ProjectsList } from './ProjectsList';
 
 const getCurrentPage = () => {
+  // eslint-disable-next-line no-restricted-globals
   const pageNumberFromURL = new URLSearchParams(location.search).get("page");
 
   return pageNumberFromURL ? Number.parseInt(pageNumberFromURL) : 1;
@@ -29,7 +30,7 @@ export const ProjectsPage = () => {
   const [currentPage, setCurrentPage] = useState(getCurrentPage());
   const [totalItems, setTotalItems] = useState(1);
   const setContextProps = useContextProps();
-  const defaultPageSize = Number.parseInt(localStorage.getItem("pages:projects-list") ?? 30);
+  const defaultPageSize = parseInt(localStorage.getItem('pages:projects-list') ?? 30);
 
   const [modal, setModal] = React.useState(false);
   const openModal = setModal.bind(null, true);
@@ -143,7 +144,7 @@ export const ProjectsPage = () => {
   );
 };
 
-ProjectsPage.title = "Projects";
+ProjectsPage.title = t("Projects");
 ProjectsPage.path = "/projects";
 ProjectsPage.exact = true;
 ProjectsPage.routes = ({ store }) => [
@@ -152,6 +153,7 @@ ProjectsPage.routes = ({ store }) => [
     path: "/:id(\\d+)",
     exact: true,
     component: () => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const params = useRouterParams();
 
       return <Redirect to={`/projects/${params.id}/data`} />;
@@ -164,9 +166,5 @@ ProjectsPage.routes = ({ store }) => [
 ];
 ProjectsPage.context = ({ openModal, showButton }) => {
   if (!showButton) return null;
-  return (
-    <Button style={{ display: 'none' }} onClick={openModal} look="primary" size="compact">
-      Create
-    </Button>
-  );
+  return <Button style={{ display: 'none' }} onClick={openModal} look="primary" size="compact">Create</Button>;
 };
