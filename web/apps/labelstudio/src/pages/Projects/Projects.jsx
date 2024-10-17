@@ -12,9 +12,9 @@ import { FF_DEV_2575, isFF } from '../../utils/feature-flags';
 import { CreateProject } from '../CreateProject/CreateProject';
 import { DataManagerPage } from '../DataManager/DataManager';
 import { SettingsPage } from '../Settings';
-import './Projects.styl';
+import "./Projects.scss";
 import { EmptyProjectsList, ProjectsList } from './ProjectsList';
-
+import { t } from '../../language/i18n';
 const getCurrentPage = () => {
   // eslint-disable-next-line no-restricted-globals
   const pageNumberFromURL = new URLSearchParams(location.search).get("page");
@@ -31,7 +31,6 @@ export const ProjectsPage = () => {
   const [totalItems, setTotalItems] = useState(1);
   const setContextProps = useContextProps();
   const defaultPageSize = parseInt(localStorage.getItem('pages:projects-list') ?? 30);
-
   const [modal, setModal] = React.useState(false);
   const openModal = setModal.bind(null, true);
   const closeModal = setModal.bind(null, false);
@@ -166,5 +165,5 @@ ProjectsPage.routes = ({ store }) => [
 ];
 ProjectsPage.context = ({ openModal, showButton }) => {
   if (!showButton) return null;
-  return <Button style={{ display: 'none' }} onClick={openModal} look="primary" size="compact">Create</Button>;
+  return <Button style={{ display: 'none' }} onClick={openModal} look="primary" size="compact">{t("Create")}</Button>;
 };
