@@ -394,12 +394,13 @@ class ProjectAPI(generics.RetrieveUpdateDestroyAPIView):
 
     redirect_route = 'projects:project-detail'
     redirect_kwarg = 'pk'
+    @pysnooper.snoop(prefix="get_queryset..........: ")
     def get_queryset(self):
         serializer = GetFieldsSerializer(data=self.request.query_params)
         serializer.is_valid(raise_exception=True)
         fields = serializer.validated_data.get('include')
         return Project.objects.with_counts(fields=fields).filter(organization=self.request.user.active_organization)
-
+    @pysnooper.snoop(prefix="get..........: ")
     def get(self, request, *args, **kwargs):
         return super(ProjectAPI, self).get(request, *args, **kwargs)
 
@@ -870,6 +871,9 @@ def sync_dataset(request):
                 for username in owner_arry:
                     user = User.objects.get(username = username)
                     project.add_collaborator(user)
+            project_id_str = str(projectInfo['id'])
+            project_dir = os.path.join(settings.MEDIA_ROOT, settings.UPLOAD_DIR, project_id_str)
+            response.data['project_dir'] = project_dir
             return response
         else:
             # 项目创建失败，返回错误信息
