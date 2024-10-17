@@ -3,7 +3,7 @@ import { FaSortAmountDown, FaSortAmountUp } from "react-icons/fa";
 import { Button } from "../../Common/Button/Button";
 import { FieldsButton } from "../../Common/FieldsButton";
 import { Space } from "../../Common/Space/Space";
-
+import { t } from "../../../../../../language/i18n";
 const injector = inject(({ store }) => {
   const view = store?.currentView;
 
@@ -16,12 +16,12 @@ const injector = inject(({ store }) => {
 export const OrderButton = injector(({ size, ordering, view, ...rest }) => {
   return (
     <Space style={{ fontSize: 12 }}>
-      Order
-      <Button.Group collapsed {...rest}>
+      {t("Order")}
+      <Button.Group collapsed {...rest} >
         <FieldsButton
           size={size}
           style={{ minWidth: 67, textAlign: "left", marginRight: -1 }}
-          title={ordering ? ordering.column?.title : "not set"}
+          title={ordering ? ordering.column?.title : t("notset")}
           onClick={(col) => view.setOrdering(col.id)}
           onReset={() => view.setOrdering(null)}
           resetTitle="Default"

@@ -6,6 +6,7 @@ import { Button } from "../../Common/Button/Button";
 import { Icon } from "../../Common/Icon/Icon";
 import { Filters } from "../Filters";
 import "./FilterSidebar.scss";
+import { t } from "../../../../../../language/i18n";
 
 const sidebarInjector = inject(({ store }) => {
   const viewsStore = store.viewsStore;
@@ -28,7 +29,7 @@ export const FiltersSidebar = sidebarInjector(({ viewsStore, sidebarEnabled, sid
             onClick={() => viewsStore.collapseFilters()}
           />
         </Elem>
-        <Elem name="title">Filters</Elem>
+        <Elem name="title">{t("Filters")}</Elem>
       </Elem>
       <Filters sidebar={true} />
     </Block>

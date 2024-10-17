@@ -11,7 +11,7 @@ import { FiltersSidebar } from "../Filters/FiltersSidebar/FilterSidebar";
 import { DataView } from "../MainView";
 import "./DataManager.scss";
 import { Toolbar } from "./Toolbar/Toolbar";
-
+import { t } from "../../../../../language/i18n";
 const injector = inject(({ store }) => {
   const { sidebarEnabled, sidebarVisible } = store.viewsStore ?? {};
 
@@ -53,10 +53,10 @@ const ProjectSummary = summaryInjector((props) => {
       <span style={{ display: "flex", alignItems: "center", fontSize: 12 }}>
         <Space size="compact">
           <span>
-            Tasks: {props.totalFoundTasks} / {props.totalTasks}
+            {t("Tasks")}: {props.totalFoundTasks} / {props.totalTasks}
           </span>
-          <span>Annotations: {props.totalAnnotations}</span>
-          <span>Predictions: {props.totalPredictions}</span>
+          <span>{t("Annotations")}: {props.totalAnnotations}</span>
+          <span>{t("Predictions")}: {props.totalPredictions}</span>
         </Space>
       </span>
     </Space>

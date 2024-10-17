@@ -1,3 +1,4 @@
+
 import { useCallback, useRef, useState } from "react";
 import { useHistory } from "react-router";
 import { Button } from "../../../components";
@@ -10,6 +11,7 @@ import { Elem } from "../../../utils/bem";
 import { useRefresh } from "../../../utils/hooks";
 import { ImportPage } from "./Import";
 import { useImportPage } from "./useImportPage";
+import { t } from '../../../../../../language/i18n';
 
 export const Inner = () => {
   const history = useHistory();
@@ -64,15 +66,15 @@ export const Inner = () => {
     >
       <Modal.Header divided>
         <Elem block="modal" name="title">
-          Import Data
+          {t("ImportData")}
         </Elem>
 
         <Space>
           <Button waiting={waiting} onClick={onCancel}>
-            Cancel
+            {t("Cancel")}
           </Button>
           <Button look="primary" onClick={onFinish} waiting={waiting || uploading} disabled={uploadDisabled}>
-            Import
+            {t("Import")}
           </Button>
         </Space>
       </Modal.Header>

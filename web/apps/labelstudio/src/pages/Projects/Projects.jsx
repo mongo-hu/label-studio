@@ -14,7 +14,7 @@ import { DataManagerPage } from '../DataManager/DataManager';
 import { SettingsPage } from '../Settings';
 import "./Projects.scss";
 import { EmptyProjectsList, ProjectsList } from './ProjectsList';
-import { t } from '../../language/i18n';
+import { t } from  "../../../../../language/i18n";
 const getCurrentPage = () => {
   // eslint-disable-next-line no-restricted-globals
   const pageNumberFromURL = new URLSearchParams(location.search).get("page");

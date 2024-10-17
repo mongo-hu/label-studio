@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router";
 import { Button } from "../../components";
@@ -9,7 +10,7 @@ import { useFixedLocation, useParams } from "../../providers/RoutesProvider";
 import { BemWithSpecifiContext } from "../../utils/bem";
 import { isDefined } from "../../utils/helpers";
 import "./ExportPage.scss";
-
+import { t } from '../../../../../language/i18n';
 // const formats = {
 //   json: 'JSON',
 //   csv: 'CSV',
@@ -153,7 +154,7 @@ export const ExportPage = () => {
 
         history.replace(`${path}${search !== "?" ? search : ""}`);
       }}
-      title="Export data"
+      title={t("Exportdata")}
       style={{ width: 720 }}
       closeOnClickOutside={false}
       allowClose={!downloading}
@@ -184,9 +185,9 @@ export const ExportPage = () => {
             <Elem name="recent">{/* {exportHistory} */}</Elem>
             <Elem name="actions">
               <Space>
-                {downloadingMessage && "Files are being prepared. It might take some time."}
+                {downloadingMessage && t("downloadingMessage")}
                 <Elem tag={Button} name="finish" look="primary" onClick={proceedExport} waiting={downloading}>
-                  Export
+                  {t("Export")}
                 </Elem>
               </Space>
             </Elem>
@@ -200,7 +201,7 @@ export const ExportPage = () => {
 const FormatInfo = ({ availableFormats, selected, onClick }) => {
   return (
     <Block name="formats">
-      <Elem name="info">You can export dataset in one of the following formats:</Elem>
+      <Elem name="info">{t("supportedFormatInfo")}</Elem>
       <Elem name="list">
         {availableFormats.map((format) => (
           <Elem

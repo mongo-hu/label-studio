@@ -1,3 +1,4 @@
+
 import React from "react";
 import { SidebarMenu } from "../../components/SidebarMenu/SidebarMenu";
 import { WebhookPage } from "../WebhookPage/WebhookPage";
@@ -9,6 +10,7 @@ import { MachineLearningSettings } from "./MachineLearningSettings/MachineLearni
 import { PredictionsSettings } from "./PredictionsSettings/PredictionsSettings";
 import { StorageSettings } from "./StorageSettings/StorageSettings";
 import { isInLicense, LF_CLOUD_STORAGE_FOR_MANAGERS } from "../../utils/license-flags";
+import { t } from  "../../../../../language/i18n";
 
 const isAllowCloudStorage = !isInLicense(LF_CLOUD_STORAGE_FOR_MANAGERS);
 
@@ -43,8 +45,8 @@ const pages = {
 isAllowCloudStorage && (pages.StorageSettings = StorageSettings);
 
 export const SettingsPage = {
-  title: "Settings",
-  path: "/settings",
+  title: t('Settings'),
+  path: '/settings',
   exact: true,
   layout: MenuLayout,
   component: GeneralSettings,

@@ -1,3 +1,4 @@
+
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { generatePath, useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
@@ -16,7 +17,7 @@ import { ExportPage } from "../ExportPage/ExportPage";
 import { APIConfig } from "./api-config";
 import { ToastContext } from "../../components/Toast/Toast";
 import { FF_OPTIC_2, isFF } from "../../utils/feature-flags";
-
+import { t } from  "../../../../../language/i18n";
 import "./DataManager.scss";
 
 const loadDependencies = () => [import("@humansignal/datamanager"), import("@humansignal/editor")];
@@ -199,9 +200,9 @@ export const DataManagerPage = ({ ...props }) => {
 
   return crashed ? (
     <Block name="crash">
-      <Elem name="info">Project was deleted or not yet created</Elem>
+      <Elem name="info">{t("dataManagerCrashed")}</Elem>
+      <Button to="/projects">{t("BackToProjects")}</Button>
 
-      <Button to="/projects">Back to projects</Button>
     </Block>
   ) : (
     <Block ref={root} name="datamanager" />
@@ -214,12 +215,15 @@ DataManagerPage.pages = {
   ImportModal,
 };
 DataManagerPage.context = ({ dmRef }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const location = useFixedLocation();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { project } = useProject();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [mode, setMode] = useState(dmRef?.mode ?? "explorer");
 
   const links = {
-    "/settings": "Settings",
+    '/settings': t('Settings'),
   };
 
   const updateCrumbs = (currentMode) => {

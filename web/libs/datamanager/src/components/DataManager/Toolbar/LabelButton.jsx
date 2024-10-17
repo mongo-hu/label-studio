@@ -2,7 +2,7 @@ import { inject } from "mobx-react";
 import { Button } from "../../Common/Button/Button";
 import { Interface } from "../../Common/Interface";
 import { useCallback, useEffect, useRef, useState } from "react";
-
+import { t } from "../../../../../../language/i18n";
 const Arrow = ({ rotate }) => (
   <svg
     fill="currentColor"
@@ -106,7 +106,7 @@ export const LabelButton = injector(({ store, canLabel, size, target, selectedCo
             style={primaryStyle}
             onClick={onLabelAll}
           >
-            Label {selectedCount ? selectedCount : "All"} Task{!selectedCount || selectedCount > 1 ? "s" : ""}
+            { t("Label")}{selectedCount ? selectedCount : t("All")}{!selectedCount || selectedCount > 1 ? t("Tasks") : t('Task')}
           </Button>
           <Button
             ref={triggerRef}
@@ -119,8 +119,13 @@ export const LabelButton = injector(({ store, canLabel, size, target, selectedCo
             <Arrow rotate={isOpen} />
           </Button>
         </div>
-        <Button size={size} style={secondStyle} mod={{ size: size ?? "medium", disabled }} onClick={onLabelVisible}>
-          Label Tasks As Displayed
+        <Button
+          size={size}
+          style={secondStyle}
+          mod={{ size: size ?? "medium", disabled }}
+          onClick={onLabelVisible}
+        >
+          {t("LabelTasksAsDisplayed")}
         </Button>
       </div>
     </Interface>
