@@ -1,7 +1,7 @@
 """This file and its contents are licensed under the Apache License 2.0. Please see the included NOTICE for copyright information and LICENSE for a copy of the license.
 """
 import logging
-
+import pysnooper
 import drf_yasg.openapi as openapi
 from core.permissions import ViewClassPermission, all_permissions
 from django.utils.decorators import method_decorator
@@ -17,7 +17,7 @@ from rest_framework.views import APIView
 from users.functions import check_avatar
 from users.models import User
 from users.serializers import UserSerializer, UserSerializerUpdate
-
+from rest_framework import status
 logger = logging.getLogger(__name__)
 
 _user_schema = openapi.Schema(
@@ -153,6 +153,30 @@ class UserAPI(viewsets.ModelViewSet):
             request.user.avatar = None
             request.user.save()
             return Response(status=204)
+
+
+    @swagger_auto_schema(
+        method='delete',
+        manual_parameters=[
+            openapi.Parameter(name='email', in_=openapi.IN_QUERY, type=openapi.TYPE_STRING, description='User email')
+        ],
+        operation_summary='Delete user by email',
+        operation_description='Delete a user by their email address.',
+    )
+    @action(detail=False, methods=['delete'], url_path='delete-by-email')
+    @pysnooper.snoop()
+    def delete_by_email(self, request):
+        email = request.query_params.get('email')
+        if not email:
+            return Response({"detail": "Email parameter is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return Response({"detail": "User not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        user.delete()
+        return Response({"detail": "User deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
 
     def get_serializer_class(self):
         if self.request.method in {'PUT', 'PATCH'}:
