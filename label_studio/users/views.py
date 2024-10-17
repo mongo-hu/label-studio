@@ -74,7 +74,8 @@ def user_signup(request,external=False):
                 token = Token.objects.get(user=user)
                 data = {
                     'user': user.email,
-                    'token': token.key
+                    'token': token.key,
+                    'ls_user_id': user.id
                 }
                 return JsonResponse(data, safe=False, status=200)
             if redirect_response:
@@ -154,7 +155,8 @@ def user_login(request, external=False):
                 token = Token.objects.get(user=user)
                 data = {
                     'user': user.email,
-                    'token': token.key
+                    'token': token.key,
+                    'ls_user_id': user.id
                 }
                 return JsonResponse(data, safe=False, status=200)
 

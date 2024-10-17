@@ -318,3 +318,51 @@ class UserWhoAmIAPI(generics.RetrieveAPIView):
 
     def get(self, request, *args, **kwargs):
         return super(UserWhoAmIAPI, self).get(request, *args, **kwargs)
+
+class ModifyOrDeleteUserAPI(APIView):
+    permission_classes = [IsAuthenticated]
+    @pysnooper.snoop(prefix="modify..........: ")
+    def post(self, request, *args, **kwargs):
+        """
+        修改用户信息
+        接收用户的ID和需要更新的字段来修改用户信息
+        """
+        user_email = request.POST.get('email')
+        user_password = request.POST.get('password')
+        id = request.POST.get('id')
+        if not id:
+            return Response({'detail': 'User ID is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = User.objects.get(id=id)
+        except User.DoesNotExist:
+            return Response({'detail': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        # 更新用户的密码
+        if user_password:
+            user.set_password(user_password)
+
+        # 更新用户的邮箱
+        if user_email:
+            user.email = user_email
+
+        # 保存更改
+        user.save()
+        return Response({'detail': 'User email and password updated successfully'}, status=status.HTTP_200_OK)
+
+    @pysnooper.snoop(prefix="delete..........: ")
+    def delete(self, request, *args, **kwargs):
+        """
+        根据用户ID删除用户
+        """
+        user_email = request.get('email')
+        if not user_email:
+            return Response({'detail': 'User ID is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = User.objects.get(email=user_email)
+        except User.DoesNotExist:
+            return Response({'detail': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        user.delete()
+        return Response({'detail': 'User deleted successfully'}, status=status.HTTP_204_NO_CONTENT)
