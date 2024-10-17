@@ -57,6 +57,9 @@ const translation = {
   downloadingMessage:"文件正在准备中，可能需要一些时间。",
   supportedFormatInfo:"您可以将数据集导出为以下格式之一:",
   Listoftasks:"任务清单",
+  Organization:"组织",
+  unpinmenu:"取消固定菜单",
+  pinMenu:"固定菜单"
 };
 
 export default translation;
