@@ -1,10 +1,10 @@
 {% load filters %}
-
+{% load i18n %}
 <script nonce="{{request.csp_nonce}}">
   const dataTips = [
     {
       title: 'Did you know?',
-      description: 'You can sync data from all popular cloud storage providers to collect new items for labeling as they are uploaded, and return the annotation results to train and continuously improve models.',
+      description: "{% translate 'You can sync data from all popular cloud storage providers to collect new items for labeling as they are uploaded, and return the annotation results to train and continuously improve models.' %}",
       cta: {
         text: 'Learn more',
         url: `https://labelstud.io/guide/storage`,
@@ -39,8 +39,8 @@
       },
 
     }, {
-      title: 'Did you know?',
-      description: 'Label Studio has dozens of pre-built templates for all data types you can use to configure your labeling UI, from image classification to sentiment analysis to supervised LLM fine-tuning. ',
+      title: "{% translate 'Did you know?' %}",
+      description: "{% translate 'Label Studio has dozens of pre-built templates for all data types you can use to configure your labeling UI, from image classification to sentiment analysis to supervised LLM fine-tuning.' %}",
       cta: {
         text: 'See all templates',
         url: 'https://labelstud.io/templates',
@@ -74,7 +74,7 @@
     const ctaUrl = createURL(selectedTip.cta.url, selectedTip.cta.params)
 
     _title.innerHTML = selectedTip.title;
-    _description.innerHTML = `${selectedTip.description} <a href="${ctaUrl}" target="_blank">${selectedTip.cta.text}</a>`;
+    _description.innerHTML = `${selectedTip.description}`;
   });
 </script>
 

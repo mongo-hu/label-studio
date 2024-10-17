@@ -1,16 +1,17 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
-
+import { t } from '../../../../language/i18n'
 import { htmlEscape } from "./html";
 
 const URL_CORS_DOCS = "https://labelstud.io/guide/storage.html#Troubleshoot-CORS-and-access-problems";
 const URL_TAGS_DOCS = "https://labelstud.io/tags";
 
 export default {
-  DONE: "Done!",
-  NO_COMP_LEFT: "No more annotations",
-  NO_NEXT_TASK: "No More Tasks Left in Queue",
-  NO_ACCESS: "You don't have access to this task",
+
+  DONE: `${t('Done')}!`,
+  NO_COMP_LEFT: t('NO_COMP_LEFT'),
+  NO_NEXT_TASK: t('NO_NEXT_TASK'),
+  NO_ACCESS: t('NO_ACCESS'),
 
   CONFIRM_TO_DELETE_ALL_REGIONS: "Please confirm you want to delete all labeled regions",
 

@@ -22,14 +22,20 @@ logger = logging.getLogger()
 
 
 @login_required
-def logout(request):
+def logout(request,external=False):
     auth.logout(request)
+    if external:
+        return JsonResponse({'message':'successfully'}, safe=False, status=200)
     if settings.HOSTNAME:
         redirect_url = settings.HOSTNAME
         if not redirect_url.endswith('/'):
             redirect_url += '/'
         return redirect(redirect_url)
     return redirect('/')
+
+@pysnooper.snoop(prefix="external_logout..........: ")
+def external_logout(request):
+    return logout(request, True)
 
 @enforce_csrf_checks
 def user_signup(request,external=False):

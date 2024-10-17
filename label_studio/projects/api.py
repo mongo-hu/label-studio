@@ -892,21 +892,22 @@ def sync_dataset(request):
         except Project.DoesNotExist:
             return Response({'message': 'not exist'}, status=status.HTTP_204_NO_CONTENT)
         #更新projectMember
-        owner_arry = []
-        if '*' in owners_str:
-            owner_arry = [user.username for user in User.objects.all()]
-        else:
-            if owners_str:
-                owner_arry = owners_str.split(',')
+        if owners_str:
+            owner_arry = []
+            if '*' in owners_str:
+                owner_arry = [user.username for user in User.objects.all()]
+            else:
+                if owners_str:
+                    owner_arry = owners_str.split(',')
 
-        if len(owner_arry) > 0 :
-            for username in owner_arry:
-                user = User.objects.get(username = username)
-                if not project.has_collaborator_enabled(user=user):
-                    project.add_collaborator(user)
-            for m in project.members.all():
-                if m.user.username.lower() not in owner_arry:
-                    m.delete()
+            if len(owner_arry) > 0 :
+                for username in owner_arry:
+                    user = User.objects.get(username = username)
+                    if not project.has_collaborator_enabled(user=user):
+                        project.add_collaborator(user)
+                for m in project.members.all():
+                    if m.user.username.lower() not in owner_arry:
+                        m.delete()
        # 更新project
         new_request.method = 'PATCH'
         new_request.data = {'title': title, 'dataset_id': dataset_id, 'description': description}
