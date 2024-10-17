@@ -25,6 +25,7 @@ from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from tasks.models import Task
+import pysnooper
 
 from .models import ConvertedFormat, DataExport, Export
 from .serializers import (
@@ -168,6 +169,15 @@ class ExportAPI(generics.RetrieveAPIView):
     def get_task_queryset(self, queryset):
         return queryset.select_related('project').prefetch_related('annotations', 'predictions')
 
+    @pysnooper.snoop(watch_explode=('save_path'))
+    def _save_file_to_path(self, file_stream, filename, project_id_str):
+        save_path = os.path.join(settings.MEDIA_ROOT, settings.UPLOAD_DIR, project_id_str)
+        os.makedirs(save_path, exist_ok=True)
+        file_path = os.path.join(save_path, filename)
+        with open(file_path, 'wb+') as destination:
+            destination.write(file_stream.getvalue())
+        return file_path
+
     def get(self, request, *args, **kwargs):
         project = self.get_object()
         query_serializer = ExportParamSerializer(data=request.GET)
@@ -207,9 +217,14 @@ class ExportAPI(generics.RetrieveAPIView):
             project, tasks, export_type, download_resources, request.GET
         )
 
-        r = FileResponse(export_file, as_attachment=True, content_type=content_type, filename=filename)
-        r['filename'] = filename
-        return r
+        # 保存文件到指定路径
+        project_id_str = str(project.id)
+        self._save_file_to_path(export_stream, filename, project_id_str)
+
+        response = HttpResponse(File(export_stream), content_type=content_type)
+        response['Content-Disposition'] = 'attachment; filename="%s"' % filename
+        response['filename'] = filename
+        return response
 
 
 @method_decorator(
@@ -230,17 +245,16 @@ class ProjectExportFiles(generics.RetrieveAPIView):
     def get_queryset(self):
         return Project.objects.filter(organization=self.request.user.active_organization)
 
+    @pysnooper.snoop()
     def get(self, request, *args, **kwargs):
         # project permission check
         self.get_object()
-
         paths = []
         for name in os.listdir(settings.EXPORT_DIR):
             if name.endswith('.json') and not name.endswith('-info.json'):
                 project_id = name.split('-')[0]
                 if str(kwargs['pk']) == project_id:
                     paths.append(settings.EXPORT_URL_ROOT + name)
-
         items = [{'name': p.split('/')[2].split('.')[0], 'url': p} for p in sorted(paths)[::-1]]
         return Response({'export_files': items}, status=status.HTTP_200_OK)
 
@@ -513,10 +527,10 @@ class ExportDownloadAPI(generics.RetrieveAPIView):
         project = self._get_project()
         return super().get_queryset().filter(project=project)
 
+    @pysnooper.snoop()
     def get(self, request, *args, **kwargs):
         snapshot = self.get_object()
         export_type = request.GET.get('exportType')
-
         if snapshot.status != Export.Status.COMPLETED:
             return HttpResponse('Export is not completed', status=404)
 
