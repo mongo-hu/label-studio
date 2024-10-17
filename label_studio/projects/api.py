@@ -36,6 +36,7 @@ from projects.serializers import (
     ProjectSerializer,
     ProjectSummarySerializer,
 )
+from django.http import JsonResponse
 from rest_framework import filters, generics, status
 from rest_framework.exceptions import NotFound
 from rest_framework.exceptions import ValidationError as RestValidationError
@@ -866,25 +867,29 @@ def sync_dataset(request):
             if "*" in owners_str:
                 for user in User.objects.all():
                    project.add_collaborator(user)
-            else: 
+            else:
                 owner_arry = owners_str.split(',')
-                for username in owner_arry:
-                    user = User.objects.get(username = username)
-                    project.add_collaborator(user)
+                try:
+                    for username in owner_arry:
+                        user = User.objects.get(username = username)
+                        project.add_collaborator(user)
+                except User.DoesNotExist:
+                    # 没有找到用户，返回错误信息
+                    return JsonResponse({'type': 'user'}, status=status.HTTP_404_NOT_FOUND)
             project_id_str = str(projectInfo['id'])
             project_dir = os.path.join(settings.MEDIA_ROOT, settings.UPLOAD_DIR, project_id_str)
             response.data['project_dir'] = project_dir
             return response
         else:
             # 项目创建失败，返回错误信息
-            return Response({'error': 'Failed to create project'}, status=response.status_code)
+            return JsonResponse({'error': 'Failed to create project'}, status=500)
     if OpType == 'D':
         # 删除project
         new_request.method = 'DELETE'
         try:
             project = Project.objects.get(dataset_id = dataset_id)
         except Project.DoesNotExist:
-            return Response({'message': 'successfully'}, status=status.HTTP_200_OK)
+            return JsonResponse({'message': 'successfully'}, status=200)
 
         project_id = project.id
         kwargs = {'pk': project_id}
@@ -894,7 +899,7 @@ def sync_dataset(request):
         try:
             project = Project.objects.get(dataset_id = dataset_id)
         except Project.DoesNotExist:
-            return Response({'message': 'not exist'}, status=status.HTTP_204_NO_CONTENT)
+            return JsonResponse({'type': 'project'}, status=status.HTTP_404_NOT_FOUND)
         #更新projectMember
         if owners_str:
             owner_arry = []
@@ -905,10 +910,14 @@ def sync_dataset(request):
                     owner_arry = owners_str.split(',')
 
             if len(owner_arry) > 0 :
-                for username in owner_arry:
-                    user = User.objects.get(username = username)
-                    if not project.has_collaborator_enabled(user=user):
-                        project.add_collaborator(user)
+                try:
+                    for username in owner_arry:
+                        user = User.objects.get(username = username)
+                        if not project.has_collaborator_enabled(user=user):
+                            project.add_collaborator(user)
+                except User.DoesNotExist:
+                    # 没有找到用户，返回错误信息
+                    return JsonResponse({'error': 'user does not exist'}, status=status.HTTP_404_NOT_FOUND)
                 for m in project.members.all():
                     if m.user.username.lower() not in owner_arry:
                         m.delete()
