@@ -1,5 +1,5 @@
 {% extends 'users/new-ui/user_base.html' %}
-
+{% load i18n %}
 {% block user_content %}
   <div class="form-wrapper">
     <h2>Log in</h2>
@@ -22,9 +22,9 @@
       {% endif %}
       <div class="form-group">
         <input type="checkbox" id="persist_session" name="persist_session" class="lsf-checkbox-ls" checked="checked" style="width: auto;" />
-        <label for="persist_session">Keep me logged in this browser</label>
+        <label for="persist_session">{% translate "Keep me logged in this browser" %}</label>
       </div>
-      <button type="submit" aria-label="Log In" class="lsf-button-ls lsf-button-ls_look_primary">Log in</button>
+      <button type="submit" aria-label="Log In" class="lsf-button-ls lsf-button-ls_look_primary">{% translate "login" %}</button>
     </form>
   </div>
   {% if not settings.DISABLE_SIGNUP_WITHOUT_LINK %}

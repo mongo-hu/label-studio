@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block head %}
 <link rel="stylesheet" href="{{ settings.HOSTNAME }}{% static 'css/uikit.css' %}">
 <link rel="stylesheet" href="{{ settings.HOSTNAME }}{% static 'css/users.css' %}">
@@ -78,7 +78,7 @@
       </div>
       <footer>
         <p class="secondary">Registered {{ user.date_joined|date:"M j, Y" }}, user ID {{ user.id }}</p>
-        <button class="lsf-button-ls lsf-button-ls_look_primary" onclick="smart_submit()">Save</button>
+        <button class="lsf-button-ls lsf-button-ls_look_primary" onclick="smart_submit()">{% translate "Save" %}</button>
       </footer>
     </form>
 
@@ -86,11 +86,11 @@
     <form action="" class="access_token__info">
       <header>Access Token</header>
       <div class="field field--wide">
-        <label for="access_token">Use this token to authenticate with our API:</label>
+        <label for="access_token">{% translate "Use this token to authenticate with our API:" %}</label>
         <input id="access_token" class="lsf-input-ls" name="access_token" type="text" value="{{token}}" readonly />
         <p class="actions">
-          <button type="button" class="blinking-status lsf-button-ls" data-copy="access_token">Copy</button>
-          <button type="button" class="blinking-status lsf-button-ls" name="renew">Renew</button>
+          <button type="button" class="blinking-status lsf-button-ls" data-copy="access_token">{% translate "Copy" %}</button>
+          <button type="button" class="blinking-status lsf-button-ls" name="renew">{% translate "Renew" %}</button>
         </p>
       </div>
       <!-- Example -->
