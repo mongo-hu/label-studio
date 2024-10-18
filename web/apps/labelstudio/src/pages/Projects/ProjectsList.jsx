@@ -1,11 +1,14 @@
-import chr from 'chroma-js';
-import { format } from 'date-fns';
-import React, { useMemo } from 'react';
-import { NavLink } from 'react-router-dom';
-import { LsBulb, LsCheck, LsEllipsis, LsMinus } from '../../assets/icons';
-import { Button, Dropdown, Menu, Pagination, Userpic } from '../../components';
-import { Block, Elem } from '../../utils/bem';
-import { absoluteURL } from '../../utils/helpers';
+import chr from "chroma-js";
+import { format } from "date-fns";
+import React, { useMemo } from "react";
+import { NavLink } from "react-router-dom";
+import { LsBulb, LsCheck, LsEllipsis, LsMinus } from "../../assets/icons";
+import { Button, Dropdown, Menu, Pagination, Userpic } from "../../components";
+import { Block, Elem } from "../../utils/bem";
+import { absoluteURL } from "../../utils/helpers";
+import {t} from "../../../../../language/i18n"
+
+const DEFAULT_CARD_COLORS = ["#FFFFFF", "#FDFDFC"];
 
 export const ProjectsList = ({ projects, currentPage, totalItems, loadNextPage, pageSize }) => {
   return (
@@ -38,8 +41,8 @@ export const EmptyProjectsList = ({ openModal }) => {
       <Elem name="header" tag="h1">
         Heidi doesn’t see any projects here!
       </Elem>
-      {/* <p>Create one and start labeling your data.</p> */}
-      {/* <Elem name="action" tag={Button} onClick={openModal} look="primary">
+      {/* <p>Create one and start labeling your data.</p>
+      <Elem name="action" tag={Button} onClick={openModal} look="primary">
         Create Project
       </Elem> */}
     </Block>
@@ -59,7 +62,8 @@ const ProjectCard = ({ project }) => {
         }
       : {};
   }, [color]);
-  const moment = require('moment');
+
+    const moment = require('moment');
 
   require('moment/locale/zh-cn');
   // 假设project.created_at是一个日期字符串
@@ -78,17 +82,22 @@ const ProjectCard = ({ project }) => {
           <Elem name="title">
             <Elem name="title-text">{project.title ?? "New project"}</Elem>
 
-            <Elem name="menu" onClick={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-            }}>
-              <Dropdown.Trigger content={(
-                <Menu contextual>
-                  <Menu.Item href={`/projects/${project.id}/settings`}>Settings</Menu.Item>
-                  <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>Label</Menu.Item>
-                </Menu>
-              )}>
-                <Button size="small" type="text" icon={<LsEllipsis/>}/>
+            <Elem
+              name="menu"
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+              }}
+            >
+              <Dropdown.Trigger
+                content={
+                  <Menu contextual>
+                    <Menu.Item href={`/projects/${project.id}/settings`}>{t("Settings")}</Menu.Item>
+                    <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>{t("Label")}</Menu.Item>
+                  </Menu>
+                }
+              >
+                <Button size="small" type="text" icon={<LsEllipsis />} />
               </Dropdown.Trigger>
             </Elem>
           </Elem>
@@ -116,9 +125,7 @@ const ProjectCard = ({ project }) => {
         </Elem>
         <Elem name="description">{project.description}</Elem>
         <Elem name="info">
-          <Elem name="created-date">
-            {format(new Date(project.created_at), "dd MMM ’yy, HH:mm")}
-          </Elem>
+          <Elem name="created-date">{format(new Date(project.created_at), "dd MMM ’yy, HH:mm")}</Elem>
           <Elem name="created-by">
             <Userpic src="#" user={project.created_by} showUsername />
           </Elem>
