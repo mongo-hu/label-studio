@@ -125,7 +125,7 @@ const ProjectCard = ({ project }) => {
         </Elem>
         <Elem name="description">{project.description}</Elem>
         <Elem name="info">
-          <Elem name="created-date">{format(new Date(project.created_at), "dd MMM ’yy, HH:mm")}</Elem>
+          <Elem name="created-date">{formattedDate}</Elem>
           <Elem name="created-by">
             <Userpic src="#" user={project.created_by} showUsername />
           </Elem>

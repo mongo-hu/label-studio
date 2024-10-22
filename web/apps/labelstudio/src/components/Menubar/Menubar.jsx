@@ -1,5 +1,6 @@
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { StaticContent } from "../../app/StaticContent/StaticContent";
+import { t } from '../../../../../language/i18n';
 import {
   IconBook,
   IconFolder,
@@ -183,13 +184,13 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
               style={{ width: 240 }}
             >
               <Menu>
-                <Menu.Item label="Projects" to="/projects" icon={<IconFolder />} data-external exact />
-                <Menu.Item label="Organization" to="/organization" icon={<IconPersonInCircle />} data-external exact />
+                <Menu.Item label={t("Projects")}to="/projects" icon={<IconFolder />} data-external exact />
+                <Menu.Item label={t("Organization")} to="/organization" icon={<IconPersonInCircle />} data-external exact />
                 {isFF(FF_DIA_835) && <Menu.Item label="Models" to={ModelsPage.path} icon={<IconModel />} exact />}
 
                 <Menu.Spacer />
 
-                <VersionNotifier showNewVersion />
+                {/* <VersionNotifier showNewVersion />
 
                 <Menu.Item
                   label="API"
@@ -213,7 +214,7 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
                   rel="noreferrer"
                 />
 
-                <VersionNotifier showCurrentVersion />
+                <VersionNotifier showCurrentVersion /> */}
 
                 <Menu.Divider />
 
@@ -223,7 +224,7 @@ export const Menubar = ({ enabled, defaultOpened, defaultPinned, children, onSid
                   onClick={sidebarPin}
                   active={sidebarPinned}
                 >
-                  {sidebarPinned ? "Unpin menu" : "Pin menu"}
+                   {sidebarPinned ?  t("unpinMenu") : t("pinMenu")}
                 </Menu.Item>
               </Menu>
             </Dropdown>
