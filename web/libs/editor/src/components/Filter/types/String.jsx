@@ -2,6 +2,7 @@ import { observer } from "mobx-react";
 import React from "react";
 import { FilterInput } from "../FilterInput";
 import { Common } from "./Common";
+import { t } from "../../../../../../language/i18n";
 
 const BaseInput = observer((props) => {
   return (
@@ -19,31 +20,31 @@ const BaseInput = observer((props) => {
 export const StringFilter = [
   {
     key: "contains",
-    label: "contains",
+    label: t("contains"),
     valueType: "single",
     input: BaseInput,
   },
   {
     key: "not_contains",
-    label: "not contains",
+    label:  t("notcontains"),
     valueType: "single",
     input: BaseInput,
   },
   {
     key: "regex",
-    label: "regex",
+    label: t("regex"),
     valueType: "single",
     input: BaseInput,
   },
   {
     key: "equal",
-    label: "equal",
+    label: t("equal"),
     valueType: "single",
     input: BaseInput,
   },
   {
     key: "not_equal",
-    label: "not equal",
+    label:  t("notequal"),
     valueType: "single",
     input: BaseInput,
   },
