@@ -23,18 +23,22 @@ import "./config-hint";
 import tags from "./schema.json";
 import { UnsavedChanges } from "./UnsavedChanges";
 import { Checkbox } from "@humansignal/ui";
+{/*   F202410 23 1400   */}
+import { t } from '../../../../../../language/i18n'
+
 
 const wizardClass = cn("wizard");
 const configClass = cn("configure");
 
 const EmptyConfigPlaceholder = () => (
   <div className={configClass.elem("empty-config")}>
-    <p>Your labeling configuration is empty. It is required to label your data.</p>
+  {/* 这是一个注释 F202410 23 1102  <p>Your labeling configuration is empty. It is required to label your data11111.</p>*/}
+    
+    <p>{t("EmptyConfigPlaceholder1")}</p>    
     <p>
-      Start from one of our predefined templates or create your own config on the Code panel. The labeling config is
-      XML-based and you can{" "}
+      {t("EmptyConfigPlaceholder2")}{" "}
       <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">
-        read about the available tags in our documentation
+        {t("EmptyConfigPlaceholder3")}
       </a>
       .
     </p>
@@ -102,10 +106,10 @@ const ConfigureControl = ({ control, template }) => {
   return (
     <div className={configClass.elem("labels")}>
       <form className={configClass.elem("add-labels")} action="">
-        <h4>{tagname === "Choices" ? "Add choices" : "Add label names"}</h4>
-        <span>Use new line as a separator to add multiple labels</span>
+        <h4>{tagname === "Choices" ? "Add choices" : t("Configuredata3")}</h4>
+        <span>{t("Configuredata4")}</span>
         <textarea name="labels" id="" cols="30" rows="5" ref={refLabels} onKeyPress={onKeyPress} />
-        <input type="button" value="Add" onClick={onAddLabels} />
+        <input type="button" value={t("Configuredata5")} onClick={onAddLabels} />
       </form>
       <div className={configClass.elem("current-labels")}>
         <h3>
@@ -216,7 +220,7 @@ const ConfigureSettings = ({ template }) => {
   return (
     <ul className={configClass.elem("settings")}>
       <li>
-        <h4>Configure settings</h4>
+        <h4>{t("Configuredata6")}</h4>
         <ul className={configClass.elem("object-settings")}>{items}</ul>
       </li>
     </ul>
@@ -299,14 +303,13 @@ const ConfigureColumns = ({ columns, template }) => {
 
   return (
     <div className={configClass.elem("object")}>
-      <h4>Configure data</h4>
+      <h4>{t("Configuredata2")}</h4>
       {template.objects.length > 1 && columns?.length > 0 && columns.length < template.objects.length && (
         <p className={configClass.elem("object-error")}>This template requires more data then you have for now</p>
       )}
       {columns?.length === 0 && (
         <p className={configClass.elem("object-error")}>
-          To select which field(s) to label you need to upload the data. Alternatively, you can provide it using Code
-          mode.
+          {t("Configuredata1")}
         </p>
       )}
       {template.objects.map((obj) => (
@@ -452,10 +455,11 @@ const Configurator = ({
 
   const extra = (
     <p className={configClass.elem("tags-link")}>
-      Configure the labeling interface with tags.
+      {t("Configurethelabeling1")}
       <br />
       <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">
-        See all available tags
+        {t("Configurethelabeling2")}
+
       </a>
       .
     </p>
@@ -464,10 +468,10 @@ const Configurator = ({
   return (
     <div className={configClass}>
       <div className={configClass.elem("container")}>
-        <h1>Labeling Interface{hasChanges ? " *" : ""}</h1>
+        <h1>{t("LabelingInterface1")}{hasChanges ? " *" : ""}</h1>
         <header>
           <button type="button" data-leave={true} onClick={onBrowse}>
-            Browse Templates
+            {t("BrowseTemplates1")}
           </button>
           <ToggleItems items={{ code: "Code", visual: "Visual" }} active={configure} onSelect={onSelect} />
         </header>

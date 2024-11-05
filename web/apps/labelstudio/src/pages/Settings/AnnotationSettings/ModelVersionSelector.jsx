@@ -2,6 +2,7 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import { useAPI } from "../../../providers/ApiProvider";
 import { Label, Select } from "../../../components/Form";
 import { ProjectContext } from "../../../providers/ProjectProvider";
+import { t } from '../../../../../../language/i18n'
 
 export const ModelVersionSelector = ({
   name = "model_version",
@@ -63,7 +64,7 @@ export const ModelVersionSelector = ({
     }
 
     if (!modelVersions?.static?.length && !modelVersions?.live?.length) {
-      setPlaceholder("No model or predictions available");
+      setPlaceholder(t("AnnotationSettings10"));
     }
 
     setLoading(false);
@@ -73,7 +74,7 @@ export const ModelVersionSelector = ({
 
   return (
     <div>
-      <label>Select which predictions or which model you want to use:</label>
+      <label>{t("AnnotationSettings9")}</label>
       <div style={{ display: "flex", alignItems: "center", width: 400 }}>
         <div style={{ flex: 1, paddingRight: 16 }}>
           <Select

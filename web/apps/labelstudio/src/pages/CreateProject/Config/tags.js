@@ -1,25 +1,27 @@
+import { t } from '../../../../../../language/i18n'
+
 const OBJECTS = {
   Image: {
     type: "Image",
     settings: {
       strokeWidth: {
-        title: "Width of region borders",
+        title: t("Configuredata10"),
         type: Number,
         param: ($obj, value) => $obj.$controls.forEach(($control) => $control.setAttribute("strokeWidth", value)),
         value: ($obj) => $obj.$controls[0]?.getAttribute("strokeWidth") ?? 1,
       },
       zoom: {
-        title: "Allow image zoom (ctrl+wheel)",
+        title: t("Configuredata7"),
         type: Boolean,
         param: "zoom",
       },
       zoomControl: {
-        title: "Show controls to zoom in and out",
+        title: t("Configuredata8"),
         type: Boolean,
         param: "zoomControl",
       },
       rotateControl: {
-        title: "Show controls to rotate image",
+        title: t("Configuredata9"),
         type: Boolean,
         param: "rotateControl",
       },
@@ -68,7 +70,7 @@ const Labels = {
   type: "Labels",
   settings: {
     placeLabelsLeft: {
-      title: "Display labels:",
+      title: t("Configuredata11"),
       type: ["bottom", "left", "right", "top"],
       control: true,
       when: ($tag) => $tag.$object.tagName !== "Video",
@@ -114,7 +116,7 @@ const Labels = {
       },
     },
     filter: {
-      title: "Add filter for long list of labels",
+      title: t("Configuredata12"),
       type: Boolean,
       control: true,
       param: ($obj, value) => {

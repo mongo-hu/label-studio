@@ -68,7 +68,105 @@ const translation = {
   completed_tips:"您已完成队列中的所有任务!",
   GotoPreviousTask:"转到上一个任务",
   labelingStart:"从 Cube Studio 创建一个并开始标注您的数据",
-  noProjectsTips:"Heidi 这里没有看到任何项目。"
+  noProjectsTips:"Heidi 这里没有看到任何项目。",
+  EmptyConfigPlaceholder1:"您的标记配置为空。标记数据是必需的。",
+  EmptyConfigPlaceholder2:"从我们的预定义模板开始，或在代码面板上创建自己的配置。标记配置是基于 XML 的，您可以",
+  EmptyConfigPlaceholder3:"阅读我们文档中可用标签的说明。",
+  BrowseTemplates1:"浏览标注模板",
+  Configurethelabeling1:"使用tag配置标签接口。",
+  Configurethelabeling2:"查看所有可用tag。",
+  LabelingInterface1:"标签接口",
+  Configuredata1:"要选择要标记的字段，您需要上传数据。或者，您可以使用代码模式提供它。",
+  Configuredata2:"配置数据",
+  Configuredata3:"添加标签名称",
+  Configuredata4:"使用换行符作为分隔符添加多个标签",
+  Configuredata5:"添加",
+  Configuredata6:"配置设置",
+  Configuredata7:"允许图像缩放（ctrl+滚轮）",
+  Configuredata8:"显示放大和缩小控件",
+  Configuredata9:"显示旋转图像的控件",
+  Configuredata10:"区域边界的宽度",
+  Configuredata11:"显示标签：",
+  Configuredata12:"添加长标签列表过滤器",
+  GeneralSettings0:"通用",  
+  GeneralSettings1:"常规设置",
+  GeneralSettings2:"项目名称",
+  GeneralSettings3:"描述",
+  GeneralSettings4:"颜色",
+  GeneralSettings5:"任务取样",
+  GeneralSettings6:"顺序采样",
+  GeneralSettings7:"任务按数据管理器排序",
+  GeneralSettings8:"随机抽样",
+  GeneralSettings9:"任务是均匀随机选择的",
+  GeneralSettings10:"Width of region borders",
+  AnnotationSettings0:"注释",  
+  AnnotationSettings1:"注释设置",
+  AnnotationSettings2:"标签说明",
+  AnnotationSettings3:"编写说明来帮助用户完成标记任务。",
+  AnnotationSettings4:"说明字段支持 HTML 标记，并允许使用图像、iframe (pdf)。",
+  AnnotationSettings5:"标注前显示",
+  AnnotationSettings6:"预标注",
+  AnnotationSettings7:"使用预测来预先标记任务",
+  AnnotationSettings8:"启用并选择用于预标记的预测集。",
+  AnnotationSettings9:"选择您要使用的预测或模型：",
+  AnnotationSettings10:"没有可用的模型或预测",
+  MachineLearning0:"模型",  
+  MachineLearning1:"让我们连接您的第一个模型",
+  MachineLearning2:"连接机器学习模型以生成预测。这些预测可以并排比较，用于高效的预标记，并帮助主动学习，引导用户执行最有影响力的标记任务。",
+  MachineLearning3:"连接模型",
+  MachineLearning4:"名称",
+  MachineLearning5:"输入名称",
+  MachineLearning6:"后端url",
+  MachineLearning7:"使用预测来预先标记任务",
+  MachineLearning8:"无认证",
+  MachineLearning9:"模型连接期间要传递的任何额外参数",
+  MachineLearning10:"交互式预注释",
+  MachineLearning11:"如果启用，某些标记工具将在注释过程中以交互方式向 ML 后端发送请求。",
+  MachineLearning12:"确认并保存",
+  MachineLearning13:"基本认证",
+  PredictionsSettings0:"预测",  
+  PredictionsSettings1:"尚未上传任何预测",
+  PredictionsSettings2:"预测可用于预先标记数据，或验证模型。您可以上传并选择多个模型版本的预测。您还可以在“模型”选项卡中连接实时模型。",
+  StorageSettings0:"云存储",  
+  StorageSettings1:"使用云或数据库存储作为标记任务的源或已完成注释的目标。",
+  StorageSettings2:"原始文件云存储",
+  StorageSettings3:"添加原始文件云存储",
+  StorageSettings4:"结果文件云存储",
+  StorageSettings5:"添加结果文件云存储",
+  DangerZone0:"危险区",  
+  DangerZone1:"执行这些操作的风险由您自行承担。您在此页面上执行的操作无法恢复。请确保您的数据已备份。",
+  DangerZone2:"清空缓存",
+  DangerZone3:"重置缓存可能会在某些情况下有所帮助，例如由于现有标签的验证错误而无法修改标签配置，但您确信标签不存在。您可以使用此操作重置缓存并重试。",
+  DangerZone4:"删除所有tab",
+  DangerZone5:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。",
+  DangerZone6:"删除项目",
+  DangerZone7:"删除项目将从数据库中删除所有任务、注释和项目数据。",
+  DangerZone8:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。",
+  AddSourceStorage0:"添加源存储",  
+  AddSourceStorage1:"存储类型",
+  AddSourceStorage2:"本地文件",
+  AddSourceStorage3:"存储标题",
+  AddSourceStorage4:"删除所有tab",
+  AddSourceStorage5:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。",
+  AddSourceStorage6:"删除项目",
+  AddSourceStorage7:"删除项目将从数据库中删除所有任务、注释和项目数据。",
+  AddSourceStorage8:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。"
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
 };
 
 export default translation;

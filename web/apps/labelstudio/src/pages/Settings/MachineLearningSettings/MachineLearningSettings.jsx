@@ -14,6 +14,7 @@ import { TestRequest } from "./TestRequest";
 import { StartModelTraining } from "./StartModelTraining";
 import { Block, Elem } from "../../../utils/bem";
 import "./MachineLearningSettings.scss";
+import { t } from '../../../../../../language/i18n'
 
 export const MachineLearningSettings = () => {
   const api = useAPI();
@@ -102,11 +103,11 @@ export const MachineLearningSettings = () => {
         {loaded && backends.length === 0 && (
           <EmptyState
             icon={<IconModels />}
-            title="Let’s connect your first model"
-            description="Connect a machine learning model to generate predictions. These predictions can be compared side by side, used for efficient pre‒labeling and, to aid in active learning, directing users to the most impactful labeling tasks."
+            title={t("MachineLearning1")}
+            description={t("MachineLearning2")}
             action={
               <Button primary onClick={() => showMLFormModal()}>
-                Connect Model
+                {t("MachineLearning3")}
               </Button>
             }
             footer={
@@ -183,5 +184,5 @@ export const MachineLearningSettings = () => {
   );
 };
 
-MachineLearningSettings.title = "Model";
+MachineLearningSettings.title = t("MachineLearning0");
 MachineLearningSettings.path = "/ml";
