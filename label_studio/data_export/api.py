@@ -174,8 +174,11 @@ class ExportAPI(generics.RetrieveAPIView):
         save_path = os.path.join(settings.MEDIA_ROOT, settings.UPLOAD_DIR, project_id_str)
         os.makedirs(save_path, exist_ok=True)
         file_path = os.path.join(save_path, filename)
+
+        # 直接读取 file_stream 的内容写入
         with open(file_path, 'wb+') as destination:
-            destination.write(file_stream.getvalue())
+            file_stream.seek(0)  # 将文件指针移到开头
+            destination.write(file_stream.read())
         return file_path
 
     def get(self, request, *args, **kwargs):
@@ -219,9 +222,9 @@ class ExportAPI(generics.RetrieveAPIView):
 
         # 保存文件到指定路径
         project_id_str = str(project.id)
-        self._save_file_to_path(export_stream, filename, project_id_str)
+        self._save_file_to_path(export_file, filename, project_id_str)
 
-        response = HttpResponse(File(export_stream), content_type=content_type)
+        response = HttpResponse(File(export_file), content_type=content_type)
         response['Content-Disposition'] = 'attachment; filename="%s"' % filename
         response['filename'] = filename
         return response
