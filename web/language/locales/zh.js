@@ -46,7 +46,7 @@ const translation = {
   DragDrop:"将文件拖放到这里",
   orclicktobrowse:"或点击浏览",
   CommonFormats:"常见格式",
-  Supportdependsonthebrowser:"支持取决于浏览器",
+  Supportdependsonthebrowser:"支持度取决于浏览器",
   AddURL:"添加地址",
   UploadMoreFiles:"上传更多文件",
   UploadFiles:"上传更多文件",

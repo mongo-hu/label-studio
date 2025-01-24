@@ -1,6 +1,6 @@
 import { FilterDropdown } from "../FilterDropdown";
 import { observer } from "mobx-react";
-
+import { t } from "../../../../../../language/i18n";
 const BaseInput = observer((props) => (
   <FilterDropdown onChange={(value) => props.onChange(value)} items={[{ label: "yes" }, { label: "no" }]} />
 ));
@@ -8,7 +8,7 @@ const BaseInput = observer((props) => (
 export const Common = [
   {
     key: "empty",
-    label: "is empty",
+    label:t("isempty"),
     input: BaseInput,
   },
 ];
