@@ -9,6 +9,7 @@ import { Spinner } from "../../../components/Spinner/Spinner";
 import { PredictionsList } from "./PredictionsList";
 import { Block, Elem } from "../../../utils/bem";
 import "./PredictionsSettings.scss";
+import { t } from '../../../../../../language/i18n'
 
 export const PredictionsSettings = () => {
   const api = useAPI();
@@ -59,8 +60,8 @@ export const PredictionsSettings = () => {
         {loaded && versions.length === 0 && (
           <EmptyState
             icon={<IconPredictions />}
-            title="No predictions yet uploaded"
-            description="Predictions could be used to prelabel the data, or validate the model. You can upload and select predictions from multiple model versions. You can also connect live models in the Model tab."
+            title={t("PredictionsSettings1")}
+            description={t("PredictionsSettings2")}
             footer={
               <div>
                 Need help?
@@ -81,5 +82,5 @@ export const PredictionsSettings = () => {
   );
 };
 
-PredictionsSettings.title = "Predictions";
+PredictionsSettings.title = t("PredictionsSettings0");
 PredictionsSettings.path = "/predictions";

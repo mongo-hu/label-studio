@@ -4,6 +4,7 @@ import { ErrorWrapper } from "../../../components/Error/Error";
 import { InlineError } from "../../../components/Error/InlineError";
 import { Form, Input, Select, TextArea, Toggle } from "../../../components/Form";
 import "./MachineLearningSettings.scss";
+import { t } from '../../../../../../language/i18n'
 
 const CustomBackendForm = ({ action, backend, project, onSubmit }) => {
   const [selectedAuthMethod, setAuthMethod] = useState("");
@@ -23,20 +24,20 @@ const CustomBackendForm = ({ action, backend, project, onSubmit }) => {
       <Input type="hidden" name="project" value={project.id} />
 
       <Form.Row columnCount={1}>
-        <Input name="title" label="Name" placeholder="Enter a name" required />
+        <Input name="title" label={t("MachineLearning4")} placeholder={t("MachineLearning5")} required />
       </Form.Row>
 
       <Form.Row columnCount={1}>
-        <Input name="url" label="Backend URL" required />
+        <Input name="url" label={t("MachineLearning6")} required />
       </Form.Row>
 
       <Form.Row columnCount={2}>
         <Select
           name="auth_method"
-          label="Select authentication method"
+          label={t("MachineLearning7")}
           options={[
-            { label: "No Authentication", value: "NONE" },
-            { label: "Basic Authentication", value: "BASIC_AUTH" },
+            { label: t("MachineLearning8"), value: "NONE" },
+            { label: t("MachineLearning13"), value: "BASIC_AUTH" },
           ]}
           onChange={(e) => {
             setAuthMethod(e.target.value);
@@ -58,7 +59,7 @@ const CustomBackendForm = ({ action, backend, project, onSubmit }) => {
       <Form.Row columnCount={1}>
         <TextArea
           name="extra_params"
-          label="Any extra params to pass during model connection"
+          label={t("MachineLearning9")}
           style={{ minHeight: 120 }}
         />
       </Form.Row>
@@ -66,14 +67,14 @@ const CustomBackendForm = ({ action, backend, project, onSubmit }) => {
       <Form.Row columnCount={1}>
         <Toggle
           name="is_interactive"
-          label="Interactive preannotations"
-          description="If enabled some labeling tools will send requests to the ML Backend interactively during the annotation process."
+          label={t("MachineLearning10")}
+          description={t("MachineLearning11")}
         />
       </Form.Row>
 
       <Form.Actions>
         <Button type="submit" look="primary" onClick={() => setMLError(null)}>
-          Validate and Save
+          {t("MachineLearning12")}
         </Button>
       </Form.Actions>
 

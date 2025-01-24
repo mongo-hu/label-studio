@@ -7,6 +7,7 @@ import { Block, Elem } from "../../utils/bem";
 import { ModelVersionSelector } from "./AnnotationSettings/ModelVersionSelector";
 import { ProjectContext } from "../../providers/ProjectProvider";
 import { Divider } from "../../components/Divider/Divider";
+import { t } from '../../../../../language/i18n'
 
 export const AnnotationSettings = () => {
   const { project, fetchProject } = useContext(ProjectContext);
@@ -25,7 +26,7 @@ export const AnnotationSettings = () => {
   return (
     <Block name="annotation-settings">
       <Elem name={"wrapper"}>
-        <h1>Annotation Settings</h1>
+        <h1>{t("AnnotationSettings1")}</h1>
         <Block name="settings-wrapper">
           <Form
             ref={formRef}
@@ -35,15 +36,15 @@ export const AnnotationSettings = () => {
             onSubmit={updateProject}
           >
             <Form.Row columnCount={1}>
-              <Elem name={"header"}>Labeling Instructions</Elem>
+              <Elem name={"header"}>{t("AnnotationSettings2")}</Elem>
               <div style={{ color: "var(--sand_600)", fontSize: "14px" }}>
-                <p style={{ marginBottom: "0" }}>Write instructions to help users complete labeling tasks.</p>
+                <p style={{ marginBottom: "0" }}>{t("AnnotationSettings3")}</p>
                 <p style={{ marginTop: "8px" }}>
-                  The instruction field supports HTML markup and it allows use of images, iframes (pdf).
+                  {t("AnnotationSettings4")}
                 </p>
               </div>
               <div>
-                <Toggle label="Show before labeling" name="show_instruction" />
+                <Toggle label={t("AnnotationSettings5")} name="show_instruction" />
               </div>
               <TextArea name="expert_instruction" style={{ minHeight: 128, maxWidth: "520px" }} />
             </Form.Row>
@@ -52,11 +53,11 @@ export const AnnotationSettings = () => {
 
             <Form.Row columnCount={1}>
               <br />
-              <Elem name={"header"}>Prelabeling</Elem>
+              <Elem name={"header"}>{t("AnnotationSettings6")}</Elem>
               <div>
                 <Toggle
-                  label="Use predictions to prelabel tasks"
-                  description={<span>Enable and select which set of predictions to use for prelabeling.</span>}
+                  label={t("AnnotationSettings7")}
+                  description={<span>{t("AnnotationSettings8")}</span>}
                   name="show_collab_predictions"
                   onChange={(e) => {
                     setCollab(e.target.checked);
@@ -82,5 +83,5 @@ export const AnnotationSettings = () => {
   );
 };
 
-AnnotationSettings.title = "Annotation";
+AnnotationSettings.title = t("AnnotationSettings0");
 AnnotationSettings.path = "/annotation";

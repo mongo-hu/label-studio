@@ -7,6 +7,7 @@ import { Spinner } from "../../components/Spinner/Spinner";
 import { useAPI } from "../../providers/ApiProvider";
 import { useProject } from "../../providers/ProjectProvider";
 import { cn } from "../../utils/bem";
+import { t } from '../../../../../language/i18n'
 
 export const DangerZone = () => {
   const { project } = useProject();
@@ -73,20 +74,20 @@ export const DangerZone = () => {
       {
         type: "reset_cache",
         help:
-          "Reset Cache may help in cases like if you are unable to modify the labeling configuration due " +
-          "to validation errors concerning existing labels, but you are confident that the labels don't exist. You can " +
-          "use this action to reset the cache and try again.",
-        label: "Reset Cache",
+          "" +
+          "" +
+          t("DangerZone1"),
+        label: t("DangerZone2"),
       },
       {
         type: "tabs",
-        help: "If the Data Manager is not loading, dropping all Data Manager tabs can help.",
-        label: "Drop All Tabs",
+        help: t("DangerZone5"),
+        label: t("DangerZone4"),
       },
       {
         type: "project",
-        help: "Deleting a project removes all tasks, annotations, and project data from the database.",
-        label: "Delete Project",
+        help: t("DangerZone7"),
+        label: t("DangerZone6"),
       },
     ],
     [project],
@@ -94,8 +95,8 @@ export const DangerZone = () => {
 
   return (
     <div className={cn("simple-settings")}>
-      <h1>Danger Zone</h1>
-      <Label description="Perform these actions at your own risk. Actions you take on this page can't be reverted. Make sure your data is backed up." />
+      <h1>{t("DangerZone0")}</h1>
+      <Label description={t("DangerZone1")} />
 
       {project.id ? (
         <div style={{ marginTop: 16 }}>
@@ -132,5 +133,5 @@ export const DangerZone = () => {
   );
 };
 
-DangerZone.title = "Danger Zone";
+DangerZone.title = t("DangerZone0");
 DangerZone.path = "/danger-zone";
