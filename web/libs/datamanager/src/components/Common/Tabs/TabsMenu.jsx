@@ -1,25 +1,25 @@
 import { useMemo } from "react";
 import { Menu } from "../Menu/Menu";
-
+import { t } from "../../../../../../language/i18n";
 export const TabsMenu = ({ onClick, editable = true, closable = true, clonable = true, virtual = false }) => {
   const items = useMemo(
     () => [
       {
         key: "edit",
-        title: "Rename",
+        title:t('Rename'),
         enabled: editable && !virtual,
         action: () => onClick("edit"),
       },
       {
         key: "duplicate",
-        title: "Duplicate",
+        title: t('Duplicate'),
         enabled: !virtual && clonable,
         action: () => onClick("duplicate"),
         willLeave: true,
       },
       {
         key: "save",
-        title: "Save",
+        title: t('Save'),
         enabled: virtual,
         action: () => onClick("save"),
         willLeave: true,
@@ -44,7 +44,7 @@ export const TabsMenu = ({ onClick, editable = true, closable = true, clonable =
         <>
           {showDivider && <Menu.Divider />}
           <Menu.Item onClick={() => onClick("close")} data-leave>
-            Close
+            {t("Close")}
           </Menu.Item>
         </>
       ) : null}
