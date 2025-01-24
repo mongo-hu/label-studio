@@ -13,7 +13,7 @@ import { DataManagerPage } from "../DataManager/DataManager";
 import { SettingsPage } from "../Settings";
 import "./Projects.scss";
 import { EmptyProjectsList, ProjectsList } from "./ProjectsList";
-import { t } from "../../i18n";
+import {t} from "../../language/i18n";
 const getCurrentPage = () => {
   const pageNumberFromURL = new URLSearchParams(location.search).get("page");
 
@@ -159,7 +159,7 @@ ProjectsPage.context = ({ openModal, showButton }) => {
   if (!showButton) return null;
   return (
     <Button onClick={openModal} look="primary" size="compact">
-      Create
+      {t(Create)}
     </Button>
   );
 };
