@@ -12,8 +12,8 @@ import { CreateProject } from "../CreateProject/CreateProject";
 import { DataManagerPage } from "../DataManager/DataManager";
 import { SettingsPage } from "../Settings";
 import "./Projects.scss";
-import { EmptyProjectsList, ProjectsList } from "./ProjectsList";
-import {t} from "../../language/i18n";
+import { EmptyProjectsList, ProjectsList } from './ProjectsList';
+import { t } from  "../../../../../language/i18n";
 const getCurrentPage = () => {
   const pageNumberFromURL = new URLSearchParams(location.search).get("page");
 

@@ -1,9 +1,9 @@
 import { FilterDropdown } from "../FilterDropdown";
-
+import { t } from "../../../../../../language/i18n";
 export const Common = [
   {
     key: "empty",
-    label: "is empty",
+    label: t("isempty"),
     input: (props) => (
       <FilterDropdown
         value={props.value ?? false}

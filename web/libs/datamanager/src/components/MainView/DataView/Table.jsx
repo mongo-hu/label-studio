@@ -17,7 +17,7 @@ import "./Table.scss";
 import { Button } from "../../Common/Button/Button";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import { t } from "../../../../../../language/i18n";
 const injector = inject(({ store }) => {
   const { dataStore, currentView } = store;
   const props = {
@@ -139,8 +139,9 @@ export const DataView = injector(
         if (store.SDK.type === "DE" && ["canceled", "failed"].includes(datasetStatusID)) {
           return (
             <Block name="syncInProgress">
+
               <Elem name="title" tag="h3">
-                Failed to sync data
+                {t("Failedtosyncdata")}
               </Elem>
               {isFF(FF_LOPS_86) ? (
                 <>
@@ -201,13 +202,13 @@ export const DataView = injector(
                     Try adjusting the filter
                   </>
                 ) : (
-                  "Looks like you have not imported any data yet"
+                  t("importTips")
                 )}
               </Elem>
               {!hasData && !!store.interfaces.get("import") && (
                 <Elem name="navigation">
                   <ImportButton look="primary" href="./import">
-                    Go to import
+                    {t("Gotoimport")}
                   </ImportButton>
                 </Elem>
               )}

@@ -9,7 +9,7 @@ import { TabFilterType } from "./tab_filter_type";
 import { TabHiddenColumns } from "./tab_hidden_columns";
 import { serializeJsonForUrl, deserializeJsonFromUrl } from "../../utils/urlJSON";
 import { isEmpty } from "../../utils/helpers";
-
+import { t } from "../../../../../language/i18n";
 const storeValue = (name, value) => {
   window.localStorage.setItem(name, value);
   return value;
@@ -255,7 +255,7 @@ export const TabStore = types
     createDefaultView: flow(function* () {
       self.views.push({
         id: 0,
-        title: "Default",
+        title: t("Default1"),
         hiddenColumns: self.defaultHidden,
       });
 
