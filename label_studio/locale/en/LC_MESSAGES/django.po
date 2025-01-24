@@ -932,3 +932,7 @@ msgstr ""
 #: .\label_studio\webhooks\models.py:259
 msgid "Action value"
 msgstr ""
+
+msgid "Task IDs start 1"
+msgstr "Internal task ID starting from 1 for the current project"
+

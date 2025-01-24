@@ -938,3 +938,60 @@ msgstr "账号信息"
 
 msgid "Phone"
 msgstr "手机号"
+
+msgid "TaskID"
+msgstr "任务 ID"
+
+msgid "Task IDs start 1"
+msgstr "当前项目的内部任务ID从1开始"
+
+msgid "Last annotation date"
+msgstr "最后注释日期"
+
+msgid "Total annotations per task"
+msgstr "每个任务的注释总数"
+
+msgid "Total cancelled (skipped) annotations"
+msgstr "总取消（跳过）的注释数量"
+
+msgid "Total predictions per task"
+msgstr "每个任务的预测总数"
+
+msgid "All users who completed the task"
+msgstr "完成该任务的所有用户"
+
+msgid "Annotation results stacked over all annotations"
+msgstr "所有注释叠加的注释结果"
+
+msgid "Annotation IDs stacked over all annotations"
+msgstr "所有注释叠加的注释ID"
+
+msgid "Average prediction score over all task predictions"
+msgstr "所有任务预测的平均预测得分"
+
+msgid "Model versions aggregated over all predictions"
+msgstr "所有预测的模型版本汇总"
+
+msgid "Prediction results stacked over all predictions"
+msgstr "所有预测叠加的预测结果"
+
+msgid "Filename of uploaded file"
+msgstr "上传文件的文件名"
+
+msgid "Filename from import storage"
+msgstr "导入存储的文件名"
+
+msgid "Task creation time"
+msgstr "任务创建时间"
+
+msgid "Task update time"
+msgstr "任务更新时间"
+
+msgid "User who did the last task update"
+msgstr "最后一次任务更新的用户"
+
+msgid "Average lead time over all annotations (seconds)"
+msgstr "所有注释的平均处理时间（秒）"
+
+msgid "True if at least one draft exists for the task"
+msgstr "如果任务中至少存在一个草稿则为真"

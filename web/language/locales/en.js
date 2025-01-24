@@ -9,7 +9,8 @@ const translation = {
   downloadingMessage:"Files are being prepared. It might take some time.",
   supportedFormatInfo:"You can export dataset in one of the following formats:",
   Listoftasks:"List of tasks",
-  Supportdependsonthebrowser:"Support depends on the browser"
+  Supportdependsonthebrowser:"Support depends on the browser",
+  unpinMenu:"Unpin menu"
 };
 
 export default translation;
