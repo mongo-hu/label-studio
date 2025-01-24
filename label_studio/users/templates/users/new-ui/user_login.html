@@ -18,11 +18,11 @@
     <form id="login-form" action="{% url 'user-login' %}?next={{ next }}" method="post">
       {% csrf_token %}
       <div class="input-wrapper">
-        <label>Email Address</label>
+        <label>{% translate 'Email'}</label>
         <input type="text" class="lsf-input-ls" name="email" id="email" value="{{ form.data.email }}">
       </div>
       <div class="input-wrapper">
-        <label>Password</label>
+        <label>{% translate 'Password'}</label>
         <input type="password" class="lsf-input-ls" name="password" id="password">
       </div>
       {% if form.non_field_errors %}

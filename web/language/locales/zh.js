@@ -59,7 +59,16 @@ const translation = {
   Listoftasks:"任务清单",
   Organization:"组织",
   unpinmenu:"取消固定菜单",
-  pinMenu:"固定菜单"
+  pinMenu:"固定菜单",
+  People:"成员",
+  Done:"完成",
+  NO_COMP_LEFT:"不再有注释",
+  NO_NEXT_TASK:"队列中没有剩余任务",
+  NO_ACCESS:"您无权访问此任务",
+  completed_tips:"您已完成队列中的所有任务!",
+  GotoPreviousTask:"转到上一个任务",
+  labelingStart:"从 Cube Studio 创建一个并开始标注您的数据",
+  noProjectsTips:"Heidi 这里没有看到任何项目。"
 };
 
 export default translation;

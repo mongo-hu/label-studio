@@ -57,6 +57,7 @@ import { SidebarTabs } from "../SidebarTabs/SidebarTabs";
 import { SidePanels } from "../SidePanels/SidePanels";
 import { SideTabsPanels } from "../SidePanels/TabPanels/SideTabsPanels";
 import { TopBar } from "../TopBar/TopBar";
+import { t } from '../../../../../language/i18n'
 
 /**
  * Styles
@@ -107,7 +108,7 @@ class App extends Component {
         <Block name="sub__result">You have completed all tasks in the queue!</Block>
         {store.taskHistory.length > 0 && (
           <Button onClick={(e) => store.prevTask(e, true)} look="outlined" style={{ margin: "16px 0" }}>
-            Go to Previous Task
+            {t("GotoPreviousTask")}
           </Button>
         )}
       </Block>

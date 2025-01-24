@@ -15,6 +15,7 @@ import "./PeopleInvitation.scss";
 import { PeopleList } from "./PeopleList";
 import "./PeoplePage.scss";
 import { SelectedUser } from "./SelectedUser";
+import { t } from "../../../../../../language/i18n";
 
 const InvitationModal = ({ link }) => {
   return (
@@ -156,5 +157,5 @@ export const PeoplePage = () => {
   );
 };
 
-PeoplePage.title = "People";
+PeoplePage.title = t("People");
 PeoplePage.path = "/";
