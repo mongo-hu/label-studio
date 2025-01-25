@@ -840,9 +840,13 @@ msgstr ""
 msgid "Keep me logged in this browser"
 msgstr ""
 
-#: .\label_studio\users\templates\users\new-ui\user_login.html:19
-#: .\label_studio\users\templates\users\user_login.html:19
-msgid "login"
+msgid "Email"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Login"
 msgstr ""
 
 #: .\label_studio\users\templates\users\user_account.html:81

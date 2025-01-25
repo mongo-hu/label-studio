@@ -840,8 +840,12 @@ msgstr ""
 msgid "Keep me logged in this browser"
 msgstr "在浏览器中保持登录状态"
 
-#: .\label_studio\users\templates\users\new-ui\user_login.html:19
-#: .\label_studio\users\templates\users\user_login.html:19
+msgid "Email"
+msgstr "邮箱"
+
+msgid "Password"
+msgstr "密码"
+
 msgid "login"
 msgstr "登录"
 
@@ -999,7 +1003,7 @@ msgstr "如果任务中至少存在一个草稿则为真"
 msgid "Welcome"
 msgstr "欢迎"
 
-msgid "Log in"
+msgid "Login"
 msgstr "登录"
 
 msgid "A full-fledged open source solution for data labeling"
