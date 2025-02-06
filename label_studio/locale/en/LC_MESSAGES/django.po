@@ -44,7 +44,7 @@ msgstr ""
 #: .\label_studio\tasks\models.py:611 .\label_studio\tasks\models.py:823
 #: .\label_studio\tasks\models.py:892 .\label_studio\webhooks\models.py:65
 msgid "created at"
-msgstr ""
+msgstr "Created at"
 
 #: .\label_studio\core\models.py:41 .\label_studio\data_export\models.py:223
 #: .\label_studio\io_storages\base_models.py:611
@@ -61,31 +61,31 @@ msgstr ""
 #: .\label_studio\tasks\models.py:612 .\label_studio\tasks\models.py:824
 #: .\label_studio\tasks\models.py:893 .\label_studio\webhooks\models.py:66
 msgid "updated at"
-msgstr ""
+msgstr "Updated at"
 
 #: .\label_studio\core\settings\base.py:387
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: .\label_studio\core\settings\base.py:388
 msgid "简体中文"
-msgstr ""
+msgstr "Simplified Chinese"
 
 #: .\label_studio\core\utils\static_serve.py:39
 msgid "Directory indexes are not allowed here."
-msgstr ""
+msgstr "Directory indexes are not allowed here."
 
 #: .\label_studio\core\utils\static_serve.py:41
 #, python-format
 msgid "“%(path)s” does not exist"
-msgstr ""
+msgstr "“%(path)s” does not exist"
 
 #: .\label_studio\data_export\models.py:31
 #: .\label_studio\data_export\models.py:182
 #: .\label_studio\projects\models.py:1377
 #: .\label_studio\projects\models.py:1410
 msgid "Created"
-msgstr ""
+msgstr "Created"
 
 #: .\label_studio\data_export\models.py:32
 #: .\label_studio\data_export\models.py:183
@@ -93,7 +93,7 @@ msgstr ""
 #: .\label_studio\projects\models.py:1378
 #: .\label_studio\projects\models.py:1411
 msgid "In progress"
-msgstr ""
+msgstr "In progress"
 
 #: .\label_studio\data_export\models.py:33
 #: .\label_studio\data_export\models.py:184
@@ -101,7 +101,7 @@ msgstr ""
 #: .\label_studio\projects\models.py:1379
 #: .\label_studio\projects\models.py:1412
 msgid "Failed"
-msgstr ""
+msgstr "Failed"
 
 #: .\label_studio\data_export\models.py:34
 #: .\label_studio\data_export\models.py:185
@@ -109,91 +109,91 @@ msgstr ""
 #: .\label_studio\projects\models.py:1380
 #: .\label_studio\projects\models.py:1413
 msgid "Completed"
-msgstr ""
+msgstr "Completed"
 
 #: .\label_studio\data_export\models.py:37
 #: .\label_studio\io_storages\base_models.py:211 .\label_studio\ml\models.py:62
 #: .\label_studio\ml_models\models.py:23 .\label_studio\ml_models\models.py:53
 #: .\label_studio\projects\models.py:122 .\label_studio\projects\models.py:1076
 msgid "title"
-msgstr ""
+msgstr "Title"
 
 #: .\label_studio\data_export\models.py:52
 msgid "md5 of file"
-msgstr ""
+msgstr "MD5 of file"
 
 #: .\label_studio\data_export\models.py:57
 #: .\label_studio\data_export\models.py:229
 #: .\label_studio\projects\models.py:1392
 msgid "finished at"
-msgstr ""
+msgstr "Finished at"
 
 #: .\label_studio\data_export\models.py:64
 msgid "Export status"
-msgstr ""
+msgstr "Export status"
 
 #: .\label_studio\data_export\models.py:70
 msgid "Exporting meta data"
-msgstr ""
+msgstr "Exporting meta data"
 
 #: .\label_studio\data_export\models.py:83
 #: .\label_studio\data_export\models.py:239
 #: .\label_studio\projects\models.py:202
 msgid "created by"
-msgstr ""
+msgstr "Created by"
 
 #: .\label_studio\data_manager\models.py:10
 msgid "data"
-msgstr ""
+msgstr "Data"
 
 #: .\label_studio\data_manager\models.py:11
 msgid "ordering"
-msgstr ""
+msgstr "Ordering"
 
 #: .\label_studio\data_manager\models.py:12
 msgid "selected items"
-msgstr ""
+msgstr "Selected items"
 
 #: .\label_studio\data_manager\models.py:74
 msgid "conjunction"
-msgstr ""
+msgstr "Conjunction"
 
 #: .\label_studio\data_manager\models.py:81
 msgid "index"
-msgstr ""
+msgstr "Index"
 
 #: .\label_studio\data_manager\models.py:82
 msgid "column"
-msgstr ""
+msgstr "Column"
 
 #: .\label_studio\data_manager\models.py:83
 msgid "type"
-msgstr ""
+msgstr "Type"
 
 #: .\label_studio\data_manager\models.py:84
 msgid "operator"
-msgstr ""
+msgstr "Operator"
 
 #: .\label_studio\data_manager\models.py:85
 msgid "value"
-msgstr ""
+msgstr "Value"
 
 #: .\label_studio\io_storages\azure_blob\models.py:34
 msgid "container"
-msgstr ""
+msgstr "Container"
 
 #: .\label_studio\io_storages\azure_blob\models.py:35
 #: .\label_studio\io_storages\gcs\models.py:27
 #: .\label_studio\io_storages\s3\models.py:37
 msgid "prefix"
-msgstr ""
+msgstr "Prefix"
 
 #: .\label_studio\io_storages\azure_blob\models.py:37
 #: .\label_studio\io_storages\gcs\models.py:29
 #: .\label_studio\io_storages\localfiles\models.py:30
 #: .\label_studio\io_storages\s3\models.py:39
 msgid "regex_filter"
-msgstr ""
+msgstr "Regex filter"
 
 #: .\label_studio\io_storages\azure_blob\models.py:40
 #: .\label_studio\io_storages\gcs\models.py:32
@@ -201,742 +201,786 @@ msgstr ""
 #: .\label_studio\io_storages\redis\models.py:32
 #: .\label_studio\io_storages\s3\models.py:42
 msgid "use_blob_urls"
-msgstr ""
+msgstr "Use blob URLs"
 
 #: .\label_studio\io_storages\azure_blob\models.py:42
 msgid "account_name"
-msgstr ""
+msgstr "Account name"
 
 #: .\label_studio\io_storages\azure_blob\models.py:43
 msgid "account_key"
-msgstr ""
+msgstr "Account key"
 
 #: .\label_studio\io_storages\azure_blob\models.py:101
 #: .\label_studio\io_storages\gcs\models.py:66
 #: .\label_studio\io_storages\s3\models.py:119
 msgid "presign"
-msgstr ""
+msgstr "Presign"
 
 #: .\label_studio\io_storages\azure_blob\models.py:103
 #: .\label_studio\io_storages\gcs\models.py:68
 #: .\label_studio\io_storages\s3\models.py:121
 msgid "presign_ttl"
-msgstr ""
+msgstr "Presign TTL"
 
 #: .\label_studio\io_storages\base_models.py:42
 msgid "Initialized"
-msgstr ""
+msgstr "Initialized"
 
 #: .\label_studio\io_storages\base_models.py:43
 msgid "Queued"
-msgstr ""
+msgstr "Queued"
 
 #: .\label_studio\io_storages\base_models.py:51
 msgid "last sync"
-msgstr ""
+msgstr "Last sync"
 
 #: .\label_studio\io_storages\base_models.py:53
 msgid "last sync count"
-msgstr ""
+msgstr "Last sync count"
 
 #: .\label_studio\io_storages\base_models.py:56
 msgid "last_sync_job"
-msgstr ""
+msgstr "Last sync job"
 
 #: .\label_studio\io_storages\base_models.py:212 .\label_studio\ml\models.py:92
 #: .\label_studio\ml_models\models.py:25 .\label_studio\projects\models.py:134
 #: .\label_studio\projects\models.py:1077
 msgid "description"
-msgstr ""
+msgstr "Description"
 
 #: .\label_studio\io_storages\base_models.py:215
 msgid "synchronizable"
-msgstr ""
+msgstr "Synchronizable"
 
 #: .\label_studio\io_storages\base_models.py:520
 msgid "can_delete_objects"
-msgstr ""
+msgstr "Can delete objects"
 
 #: .\label_studio\io_storages\base_models.py:583
 msgid "key"
-msgstr ""
+msgstr "Key"
 
 #: .\label_studio\io_storages\base_models.py:585
 #: .\label_studio\io_storages\base_models.py:608
 msgid "object exists"
-msgstr ""
+msgstr "Object exists"
 
 #: .\label_studio\io_storages\gcs\models.py:26
 #: .\label_studio\io_storages\s3\models.py:36
 msgid "bucket"
-msgstr ""
+msgstr "Bucket"
 
 #: .\label_studio\io_storages\gcs\models.py:35
 msgid "google_application_credentials"
-msgstr ""
+msgstr "Google application credentials"
 
 #: .\label_studio\io_storages\gcs\models.py:40
 msgid "Google Project ID"
-msgstr ""
+msgstr "Google Project ID"
 
 #: .\label_studio\io_storages\localfiles\models.py:29
 #: .\label_studio\io_storages\redis\models.py:24
 msgid "path"
-msgstr ""
+msgstr "Path"
 
 #: .\label_studio\io_storages\redis\models.py:25
 msgid "host"
-msgstr ""
+msgstr "Host"
 
 #: .\label_studio\io_storages\redis\models.py:26
 #: .\label_studio\io_storages\redis\models.py:29
 msgid "port"
-msgstr ""
+msgstr "Port"
 
 #: .\label_studio\io_storages\redis\models.py:27
 msgid "password"
-msgstr ""
+msgstr "Password"
 
 #: .\label_studio\io_storages\redis\models.py:75
 #: .\label_studio\io_storages\redis\models.py:111
 msgid "db"
-msgstr ""
+msgstr "DB"
 
 #: .\label_studio\io_storages\s3\models.py:44
 msgid "aws_access_key_id"
-msgstr ""
+msgstr "AWS access key ID"
 
 #: .\label_studio\io_storages\s3\models.py:46
 msgid "aws_secret_access_key"
-msgstr ""
+msgstr "AWS secret access key"
 
 #: .\label_studio\io_storages\s3\models.py:48
 msgid "aws_session_token"
-msgstr ""
+msgstr "AWS session token"
 
 #: .\label_studio\io_storages\s3\models.py:50
 msgid "aws_sse_kms_key_id"
-msgstr ""
+msgstr "AWS SSE KMS key ID"
 
 #: .\label_studio\io_storages\s3\models.py:52
 msgid "region_name"
-msgstr ""
+msgstr "Region name"
 
 #: .\label_studio\io_storages\s3\models.py:53
 msgid "s3_endpoint"
-msgstr ""
+msgstr "S3 endpoint"
 
 #: .\label_studio\io_storages\s3\models.py:124
 msgid "recursive scan"
-msgstr ""
+msgstr "Recursive scan"
 
 #: .\label_studio\io_storages\s3\models.py:124
 msgid "Perform recursive scan over the bucket content"
-msgstr ""
+msgstr "Perform recursive scan over the bucket content"
 
 #: .\label_studio\labels_manager\models.py:7
 msgid "Created at"
-msgstr ""
+msgstr "Created at"
 
 #: .\label_studio\labels_manager\models.py:8
 msgid "Updated at"
-msgstr ""
+msgstr "Updated at"
 
 #: .\label_studio\labels_manager\models.py:13
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 #: .\label_studio\labels_manager\models.py:14
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: .\label_studio\labels_manager\models.py:36
 msgid "Tag name"
-msgstr ""
+msgstr "Tag name"
 
 #: .\label_studio\ml\models.py:26
 msgid "Connected"
-msgstr ""
+msgstr "Connected"
 
 #: .\label_studio\ml\models.py:27
 msgid "Disconnected"
-msgstr ""
+msgstr "Disconnected"
 
 #: .\label_studio\ml\models.py:28
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: .\label_studio\ml\models.py:29
 msgid "Training"
-msgstr ""
+msgstr "Training"
 
 #: .\label_studio\ml\models.py:30
 msgid "Predicting"
-msgstr ""
+msgstr "Predicting"
 
 #: .\label_studio\ml\models.py:34
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: .\label_studio\ml\models.py:35
 msgid "Basic Auth"
-msgstr ""
+msgstr "Basic Auth"
 
 #: .\label_studio\ml\models.py:47
 msgid "is_interactive"
-msgstr ""
+msgstr "Is interactive"
 
 #: .\label_studio\ml\models.py:52
 msgid "url"
-msgstr ""
+msgstr "URL"
 
 #: .\label_studio\ml\models.py:56
 msgid "error_message"
-msgstr ""
+msgstr "Error message"
 
 #: .\label_studio\ml\models.py:76
 msgid "basic auth user"
-msgstr ""
+msgstr "Basic auth user"
 
 #: .\label_studio\ml\models.py:84
 msgid "basic auth password"
-msgstr ""
+msgstr "Basic auth password"
 
 #: .\label_studio\ml\models.py:100
 msgid "extra params"
-msgstr ""
+msgstr "Extra params"
 
 #: .\label_studio\ml\models.py:106 .\label_studio\ml\models.py:440
 #: .\label_studio\ml\models.py:455 .\label_studio\projects\models.py:236
 #: .\label_studio\tasks\models.py:855
 msgid "model version"
-msgstr ""
+msgstr "Model version"
 
 #: .\label_studio\ml\models.py:113
 msgid "timeout"
-msgstr ""
+msgstr "Timeout"
 
 #: .\label_studio\ml\models.py:126
 msgid "auto_update"
-msgstr ""
+msgstr "Auto update"
 
 #: .\label_studio\ml\models.py:443
 msgid "batch size"
-msgstr ""
+msgstr "Batch size"
 
 #: .\label_studio\ml_model_providers\models.py:11
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: .\label_studio\ml_model_providers\models.py:14
 msgid "Organization"
-msgstr ""
+msgstr "Organization"
 
 #: .\label_studio\ml_model_providers\models.py:15
 msgid "User"
-msgstr ""
+msgstr "User"
 
 #: .\label_studio\ml_model_providers\models.py:16
 msgid "Model"
-msgstr ""
+msgstr "Model"
 
 #: .\label_studio\ml_model_providers\models.py:20
 msgid "api_key"
-msgstr ""
+msgstr "API key"
 
 #: .\label_studio\ml_models\models.py:61
 msgid "prompt"
-msgstr ""
+msgstr "Prompt"
 
 #: .\label_studio\ml_models\models.py:101
 msgid "All"
-msgstr ""
+msgstr "All"
 
 #: .\label_studio\ml_models\models.py:102
 msgid "HasGT"
-msgstr ""
+msgstr "HasGT"
 
 #: .\label_studio\ml_models\models.py:105
 msgid "Input"
-msgstr ""
+msgstr "Input"
 
 #: .\label_studio\ml_models\models.py:106
 msgid "Output"
-msgstr ""
+msgstr "Output"
 
 #: .\label_studio\ml_models\models.py:109
 msgid "Pending"
-msgstr ""
+msgstr "Pending"
 
 #: .\label_studio\ml_models\models.py:110
 msgid "InProgress"
-msgstr ""
+msgstr "InProgress"
 
 #: .\label_studio\ml_models\models.py:144
 msgid "triggered at"
-msgstr ""
+msgstr "Triggered at"
 
 #: .\label_studio\ml_models\models.py:146
 msgid "predictions updated at"
-msgstr ""
+msgstr "Predictions updated at"
 
 #: .\label_studio\ml_models\models.py:148
 msgid "completed at"
-msgstr ""
+msgstr "Completed at"
 
 #: .\label_studio\organizations\models.py:31
 msgid "deleted at"
-msgstr ""
+msgstr "Deleted at"
 
 #: .\label_studio\organizations\models.py:78
 msgid "organization title"
-msgstr ""
+msgstr "Organization title"
 
 #: .\label_studio\organizations\models.py:80
 #: .\label_studio\projects\models.py:191
 msgid "token"
-msgstr ""
+msgstr "Token"
 
 #: .\label_studio\organizations\models.py:89
 msgid "created_by"
-msgstr ""
+msgstr "Created by"
 
 #: .\label_studio\organizations\models.py:95
 msgid "contact info"
-msgstr ""
+msgstr "Contact info"
 
 #: .\label_studio\projects\models.py:141
 msgid "dataset id"
-msgstr ""
+msgstr "Dataset ID"
 
 #: .\label_studio\projects\models.py:144
 msgid "label config"
-msgstr ""
+msgstr "Label config"
 
 #: .\label_studio\projects\models.py:151
 msgid "parsed label config"
-msgstr ""
+msgstr "Parsed label config"
 
 #: .\label_studio\projects\models.py:159
 msgid "expert instruction"
-msgstr ""
+msgstr "Expert instruction"
 
 #: .\label_studio\projects\models.py:162
 msgid "show instruction"
-msgstr ""
+msgstr "Show instruction"
 
 #: .\label_studio\projects\models.py:166
 msgid "show skip button"
-msgstr ""
+msgstr "Show skip button"
 
 #: .\label_studio\projects\models.py:171
 msgid "enable empty annotation"
-msgstr ""
+msgstr "Enable empty annotation"
 
 #: .\label_studio\projects\models.py:175
 msgid "reveal_preannotations_interactively"
-msgstr ""
+msgstr "Reveal preannotations interactively"
 
 #: .\label_studio\projects\models.py:178
 msgid "show annotation history"
-msgstr ""
+msgstr "Show annotation history"
 
 #: .\label_studio\projects\models.py:181
 msgid "show predictions to annotator"
-msgstr ""
+msgstr "Show predictions to annotator"
 
 #: .\label_studio\projects\models.py:187
 msgid "evaluate predictions automatically"
-msgstr ""
+msgstr "Evaluate predictions automatically"
 
 #: .\label_studio\projects\models.py:193 .\label_studio\tasks\models.py:628
 msgid "result count"
-msgstr ""
+msgstr "Result count"
 
 #: .\label_studio\projects\models.py:195
 msgid "color"
-msgstr ""
+msgstr "Color"
 
 #: .\label_studio\projects\models.py:205
 msgid "maximum annotation number"
-msgstr ""
+msgstr "Maximum annotation number"
 
 #: .\label_studio\projects\models.py:212
 msgid "min_annotations_to_start_training"
-msgstr ""
+msgstr "Min annotations to start training"
 
 #: .\label_studio\projects\models.py:218
 msgid "control weights"
-msgstr ""
+msgstr "Control weights"
 
 #: .\label_studio\projects\models.py:239
 msgid "data_types"
-msgstr ""
+msgstr "Data types"
 
 #: .\label_studio\projects\models.py:242
 msgid "is draft"
-msgstr ""
+msgstr "Is draft"
 
 #: .\label_studio\projects\models.py:245
 msgid "published"
-msgstr ""
+msgstr "Published"
 
 #: .\label_studio\projects\models.py:264
 msgid "show ground truth first"
-msgstr ""
+msgstr "Show ground truth first"
 
 #: .\label_studio\projects\models.py:265
 msgid "show overlap first"
-msgstr ""
+msgstr "Show overlap first"
 
 #: .\label_studio\projects\models.py:266
 msgid "overlap_cohort_percentage"
-msgstr ""
+msgstr "Overlap cohort percentage"
 
 #: .\label_studio\projects\models.py:269
 msgid "task_data_login"
-msgstr ""
+msgstr "Task data login"
 
 #: .\label_studio\projects\models.py:272
 msgid "task_data_password"
-msgstr ""
+msgstr "Task data password"
 
 #: .\label_studio\projects\models.py:275
 msgid "pinned at"
-msgstr ""
+msgstr "Pinned at"
 
 #: .\label_studio\projects\models.py:1050
 #, python-format
 msgid "Business number %d"
-msgstr ""
+msgstr "Business number %d"
 
 #: .\label_studio\projects\models.py:1135
 msgid "all data columns"
-msgstr ""
+msgstr "All data columns"
 
 #: .\label_studio\projects\models.py:1139
 msgid "common data columns"
-msgstr ""
+msgstr "Common data columns"
 
 #: .\label_studio\projects\models.py:1143
 msgid "created annotations"
-msgstr ""
+msgstr "Created annotations"
 
 #: .\label_studio\projects\models.py:1149
 msgid "created labels"
-msgstr ""
+msgstr "Created labels"
 
 #: .\label_studio\projects\models.py:1151
 msgid "created labels in drafts"
-msgstr ""
+msgstr "Created labels in drafts"
 
 #: .\label_studio\tasks\choices.py:6
 msgid "Created from prediction"
-msgstr ""
+msgstr "Created from prediction"
 
 #: .\label_studio\tasks\choices.py:7
 msgid "Created from another annotation"
-msgstr ""
+msgstr "Created from another annotation"
 
 #: .\label_studio\tasks\choices.py:8
 msgid "Imported"
-msgstr ""
+msgstr "Imported"
 
 #: .\label_studio\tasks\choices.py:9
 msgid "Submitted"
-msgstr ""
+msgstr "Submitted"
 
 #: .\label_studio\tasks\choices.py:10
 msgid "Updated"
-msgstr ""
+msgstr "Updated"
 
 #: .\label_studio\tasks\choices.py:11
 msgid "Skipped"
-msgstr ""
+msgstr "Skipped"
 
 #: .\label_studio\tasks\choices.py:12
 msgid "Accepted"
-msgstr ""
+msgstr "Accepted"
 
 #: .\label_studio\tasks\choices.py:13
 msgid "Rejected"
-msgstr ""
+msgstr "Rejected"
 
 #: .\label_studio\tasks\choices.py:14
 msgid "Fixed and accepted"
-msgstr ""
+msgstr "Fixed and accepted"
 
 #: .\label_studio\tasks\choices.py:15
 msgid "Deleted review"
-msgstr ""
+msgstr "Deleted review"
 
 #: .\label_studio\tasks\models.py:88 .\label_studio\tasks\models.py:602
 msgid "updated by"
-msgstr ""
+msgstr "Updated by"
 
 #: .\label_studio\tasks\models.py:92
 msgid "is_labeled"
-msgstr ""
+msgstr "Is labeled"
 
 #: .\label_studio\tasks\models.py:98
 msgid "overlap"
-msgstr ""
+msgstr "Overlap"
 
 #: .\label_studio\tasks\models.py:112
 msgid "inner id"
-msgstr ""
+msgstr "Inner ID"
 
 #: .\label_studio\tasks\models.py:119
 msgid "total_annotations"
-msgstr ""
+msgstr "Total annotations"
 
 #: .\label_studio\tasks\models.py:125
 msgid "cancelled_annotations"
-msgstr ""
+msgstr "Cancelled annotations"
 
 #: .\label_studio\tasks\models.py:131
 msgid "total_predictions"
-msgstr ""
+msgstr "Total predictions"
 
 #: .\label_studio\tasks\models.py:138
 msgid "comment count"
-msgstr ""
+msgstr "Comment count"
 
 #: .\label_studio\tasks\models.py:144
 msgid "unresolved comment count"
-msgstr ""
+msgstr "Unresolved comment count"
 
 #: .\label_studio\tasks\models.py:157
 msgid "last comment updated at"
-msgstr ""
+msgstr "Last comment updated at"
 
 #: .\label_studio\tasks\models.py:605
 msgid "was cancelled"
-msgstr ""
+msgstr "Was cancelled"
 
 #: .\label_studio\tasks\models.py:607
 msgid "ground_truth"
-msgstr ""
+msgstr "Ground truth"
 
 #: .\label_studio\tasks\models.py:614
 msgid "draft created at"
-msgstr ""
+msgstr "Draft created at"
 
 #: .\label_studio\tasks\models.py:617 .\label_studio\tasks\models.py:782
 msgid "lead time"
-msgstr ""
+msgstr "Lead time"
 
 #: .\label_studio\tasks\models.py:623
 msgid "prediction"
-msgstr ""
+msgstr "Prediction"
 
 #: .\label_studio\tasks\models.py:653
 msgid "last action"
-msgstr ""
+msgstr "Last action"
 
 #: .\label_studio\tasks\models.py:663
 msgid "last created by"
-msgstr ""
+msgstr "Last created by"
 
 #: .\label_studio\tasks\models.py:769
 msgid "expire_at"
-msgstr ""
+msgstr "Expire at"
 
 #: .\label_studio\tasks\models.py:780
 msgid "result"
-msgstr ""
+msgstr "Result"
 
 #: .\label_studio\tasks\models.py:810
 msgid "was postponed"
-msgstr ""
+msgstr "Was postponed"
 
 #: .\label_studio\tasks\models.py:853
 msgid "score"
-msgstr ""
+msgstr "Score"
 
 #: .\label_studio\tasks\models.py:877
 msgid "cluster"
-msgstr ""
+msgstr "Cluster"
 
 #: .\label_studio\tasks\models.py:888
 msgid "mislabeling"
-msgstr ""
+msgstr "Mislabeling"
 
 #: .\label_studio\templates\standard_form.html:11
 msgid "Create"
-msgstr ""
+msgstr "Create"
 
 #: .\label_studio\users\models.py:26
 msgid "year"
-msgstr ""
+msgstr "Year"
 
 #: .\label_studio\users\models.py:65
 msgid "last activity"
-msgstr ""
+msgstr "Last activity"
 
 #: .\label_studio\users\models.py:86
 msgid "username"
-msgstr ""
+msgstr "Username"
 
 #: .\label_studio\users\models.py:87
 msgid "email address"
-msgstr ""
+msgstr "Email address"
 
 #: .\label_studio\users\models.py:89
 msgid "first name"
-msgstr ""
+msgstr "First name"
 
 #: .\label_studio\users\models.py:90
 msgid "last name"
-msgstr ""
+msgstr "Last name"
 
 #: .\label_studio\users\models.py:91
 msgid "phone"
-msgstr ""
+msgstr "Phone"
 
 #: .\label_studio\users\models.py:95
 msgid "staff status"
-msgstr ""
+msgstr "Staff status"
 
 #: .\label_studio\users\models.py:95
 msgid "Designates whether the user can log into this admin site."
-msgstr ""
+msgstr "Designates whether the user can log into this admin site."
 
 #: .\label_studio\users\models.py:99
 msgid "active"
-msgstr ""
+msgstr "Active"
 
 #: .\label_studio\users\models.py:101
 msgid ""
 "Designates whether to treat this user as active. Unselect this instead of "
 "deleting accounts."
-msgstr ""
+msgstr "Designates whether to treat this user as active. Unselect this instead of deleting accounts."
 
 #: .\label_studio\users\models.py:104
 msgid "date joined"
-msgstr ""
+msgstr "Date joined"
 
 #: .\label_studio\users\models.py:106
 msgid "last annotation activity"
-msgstr ""
+msgstr "Last annotation activity"
 
 #: .\label_studio\users\models.py:113
 msgid "allow newsletters"
-msgstr ""
+msgstr "Allow newsletters"
 
 #: .\label_studio\users\models.py:113
 msgid "Allow sending newsletters to user"
-msgstr ""
+msgstr "Allow sending newsletters to user"
 
 #: .\label_studio\users\models.py:124
 msgid "user"
-msgstr ""
+msgstr "User"
 
 #: .\label_studio\users\models.py:125
 msgid "users"
-msgstr ""
+msgstr "Users"
 
 #: .\label_studio\users\templates\users\new-ui\user_login.html:17
 msgid "Keep me logged in this browser"
-msgstr ""
+msgstr "Keep me logged in this browser"
 
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: .\label_studio\users\templates\users\user_account.html:81
 msgid "save"
-msgstr ""
+msgstr "Save"
 
 #: .\label_studio\webhooks\models.py:38
 msgid "URL of webhook"
-msgstr ""
+msgstr "URL of webhook"
 
 #: .\label_studio\webhooks\models.py:41
 msgid "does webhook send the payload"
-msgstr ""
+msgstr "Does webhook send the payload"
 
 #: .\label_studio\webhooks\models.py:47
 msgid "Use webhook for all actions"
-msgstr ""
+msgstr "Use webhook for all actions"
 
 #: .\label_studio\webhooks\models.py:53
 msgid "request extra headers of webhook"
-msgstr ""
+msgstr "Request extra headers of webhook"
 
 #: .\label_studio\webhooks\models.py:60
 msgid "is webhook active"
-msgstr ""
+msgstr "Is webhook active"
 
 #: .\label_studio\webhooks\models.py:65
 msgid "Creation time"
-msgstr ""
+msgstr "Creation time"
 
 #: .\label_studio\webhooks\models.py:66
 msgid "Last update time"
-msgstr ""
+msgstr "Last update time"
 
 #: .\label_studio\webhooks\models.py:115
 msgid "Project created"
-msgstr ""
+msgstr "Project created"
 
 #: .\label_studio\webhooks\models.py:124
 msgid "Project updated"
-msgstr ""
+msgstr "Project updated"
 
 #: .\label_studio\webhooks\models.py:133
 msgid "Project deleted"
-msgstr ""
+msgstr "Project deleted"
 
 #: .\label_studio\webhooks\models.py:142
 msgid "Task created"
-msgstr ""
+msgstr "Task created"
 
 #: .\label_studio\webhooks\models.py:151
 msgid "Task deleted"
-msgstr ""
+msgstr "Task deleted"
 
 #: .\label_studio\webhooks\models.py:160
 msgid "Annotation created"
-msgstr ""
+msgstr "Annotation created"
 
 #: .\label_studio\webhooks\models.py:176
 msgid "Annotations created"
-msgstr ""
+msgstr "Annotations created"
 
 #: .\label_studio\webhooks\models.py:192
 msgid "Annotation updated"
-msgstr ""
+msgstr "Annotation updated"
 
 #: .\label_studio\webhooks\models.py:208
 msgid "Annotation deleted"
-msgstr ""
+msgstr "Annotation deleted"
 
 #: .\label_studio\webhooks\models.py:217
 msgid "Label link created"
-msgstr ""
+msgstr "Label link created"
 
 #: .\label_studio\webhooks\models.py:226
 msgid "Label link updated"
-msgstr ""
+msgstr "Label link updated"
 
 #: .\label_studio\webhooks\models.py:242
 msgid "Label link deleted"
-msgstr ""
+msgstr "Label link deleted"
 
 #: .\label_studio\webhooks\models.py:255
 msgid "action of webhook"
-msgstr ""
+msgstr "Action of webhook"
 
 #: .\label_studio\webhooks\models.py:259
 msgid "Action value"
-msgstr ""
+msgstr "Action value"
 
 msgid "Task IDs start 1"
 msgstr "Internal task ID starting from 1 for the current project"
 
+msgid "Did you know?"
+msgstr "Did you know?"
+
+msgid "You can sync data from all popular cloud storage providers to collect new items for labeling as they are uploaded, and return the annotation results to train and continuously improve models."
+msgstr "You can sync data from all popular cloud storage providers to collect new items for labeling as they are uploaded, and return the annotation results to train and continuously improve models."
+
+msgid "You can enable webhooks to trigger machine learning model training or perform active learning after a certain number of tasks have been annotated."
+msgstr "You can enable webhooks to trigger machine learning model training or perform active learning after a certain number of tasks have been annotated."
+
+msgid "There's an Enterprise version of Label Studio packed with more features and automation to label data faster while ensuring the highest quality."
+msgstr "There's an Enterprise version of Label Studio packed with more features and automation to label data faster while ensuring the highest quality."
+
+msgid "Label Studio has dozens of pre-built templates for all data types you can use to configure your labeling UI, from image classification to sentiment analysis to supervised LLM fine-tuning."
+msgstr "Label Studio has dozens of pre-built templates for all data types you can use to configure your labeling UI, from image classification to sentiment analysis to supervised LLM fine-tuning."
+
+msgid "Learn more"
+msgstr "Learn more"
+
+msgid "See use cases"
+msgstr "See use cases"
+
+msgid "See all templates"
+msgstr "See all templates"
+
+msgid "Sign Up"
+msgstr "Sign Up"
+
+msgid "How did you hear about Label Studio?"
+msgstr "How did you hear about Label Studio?"
+
+msgid "Please elaborate"
+msgstr "Please elaborate"
+
+msgid "Already have an account?"
+msgstr "Already have an account?"
+
+msgid "Log in"
+msgstr "Log in"
+
+msgid "Create Account"
+msgstr "Create Account"
+
+msgid "Get the latest news from Heidi"
+msgstr "Get the latest news from Heidi"

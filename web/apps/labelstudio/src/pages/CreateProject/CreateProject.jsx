@@ -16,6 +16,7 @@ import { EnterpriseBadge } from "../../components/Badges/Enterprise";
 import { Caption } from "../../components/Caption/Caption";
 import { FF_LSDV_E_297, isFF } from "../../utils/feature-flags";
 import { createURL } from "../../components/HeidiTips/utils";
+import { t } from "../../../../../language/i18n"; // Import translation function
 
 const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, setDescription, show = true }) =>
   !show ? null : (
@@ -27,7 +28,7 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
       }}
     >
       <div className="field field--wide">
-        <label htmlFor="project_name">Project Name</label>
+        <label htmlFor="project_name">{t("ProjectName")}</label>
         <input
           name="name"
           id="project_name"
@@ -38,11 +39,11 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
         {error && <span className="error">{error}</span>}
       </div>
       <div className="field field--wide">
-        <label htmlFor="project_description">Description</label>
+        <label htmlFor="project_description">{t("Description")}</label>
         <textarea
           name="description"
           id="project_description"
-          placeholder="Optional description of your project"
+          placeholder={t("OptionalDescription")}
           rows="4"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -51,12 +52,12 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
       {isFF(FF_LSDV_E_297) && (
         <div className="field field--wide">
           <label>
-            Workspace
+            {t("Workspace")}
             <EnterpriseBadge />
           </label>
-          <Select placeholder="Select an option" disabled options={[]} />
+          <Select placeholder={t("SelectOption")} disabled options={[]} />
           <Caption>
-            Simplify project management by organizing projects into workspaces.
+            {t("SimplifyProjectManagement")}
             <a
               href={createURL(
                 "https://docs.humansignal.com/guide/manage_projects#Create-workspaces-to-organize-projects",
@@ -68,7 +69,7 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
               target="_blank"
               rel="noreferrer"
             >
-              Learn more
+              {t("LearnMore")}
             </a>
           </Caption>
           <HeidiTips collection="projectCreation" />
@@ -108,9 +109,9 @@ export const CreateProject = ({ onClose }) => {
   const rootClass = cn("create-project");
   const tabClass = rootClass.elem("tab");
   const steps = {
-    name: <span className={tabClass.mod({ disabled: !!error })}>Project Name</span>,
-    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>Data Import</span>,
-    config: "Labeling Setup",
+    name: <span className={tabClass.mod({ disabled: !!error })}>{t("ProjectName")}</span>,
+    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>{t("DataImport")}</span>,
+    config: t("LabelingSetup"),
   };
 
   // name intentionally skipped from deps:
@@ -180,12 +181,12 @@ export const CreateProject = ({ onClose }) => {
     <Modal onHide={onDelete} closeOnClickOutside={false} allowToInterceptEscape fullscreen visible bare>
       <div className={rootClass}>
         <Modal.Header>
-          <h1>Create Project</h1>
+          <h1>{t("CreateProject")}</h1>
           <ToggleItems items={steps} active={step} onSelect={setStep} />
 
           <Space>
             <Button look="danger" size="compact" onClick={onDelete} waiting={waiting}>
-              Delete
+              {t("Delete")}
             </Button>
             <Button
               look="primary"
@@ -194,7 +195,7 @@ export const CreateProject = ({ onClose }) => {
               waiting={waiting || uploading}
               disabled={!project || uploadDisabled || error}
             >
-              Save
+              {t("Save")}
             </Button>
           </Space>
         </Modal.Header>

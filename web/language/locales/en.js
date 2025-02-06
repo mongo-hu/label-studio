@@ -17,8 +17,8 @@ const translation = {
   Done:"Done!",
   completed_tips:"You have completed all tasks in the queue!",
   GotoPreviousTask:"Go to Previous Task",
-  labelingStart:"Create one from Cube Studio and start labeling your data",
-  noProjectsTips:"Heidi doesn’t see any projects here",
+  labelingStart:"Create one and start labeling your data.",
+  noProjectsTips:"Heidi doesn’t see any projects here!",
   EmptyConfigPlaceholder1:"Heidi doesn’t see any projects here",
   EmptyConfigPlaceholder2:"Start from one of our predefined templates or create your own config on the Code panel. The labeling config is XML-based and you can",
   EmptyConfigPlaceholder3:"Heidi doesn’t see any projects here",
@@ -38,7 +38,7 @@ const translation = {
   Configuredata10:"Width of region borders",
   Configuredata11:"Display labels:",
   Configuredata12:"Add filter for long list of labels",
-  GeneralSettings0:"General",  
+  GeneralSettings0:"General",
   GeneralSettings1:"General Settings",
   GeneralSettings2:"Project Name",
   GeneralSettings3:"Description",
@@ -49,7 +49,7 @@ const translation = {
   GeneralSettings8:"Random sampling",
   GeneralSettings9:"Tasks are chosen with uniform random",
   GeneralSettings10:"Width of region borders",
-  AnnotationSettings0:"Annotation",  
+  AnnotationSettings0:"Annotation",
   AnnotationSettings1:"Annotation Settings",
   AnnotationSettings2:"Labeling Instructions",
   AnnotationSettings3:"Write instructions to help users complete labeling tasks.",
@@ -60,8 +60,8 @@ const translation = {
   AnnotationSettings8:"Enable and select which set of predictions to use for prelabeling.",
   AnnotationSettings9:"Select which predictions or which model you want to use:",
   AnnotationSettings10:"No model or predictions available",
-  MachineLearning0:"Model",  
-  MachineLearning1:"Let’s connect your first model",  
+  MachineLearning0:"Model",
+  MachineLearning1:"Let’s connect your first model",
   MachineLearning2:"Connect a machine learning model to generate predictions. These predictions can be compared side by side, used for efficient pre‒labeling and, to aid in active learning, directing users to the most impactful labeling tasks.",
   MachineLearning3:"Connect Model",
   MachineLearning4:"Name",
@@ -74,16 +74,16 @@ const translation = {
   MachineLearning11:"If enabled some labeling tools will send requests to the ML Backend interactively during the annotation process.",
   MachineLearning12:"Validate and Save",
   MachineLearning13:"Interactive preannotations",
-  PredictionsSettings0:"Predictions",  
+  PredictionsSettings0:"Predictions",
   PredictionsSettings1:"No predictions yet uploaded",
   PredictionsSettings2:"Predictions could be used to prelabel the data, or validate the model. You can upload and select predictions from multiple model versions. You can also connect live models in the Model tab.",
-  StorageSettings0:"Cloud Storage",  
+  StorageSettings0:"Cloud Storage",
   StorageSettings1:"Use cloud or database storage as the source for your labeling tasks or the target of your completed annotations.",
   StorageSettings2:"Source Cloud Storage",
   StorageSettings3:"Add Source Storage",
   StorageSettings4:"Target Cloud Storage",
   StorageSettings5:"Add Target Storage",
-  DangerZone0:"Danger Zone",  
+  DangerZone0:"Danger Zone",
   DangerZone1:"Perform these actions at your own risk. Actions you take on this page can't be reverted. Make sure your data is backed up.",
   DangerZone2:"Reset Cache",
   DangerZone3:"Reset Cache may help in cases like if you are unable to modify the labeling configuration due to validation errors concerning existing labels, but you are confident that the labels don't exist. You can use this action to reset the cache and try again.",
@@ -92,7 +92,7 @@ const translation = {
   DangerZone6:"Delete Project",
   DangerZone7:"Deleting a project removes all tasks, annotations, and project data from the database.",
   DangerZone8:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。",
-  AddSourceStorage0:"添加源存储",  
+  AddSourceStorage0:"添加源存储",
   AddSourceStorage1:"存储类型",
   AddSourceStorage2:"本地文件",
   AddSourceStorage3:"存储标题",
@@ -100,16 +100,20 @@ const translation = {
   AddSourceStorage5:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。",
   AddSourceStorage6:"删除项目",
   AddSourceStorage7:"删除项目将从数据库中删除所有任务、注释和项目数据。",
-  AddSourceStorage8:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。"
-
-
-
-  
-
-
-
-
-
+  AddSourceStorage8:"如果数据管理器未加载，删除所有数据管理器选项卡会有所帮助。",
+  NewProject: "New project",
+  ProjectName: "Project Name",
+  Description: "Description",
+  OptionalDescription: "Optional description of your project",
+  Workspace: "Workspace",
+  SimplifyProjectManagement: "Simplify project management by organizing projects into workspaces.",
+  LearnMore: "Learn more",
+  CreateProject: "Create Project",
+  Delete: "Delete",
+  Save: "Save",
+  DataImport: "Data Import",
+  LabelingSetup: "Labeling Setup",
+  SelectOption: "Select an option"
 };
 
 export default translation;

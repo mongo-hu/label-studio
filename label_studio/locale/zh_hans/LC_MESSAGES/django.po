@@ -44,7 +44,7 @@ msgstr ""
 #: .\label_studio\tasks\models.py:611 .\label_studio\tasks\models.py:823
 #: .\label_studio\tasks\models.py:892 .\label_studio\webhooks\models.py:65
 msgid "created at"
-msgstr ""
+msgstr "创建于"
 
 #: .\label_studio\core\models.py:41 .\label_studio\data_export\models.py:223
 #: .\label_studio\io_storages\base_models.py:611
@@ -61,31 +61,31 @@ msgstr ""
 #: .\label_studio\tasks\models.py:612 .\label_studio\tasks\models.py:824
 #: .\label_studio\tasks\models.py:893 .\label_studio\webhooks\models.py:66
 msgid "updated at"
-msgstr ""
+msgstr "更新于"
 
 #: .\label_studio\core\settings\base.py:387
 msgid "English"
-msgstr ""
+msgstr "英语"
 
 #: .\label_studio\core\settings\base.py:388
 msgid "简体中文"
-msgstr ""
+msgstr "简体中文"
 
 #: .\label_studio\core\utils\static_serve.py:39
 msgid "Directory indexes are not allowed here."
-msgstr ""
+msgstr "此处不允许目录索引。"
 
 #: .\label_studio\core\utils\static_serve.py:41
 #, python-format
 msgid "“%(path)s” does not exist"
-msgstr ""
+msgstr "“%(path)s”不存在"
 
 #: .\label_studio\data_export\models.py:31
 #: .\label_studio\data_export\models.py:182
 #: .\label_studio\projects\models.py:1377
 #: .\label_studio\projects\models.py:1410
 msgid "Created"
-msgstr ""
+msgstr "已创建"
 
 #: .\label_studio\data_export\models.py:32
 #: .\label_studio\data_export\models.py:183
@@ -93,7 +93,7 @@ msgstr ""
 #: .\label_studio\projects\models.py:1378
 #: .\label_studio\projects\models.py:1411
 msgid "In progress"
-msgstr ""
+msgstr "进行中"
 
 #: .\label_studio\data_export\models.py:33
 #: .\label_studio\data_export\models.py:184
@@ -101,7 +101,7 @@ msgstr ""
 #: .\label_studio\projects\models.py:1379
 #: .\label_studio\projects\models.py:1412
 msgid "Failed"
-msgstr ""
+msgstr "失败"
 
 #: .\label_studio\data_export\models.py:34
 #: .\label_studio\data_export\models.py:185
@@ -109,91 +109,91 @@ msgstr ""
 #: .\label_studio\projects\models.py:1380
 #: .\label_studio\projects\models.py:1413
 msgid "Completed"
-msgstr ""
+msgstr "已完成"
 
 #: .\label_studio\data_export\models.py:37
 #: .\label_studio\io_storages\base_models.py:211 .\label_studio\ml\models.py:62
 #: .\label_studio\ml_models\models.py:23 .\label_studio\ml_models\models.py:53
 #: .\label_studio\projects\models.py:122 .\label_studio\projects\models.py:1076
 msgid "title"
-msgstr ""
+msgstr "标题"
 
 #: .\label_studio\data_export\models.py:52
 msgid "md5 of file"
-msgstr ""
+msgstr "文件的MD5"
 
 #: .\label_studio\data_export\models.py:57
 #: .\label_studio\data_export\models.py:229
 #: .\label_studio\projects\models.py:1392
 msgid "finished at"
-msgstr ""
+msgstr "完成于"
 
 #: .\label_studio\data_export\models.py:64
 msgid "Export status"
-msgstr ""
+msgstr "导出状态"
 
 #: .\label_studio\data_export\models.py:70
 msgid "Exporting meta data"
-msgstr ""
+msgstr "导出元数据"
 
 #: .\label_studio\data_export\models.py:83
 #: .\label_studio\data_export\models.py:239
 #: .\label_studio\projects\models.py:202
 msgid "created by"
-msgstr ""
+msgstr "创建者"
 
 #: .\label_studio\data_manager\models.py:10
 msgid "data"
-msgstr ""
+msgstr "数据"
 
 #: .\label_studio\data_manager\models.py:11
 msgid "ordering"
-msgstr ""
+msgstr "排序"
 
 #: .\label_studio\data_manager\models.py:12
 msgid "selected items"
-msgstr ""
+msgstr "选定项目"
 
 #: .\label_studio\data_manager\models.py:74
 msgid "conjunction"
-msgstr ""
+msgstr "连接"
 
 #: .\label_studio\data_manager\models.py:81
 msgid "index"
-msgstr ""
+msgstr "索引"
 
 #: .\label_studio\data_manager\models.py:82
 msgid "column"
-msgstr ""
+msgstr "列"
 
 #: .\label_studio\data_manager\models.py:83
 msgid "type"
-msgstr ""
+msgstr "类型"
 
 #: .\label_studio\data_manager\models.py:84
 msgid "operator"
-msgstr ""
+msgstr "操作符"
 
 #: .\label_studio\data_manager\models.py:85
 msgid "value"
-msgstr ""
+msgstr "值"
 
 #: .\label_studio\io_storages\azure_blob\models.py:34
 msgid "container"
-msgstr ""
+msgstr "容器"
 
 #: .\label_studio\io_storages\azure_blob\models.py:35
 #: .\label_studio\io_storages\gcs\models.py:27
 #: .\label_studio\io_storages\s3\models.py:37
 msgid "prefix"
-msgstr ""
+msgstr "前缀"
 
 #: .\label_studio\io_storages\azure_blob\models.py:37
 #: .\label_studio\io_storages\gcs\models.py:29
 #: .\label_studio\io_storages\localfiles\models.py:30
 #: .\label_studio\io_storages\s3\models.py:39
 msgid "regex_filter"
-msgstr ""
+msgstr "正则过滤器"
 
 #: .\label_studio\io_storages\azure_blob\models.py:40
 #: .\label_studio\io_storages\gcs\models.py:32
@@ -201,640 +201,640 @@ msgstr ""
 #: .\label_studio\io_storages\redis\models.py:32
 #: .\label_studio\io_storages\s3\models.py:42
 msgid "use_blob_urls"
-msgstr ""
+msgstr "使用Blob URL"
 
 #: .\label_studio\io_storages\azure_blob\models.py:42
 msgid "account_name"
-msgstr ""
+msgstr "账户名"
 
 #: .\label_studio\io_storages\azure_blob\models.py:43
 msgid "account_key"
-msgstr ""
+msgstr "账户密钥"
 
 #: .\label_studio\io_storages\azure_blob\models.py:101
 #: .\label_studio\io_storages\gcs\models.py:66
 #: .\label_studio\io_storages\s3\models.py:119
 msgid "presign"
-msgstr ""
+msgstr "预签名"
 
 #: .\label_studio\io_storages\azure_blob\models.py:103
 #: .\label_studio\io_storages\gcs\models.py:68
 #: .\label_studio\io_storages\s3\models.py:121
 msgid "presign_ttl"
-msgstr ""
+msgstr "预签名TTL"
 
 #: .\label_studio\io_storages\base_models.py:42
 msgid "Initialized"
-msgstr ""
+msgstr "已初始化"
 
 #: .\label_studio\io_storages\base_models.py:43
 msgid "Queued"
-msgstr ""
+msgstr "已排队"
 
 #: .\label_studio\io_storages\base_models.py:51
 msgid "last sync"
-msgstr ""
+msgstr "最后同步"
 
 #: .\label_studio\io_storages\base_models.py:53
 msgid "last sync count"
-msgstr ""
+msgstr "最后同步计数"
 
 #: .\label_studio\io_storages\base_models.py:56
 msgid "last_sync_job"
-msgstr ""
+msgstr "最后同步任务"
 
 #: .\label_studio\io_storages\base_models.py:212 .\label_studio\ml\models.py:92
 #: .\label_studio\ml_models\models.py:25 .\label_studio\projects\models.py:134
 #: .\label_studio\projects\models.py:1077
 msgid "description"
-msgstr ""
+msgstr "描述"
 
 #: .\label_studio\io_storages\base_models.py:215
 msgid "synchronizable"
-msgstr ""
+msgstr "可同步"
 
 #: .\label_studio\io_storages\base_models.py:520
 msgid "can_delete_objects"
-msgstr ""
+msgstr "可以删除对象"
 
 #: .\label_studio\io_storages\base_models.py:583
 msgid "key"
-msgstr ""
+msgstr "键"
 
 #: .\label_studio\io_storages\base_models.py:585
 #: .\label_studio\io_storages\base_models.py:608
 msgid "object exists"
-msgstr ""
+msgstr "对象存在"
 
 #: .\label_studio\io_storages\gcs\models.py:26
 #: .\label_studio\io_storages\s3\models.py:36
 msgid "bucket"
-msgstr ""
+msgstr "桶"
 
 #: .\label_studio\io_storages\gcs\models.py:35
 msgid "google_application_credentials"
-msgstr ""
+msgstr "Google应用凭证"
 
 #: .\label_studio\io_storages\gcs\models.py:40
 msgid "Google Project ID"
-msgstr ""
+msgstr "Google项目ID"
 
 #: .\label_studio\io_storages\localfiles\models.py:29
 #: .\label_studio\io_storages\redis\models.py:24
 msgid "path"
-msgstr ""
+msgstr "路径"
 
 #: .\label_studio\io_storages\redis\models.py:25
 msgid "host"
-msgstr ""
+msgstr "主机"
 
 #: .\label_studio\io_storages\redis\models.py:26
 #: .\label_studio\io_storages\redis\models.py:29
 msgid "port"
-msgstr ""
+msgstr "端口"
 
 #: .\label_studio\io_storages\redis\models.py:27
 msgid "password"
-msgstr ""
+msgstr "密码"
 
 #: .\label_studio\io_storages\redis\models.py:75
 #: .\label_studio\io_storages\redis\models.py:111
 msgid "db"
-msgstr ""
+msgstr "数据库"
 
 #: .\label_studio\io_storages\s3\models.py:44
 msgid "aws_access_key_id"
-msgstr ""
+msgstr "AWS访问密钥ID"
 
 #: .\label_studio\io_storages\s3\models.py:46
 msgid "aws_secret_access_key"
-msgstr ""
+msgstr "AWS秘密访问密钥"
 
 #: .\label_studio\io_storages\s3\models.py:48
 msgid "aws_session_token"
-msgstr ""
+msgstr "AWS会话令牌"
 
 #: .\label_studio\io_storages\s3\models.py:50
 msgid "aws_sse_kms_key_id"
-msgstr ""
+msgstr "AWS SSE KMS密钥ID"
 
 #: .\label_studio\io_storages\s3\models.py:52
 msgid "region_name"
-msgstr ""
+msgstr "区域名称"
 
 #: .\label_studio\io_storages\s3\models.py:53
 msgid "s3_endpoint"
-msgstr ""
+msgstr "S3端点"
 
 #: .\label_studio\io_storages\s3\models.py:124
 msgid "recursive scan"
-msgstr ""
+msgstr "递归扫描"
 
 #: .\label_studio\io_storages\s3\models.py:124
 msgid "Perform recursive scan over the bucket content"
-msgstr ""
+msgstr "对桶内容执行递归扫描"
 
 #: .\label_studio\labels_manager\models.py:7
 msgid "Created at"
-msgstr ""
+msgstr "创建于"
 
 #: .\label_studio\labels_manager\models.py:8
 msgid "Updated at"
-msgstr ""
+msgstr "更新于"
 
 #: .\label_studio\labels_manager\models.py:13
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: .\label_studio\labels_manager\models.py:14
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: .\label_studio\labels_manager\models.py:36
 msgid "Tag name"
-msgstr ""
+msgstr "标签名称"
 
 #: .\label_studio\ml\models.py:26
 msgid "Connected"
-msgstr ""
+msgstr "已连接"
 
 #: .\label_studio\ml\models.py:27
 msgid "Disconnected"
-msgstr ""
+msgstr "已断开"
 
 #: .\label_studio\ml\models.py:28
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: .\label_studio\ml\models.py:29
 msgid "Training"
-msgstr ""
+msgstr "训练中"
 
 #: .\label_studio\ml\models.py:30
 msgid "Predicting"
-msgstr ""
+msgstr "预测中"
 
 #: .\label_studio\ml\models.py:34
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: .\label_studio\ml\models.py:35
 msgid "Basic Auth"
-msgstr ""
+msgstr "基本认证"
 
 #: .\label_studio\ml\models.py:47
 msgid "is_interactive"
-msgstr ""
+msgstr "是否交互"
 
 #: .\label_studio\ml\models.py:52
 msgid "url"
-msgstr ""
+msgstr "URL"
 
 #: .\label_studio\ml\models.py:56
 msgid "error_message"
-msgstr ""
+msgstr "错误信息"
 
 #: .\label_studio\ml\models.py:76
 msgid "basic auth user"
-msgstr ""
+msgstr "基本认证用户"
 
 #: .\label_studio\ml\models.py:84
 msgid "basic auth password"
-msgstr ""
+msgstr "基本认证密码"
 
 #: .\label_studio\ml\models.py:100
 msgid "extra params"
-msgstr ""
+msgstr "额外参数"
 
 #: .\label_studio\ml\models.py:106 .\label_studio\ml\models.py:440
 #: .\label_studio\ml\models.py:455 .\label_studio\projects\models.py:236
 #: .\label_studio\tasks\models.py:855
 msgid "model version"
-msgstr ""
+msgstr "模型版本"
 
 #: .\label_studio\ml\models.py:113
 msgid "timeout"
-msgstr ""
+msgstr "超时"
 
 #: .\label_studio\ml\models.py:126
 msgid "auto_update"
-msgstr ""
+msgstr "自动更新"
 
 #: .\label_studio\ml\models.py:443
 msgid "batch size"
-msgstr ""
+msgstr "批量大小"
 
 #: .\label_studio\ml_model_providers\models.py:11
 msgid "OpenAI"
-msgstr ""
+msgstr "OpenAI"
 
 #: .\label_studio\ml_model_providers\models.py:14
 msgid "Organization"
-msgstr ""
+msgstr "组织"
 
 #: .\label_studio\ml_model_providers\models.py:15
 msgid "User"
-msgstr ""
+msgstr "用户"
 
 #: .\label_studio\ml_model_providers\models.py:16
 msgid "Model"
-msgstr ""
+msgstr "模型"
 
 #: .\label_studio\ml_model_providers\models.py:20
 msgid "api_key"
-msgstr ""
+msgstr "API密钥"
 
 #: .\label_studio\ml_models\models.py:61
 msgid "prompt"
-msgstr ""
+msgstr "提示"
 
 #: .\label_studio\ml_models\models.py:101
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: .\label_studio\ml_models\models.py:102
 msgid "HasGT"
-msgstr ""
+msgstr "有GT"
 
 #: .\label_studio\ml_models\models.py:105
 msgid "Input"
-msgstr ""
+msgstr "输入"
 
 #: .\label_studio\ml_models\models.py:106
 msgid "Output"
-msgstr ""
+msgstr "输出"
 
 #: .\label_studio\ml_models\models.py:109
 msgid "Pending"
-msgstr ""
+msgstr "待处理"
 
 #: .\label_studio\ml_models\models.py:110
 msgid "InProgress"
-msgstr ""
+msgstr "进行中"
 
 #: .\label_studio\ml_models\models.py:144
 msgid "triggered at"
-msgstr ""
+msgstr "触发于"
 
 #: .\label_studio\ml_models\models.py:146
 msgid "predictions updated at"
-msgstr ""
+msgstr "预测更新于"
 
 #: .\label_studio\ml_models\models.py:148
 msgid "completed at"
-msgstr ""
+msgstr "完成于"
 
 #: .\label_studio\organizations\models.py:31
 msgid "deleted at"
-msgstr ""
+msgstr "删除于"
 
 #: .\label_studio\organizations\models.py:78
 msgid "organization title"
-msgstr ""
+msgstr "组织标题"
 
 #: .\label_studio\organizations\models.py:80
 #: .\label_studio\projects\models.py:191
 msgid "token"
-msgstr ""
+msgstr "令牌"
 
 #: .\label_studio\organizations\models.py:89
 msgid "created_by"
-msgstr ""
+msgstr "创建者"
 
 #: .\label_studio\organizations\models.py:95
 msgid "contact info"
-msgstr ""
+msgstr "联系信息"
 
 #: .\label_studio\projects\models.py:141
 msgid "dataset id"
-msgstr ""
+msgstr "数据集ID"
 
 #: .\label_studio\projects\models.py:144
 msgid "label config"
-msgstr ""
+msgstr "标签配置"
 
 #: .\label_studio\projects\models.py:151
 msgid "parsed label config"
-msgstr ""
+msgstr "解析的标签配置"
 
 #: .\label_studio\projects\models.py:159
 msgid "expert instruction"
-msgstr ""
+msgstr "专家指导"
 
 #: .\label_studio\projects\models.py:162
 msgid "show instruction"
-msgstr ""
+msgstr "显示指导"
 
 #: .\label_studio\projects\models.py:166
 msgid "show skip button"
-msgstr ""
+msgstr "显示跳过按钮"
 
 #: .\label_studio\projects\models.py:171
 msgid "enable empty annotation"
-msgstr ""
+msgstr "启用空注释"
 
 #: .\label_studio\projects\models.py:175
 msgid "reveal_preannotations_interactively"
-msgstr ""
+msgstr "交互式显示预注释"
 
 #: .\label_studio\projects\models.py:178
 msgid "show annotation history"
-msgstr ""
+msgstr "显示注释历史"
 
 #: .\label_studio\projects\models.py:181
 msgid "show predictions to annotator"
-msgstr ""
+msgstr "向注释者显示预测"
 
 #: .\label_studio\projects\models.py:187
 msgid "evaluate predictions automatically"
-msgstr ""
+msgstr "自动评估预测"
 
 #: .\label_studio\projects\models.py:193 .\label_studio\tasks\models.py:628
 msgid "result count"
-msgstr ""
+msgstr "结果计数"
 
 #: .\label_studio\projects\models.py:195
 msgid "color"
-msgstr ""
+msgstr "颜色"
 
 #: .\label_studio\projects\models.py:205
 msgid "maximum annotation number"
-msgstr ""
+msgstr "最大注释数量"
 
 #: .\label_studio\projects\models.py:212
 msgid "min_annotations_to_start_training"
-msgstr ""
+msgstr "开始训练的最小注释数量"
 
 #: .\label_studio\projects\models.py:218
 msgid "control weights"
-msgstr ""
+msgstr "控制权重"
 
 #: .\label_studio\projects\models.py:239
 msgid "data_types"
-msgstr ""
+msgstr "数据类型"
 
 #: .\label_studio\projects\models.py:242
 msgid "is draft"
-msgstr ""
+msgstr "是草稿"
 
 #: .\label_studio\projects\models.py:245
 msgid "published"
-msgstr ""
+msgstr "已发布"
 
 #: .\label_studio\projects\models.py:264
 msgid "show ground truth first"
-msgstr ""
+msgstr "优先显示真实值"
 
 #: .\label_studio\projects\models.py:265
 msgid "show overlap first"
-msgstr ""
+msgstr "优先显示重叠"
 
 #: .\label_studio\projects\models.py:266
 msgid "overlap_cohort_percentage"
-msgstr ""
+msgstr "重叠群体百分比"
 
 #: .\label_studio\projects\models.py:269
 msgid "task_data_login"
-msgstr ""
+msgstr "任务数据登录"
 
 #: .\label_studio\projects\models.py:272
 msgid "task_data_password"
-msgstr ""
+msgstr "任务数据密码"
 
 #: .\label_studio\projects\models.py:275
 msgid "pinned at"
-msgstr ""
+msgstr "固定于"
 
 #: .\label_studio\projects\models.py:1050
 #, python-format
 msgid "Business number %d"
-msgstr ""
+msgstr "业务编号 %d"
 
 #: .\label_studio\projects\models.py:1135
 msgid "all data columns"
-msgstr ""
+msgstr "所有数据列"
 
 #: .\label_studio\projects\models.py:1139
 msgid "common data columns"
-msgstr ""
+msgstr "常见数据列"
 
 #: .\label_studio\projects\models.py:1143
 msgid "created annotations"
-msgstr ""
+msgstr "创建的注释"
 
 #: .\label_studio\projects\models.py:1149
 msgid "created labels"
-msgstr ""
+msgstr "创建的标签"
 
 #: .\label_studio\projects\models.py:1151
 msgid "created labels in drafts"
-msgstr ""
+msgstr "草稿中创建的标签"
 
 #: .\label_studio\tasks\choices.py:6
 msgid "Created from prediction"
-msgstr ""
+msgstr "从预测创建"
 
 #: .\label_studio\tasks\choices.py:7
 msgid "Created from another annotation"
-msgstr ""
+msgstr "从另一个注释创建"
 
 #: .\label_studio\tasks\choices.py:8
 msgid "Imported"
-msgstr ""
+msgstr "已导入"
 
 #: .\label_studio\tasks\choices.py:9
 msgid "Submitted"
-msgstr ""
+msgstr "已提交"
 
 #: .\label_studio\tasks\choices.py:10
 msgid "Updated"
-msgstr ""
+msgstr "已更新"
 
 #: .\label_studio\tasks\choices.py:11
 msgid "Skipped"
-msgstr ""
+msgstr "已跳过"
 
 #: .\label_studio\tasks\choices.py:12
 msgid "Accepted"
-msgstr ""
+msgstr "已接受"
 
 #: .\label_studio\tasks\choices.py:13
 msgid "Rejected"
-msgstr ""
+msgstr "已拒绝"
 
 #: .\label_studio\tasks\choices.py:14
 msgid "Fixed and accepted"
-msgstr ""
+msgstr "修正并接受"
 
 #: .\label_studio\tasks\choices.py:15
 msgid "Deleted review"
-msgstr ""
+msgstr "删除的审查"
 
 #: .\label_studio\tasks\models.py:88 .\label_studio\tasks\models.py:602
 msgid "updated by"
-msgstr ""
+msgstr "更新者"
 
 #: .\label_studio\tasks\models.py:92
 msgid "is_labeled"
-msgstr ""
+msgstr "已标注"
 
 #: .\label_studio\tasks\models.py:98
 msgid "overlap"
-msgstr ""
+msgstr "重叠"
 
 #: .\label_studio\tasks\models.py:112
 msgid "inner id"
-msgstr ""
+msgstr "内部ID"
 
 #: .\label_studio\tasks\models.py:119
 msgid "total_annotations"
-msgstr ""
+msgstr "总注释"
 
 #: .\label_studio\tasks\models.py:125
 msgid "cancelled_annotations"
-msgstr ""
+msgstr "取消的注释"
 
 #: .\label_studio\tasks\models.py:131
 msgid "total_predictions"
-msgstr ""
+msgstr "总预测"
 
 #: .\label_studio\tasks\models.py:138
 msgid "comment count"
-msgstr ""
+msgstr "评论计数"
 
 #: .\label_studio\tasks\models.py:144
 msgid "unresolved comment count"
-msgstr ""
+msgstr "未解决的评论计数"
 
 #: .\label_studio\tasks\models.py:157
 msgid "last comment updated at"
-msgstr ""
+msgstr "最后评论更新于"
 
 #: .\label_studio\tasks\models.py:605
 msgid "was cancelled"
-msgstr ""
+msgstr "已取消"
 
 #: .\label_studio\tasks\models.py:607
 msgid "ground_truth"
-msgstr ""
+msgstr "真实值"
 
 #: .\label_studio\tasks\models.py:614
 msgid "draft created at"
-msgstr ""
+msgstr "草稿创建于"
 
 #: .\label_studio\tasks\models.py:617 .\label_studio\tasks\models.py:782
 msgid "lead time"
-msgstr ""
+msgstr "处理时间"
 
 #: .\label_studio\tasks\models.py:623
 msgid "prediction"
-msgstr ""
+msgstr "预测"
 
 #: .\label_studio\tasks\models.py:653
 msgid "last action"
-msgstr ""
+msgstr "最后操作"
 
 #: .\label_studio\tasks\models.py:663
 msgid "last created by"
-msgstr ""
+msgstr "最后创建者"
 
 #: .\label_studio\tasks\models.py:769
 msgid "expire_at"
-msgstr ""
+msgstr "过期于"
 
 #: .\label_studio\tasks\models.py:780
 msgid "result"
-msgstr ""
+msgstr "结果"
 
 #: .\label_studio\tasks\models.py:810
 msgid "was postponed"
-msgstr ""
+msgstr "已推迟"
 
 #: .\label_studio\tasks\models.py:853
 msgid "score"
-msgstr ""
+msgstr "得分"
 
 #: .\label_studio\tasks\models.py:877
 msgid "cluster"
-msgstr ""
+msgstr "集群"
 
 #: .\label_studio\tasks\models.py:888
 msgid "mislabeling"
-msgstr ""
+msgstr "错误标注"
 
 #: .\label_studio\templates\standard_form.html:11
 msgid "Create"
-msgstr ""
+msgstr "创建"
 
 #: .\label_studio\users\models.py:26
 msgid "year"
-msgstr ""
+msgstr "年"
 
 #: .\label_studio\users\models.py:65
 msgid "last activity"
-msgstr ""
+msgstr "最后活动"
 
 #: .\label_studio\users\models.py:86
 msgid "username"
-msgstr ""
+msgstr "用户名"
 
 #: .\label_studio\users\models.py:87
 msgid "email address"
-msgstr ""
+msgstr "电子邮件地址"
 
 #: .\label_studio\users\models.py:89
 msgid "first name"
-msgstr ""
+msgstr "名字"
 
 #: .\label_studio\users\models.py:90
 msgid "last name"
-msgstr ""
+msgstr "姓氏"
 
 #: .\label_studio\users\models.py:91
 msgid "phone"
-msgstr ""
+msgstr "电话"
 
 #: .\label_studio\users\models.py:95
 msgid "staff status"
-msgstr ""
+msgstr "员工状态"
 
 #: .\label_studio\users\models.py:95
 msgid "Designates whether the user can log into this admin site."
-msgstr ""
+msgstr "指定用户是否可以登录此管理站点。"
 
 #: .\label_studio\users\models.py:99
 msgid "active"
-msgstr ""
+msgstr "活跃"
 
 #: .\label_studio\users\models.py:101
 msgid ""
 "Designates whether to treat this user as active. Unselect this instead of "
 "deleting accounts."
-msgstr ""
+msgstr "指定是否将此用户视为活跃。取消选择此项而不是删除帐户。"
 
 #: .\label_studio\users\models.py:104
 msgid "date joined"
-msgstr ""
+msgstr "加入日期"
 
 #: .\label_studio\users\models.py:106
 msgid "last annotation activity"
-msgstr ""
+msgstr "最后注释活动"
 
 #: .\label_studio\users\models.py:113
 msgid "allow newsletters"
-msgstr ""
+msgstr "允许新闻通讯"
 
 #: .\label_studio\users\models.py:113
 msgid "Allow sending newsletters to user"
-msgstr ""
+msgstr "允许向用户发送新闻通讯"
 
 #: .\label_studio\users\models.py:124
 msgid "user"
-msgstr ""
+msgstr "用户"
 
 #: .\label_studio\users\models.py:125
 msgid "users"
-msgstr ""
+msgstr "用户"
 
 #: .\label_studio\users\templates\users\new-ui\user_login.html:17
 msgid "Keep me logged in this browser"
@@ -846,96 +846,93 @@ msgstr "邮箱"
 msgid "Password"
 msgstr "密码"
 
-msgid "login"
-msgstr "登录"
-
 #: .\label_studio\users\templates\users\user_account.html:81
 msgid "save"
 msgstr "保存"
 
 #: .\label_studio\webhooks\models.py:38
 msgid "URL of webhook"
-msgstr ""
+msgstr "Webhook的URL"
 
 #: .\label_studio\webhooks\models.py:41
 msgid "does webhook send the payload"
-msgstr ""
+msgstr "Webhook是否发送负载"
 
 #: .\label_studio\webhooks\models.py:47
 msgid "Use webhook for all actions"
-msgstr ""
+msgstr "对所有操作使用Webhook"
 
 #: .\label_studio\webhooks\models.py:53
 msgid "request extra headers of webhook"
-msgstr ""
+msgstr "请求Webhook的额外头信息"
 
 #: .\label_studio\webhooks\models.py:60
 msgid "is webhook active"
-msgstr ""
+msgstr "Webhook是否活跃"
 
 #: .\label_studio\webhooks\models.py:65
 msgid "Creation time"
-msgstr ""
+msgstr "创建时间"
 
 #: .\label_studio\webhooks\models.py:66
 msgid "Last update time"
-msgstr ""
+msgstr "最后更新时间"
 
 #: .\label_studio\webhooks\models.py:115
 msgid "Project created"
-msgstr ""
+msgstr "项目已创建"
 
 #: .\label_studio\webhooks\models.py:124
 msgid "Project updated"
-msgstr ""
+msgstr "项目已更新"
 
 #: .\label_studio\webhooks\models.py:133
 msgid "Project deleted"
-msgstr ""
+msgstr "项目已删除"
 
 #: .\label_studio\webhooks\models.py:142
 msgid "Task created"
-msgstr ""
+msgstr "任务已创建"
 
 #: .\label_studio\webhooks\models.py:151
 msgid "Task deleted"
-msgstr ""
+msgstr "任务已删除"
 
 #: .\label_studio\webhooks\models.py:160
 msgid "Annotation created"
-msgstr ""
+msgstr "注释已创建"
 
 #: .\label_studio\webhooks\models.py:176
 msgid "Annotations created"
-msgstr ""
+msgstr "注释已创建"
 
 #: .\label_studio\webhooks\models.py:192
 msgid "Annotation updated"
-msgstr ""
+msgstr "注释已更新"
 
 #: .\label_studio\webhooks\models.py:208
 msgid "Annotation deleted"
-msgstr ""
+msgstr "注释已删除"
 
 #: .\label_studio\webhooks\models.py:217
 msgid "Label link created"
-msgstr ""
+msgstr "标签链接已创建"
 
 #: .\label_studio\webhooks\models.py:226
 msgid "Label link updated"
-msgstr ""
+msgstr "标签链接已更新"
 
 #: .\label_studio\webhooks\models.py:242
 msgid "Label link deleted"
-msgstr ""
+msgstr "标签链接已删除"
 
 #: .\label_studio\webhooks\models.py:255
 msgid "action of webhook"
-msgstr ""
+msgstr "Webhook的操作"
 
 #: .\label_studio\webhooks\models.py:259
 msgid "Action value"
-msgstr ""
+msgstr "操作值"
 
 msgid "Account info"
 msgstr "账号信息"
@@ -944,7 +941,7 @@ msgid "Phone"
 msgstr "手机号"
 
 msgid "TaskID"
-msgstr "任务 ID"
+msgstr "任务ID"
 
 msgid "Task IDs start 1"
 msgstr "当前项目的内部任务ID从1开始"
@@ -1017,3 +1014,40 @@ msgstr "Label Studio 提供了数十种预构建的模板，适用于所有数�
 
 msgid "Did you know?"
 msgstr "您知道吗？"
+
+msgid "You can enable webhooks to trigger machine learning model training or perform active learning after a certain number of tasks have been annotated."
+msgstr "您可以启用webhooks，在注释一定数量的任务后触发机器学习模型训练或执行主动学习。"
+
+msgid "There's an Enterprise version of Label Studio packed with more features and automation to label data faster while ensuring the highest quality."
+msgstr "Label Studio有一个企业版，包含更多功能和自动化，可以更快地标注数据，同时确保最高质量。"
+
+msgid "Learn more"
+msgstr "了解更多"
+
+msgid "See use cases"
+msgstr "查看用例"
+
+msgid "See all templates"
+msgstr "查看所有模板"
+
+msgid "Sign Up"
+msgstr "注册"
+
+msgid "How did you hear about Label Studio?"
+msgstr "您是如何知道Label Studio的？"
+
+msgid "Please elaborate"
+msgstr "请详细说明"
+
+msgid "Already have an account?"
+msgstr "已经有账号了？"
+
+msgid "Log in"
+msgstr "登录"
+
+msgid "Create Account"
+msgstr "创建账号"
+
+msgid "Get the latest news from Heidi"
+msgstr "获取来自Heidi的最新消息"
+

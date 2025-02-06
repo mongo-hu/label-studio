@@ -6,6 +6,7 @@ import { LsBulb, LsCheck, LsEllipsis, LsMinus } from "../../assets/icons";
 import { Button, Dropdown, Menu, Pagination, Userpic } from "../../components";
 import { Block, Elem } from "../../utils/bem";
 import { absoluteURL } from "../../utils/helpers";
+import { t } from  "../../../../../language/i18n";
 
 const DEFAULT_CARD_COLORS = ["#FFFFFF", "#FDFDFC"];
 
@@ -38,11 +39,11 @@ export const EmptyProjectsList = ({ openModal }) => {
     <Block name="empty-projects-page">
       <Elem name="heidi" tag="img" src={absoluteURL("/static/images/opossum_looking.png")} />
       <Elem name="header" tag="h1">
-        Heidi doesn’t see any projects here!
+        {t("noProjectsTips")}
       </Elem>
-      <p>Create one and start labeling your data.</p>
+      <p>{t("labelingStart")}</p>
       <Elem name="action" tag={Button} onClick={openModal} look="primary">
-        Create Project
+        {t("Create")}
       </Elem>
     </Block>
   );
@@ -78,7 +79,7 @@ const ProjectCard = ({ project }) => {
       <Block name="project-card" mod={{ colored: !!color }} style={projectColors}>
         <Elem name="header">
           <Elem name="title">
-            <Elem name="title-text">{project.title ?? "New project"}</Elem>
+            <Elem name="title-text">{project.title ?? t("NewProject")}</Elem>
 
             <Elem name="menu" onClick={(e) => {
               e.stopPropagation();
@@ -86,8 +87,8 @@ const ProjectCard = ({ project }) => {
             }}>
               <Dropdown.Trigger content={(
                 <Menu contextual>
-                  <Menu.Item href={`/projects/${project.id}/settings`}>Settings</Menu.Item>
-                  <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>Label</Menu.Item>
+                  <Menu.Item href={`/projects/${project.id}/settings`}>{t("Settings")}</Menu.Item>
+                  <Menu.Item href={`/projects/${project.id}/data?labeling=1`}>{t("Label")}</Menu.Item>
                 </Menu>
               )}>
                 <Button size="small" type="text" icon={<LsEllipsis/>}/>

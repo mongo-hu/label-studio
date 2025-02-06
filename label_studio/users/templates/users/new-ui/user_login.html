@@ -41,8 +41,8 @@
   </div>
   {% if not settings.DISABLE_SIGNUP_WITHOUT_LINK %}
   <div class="text-wrapper">
-    <p class="">Don't have an account?</p>
-    <a href="{% url 'user-signup' %}{% querystring %}">Sign up</a>
+    <p class="">{% translate "Don't have an account?" %}</p>
+    <a href="{% url 'user-signup' %}{% querystring %}">{% translate "Sign up" %}</a>
   </div>
   {% endif %}
 {% endblock %}
