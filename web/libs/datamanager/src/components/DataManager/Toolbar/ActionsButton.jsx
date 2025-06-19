@@ -44,7 +44,7 @@ export const ActionsButton = injector(
         const dialog = Modal[dialogType] ?? Modal.confirm;
 
         dialog({
-          title: title ? title : destructive ? "Destructive action" : "Confirm action",
+          title: title ? title : destructive ? t("ConfirmPage4") : t("ConfirmPage3"),
           body: buildDialogContent(text, form, formRef),
           buttonLook: destructive ? "destructive" : "primary",
           onOk() {
@@ -143,7 +143,7 @@ export const ActionsButton = injector(
     };
 
     const actionButtons = actions.map(ActionButton);
-    const recordTypeLabel = isFFLOPSE3 && store.SDK.type === "DE" ? "Record" : "Task";
+    const recordTypeLabel = isFFLOPSE3 && store.SDK.type === "DE" ? t("Record") : t("Task");
 
     return (
       <Dropdown.Trigger

@@ -7,6 +7,7 @@ import { ViewControls } from "./ViewControls";
 import "./OutlinerPanel.scss";
 import { IconInfo } from "../../../assets/icons/outliner";
 import { FF_LSDV_4992, FF_OUTLINER_OPTIM, isFF } from "../../../utils/feature-flags";
+import { t } from '../../../../../../language/i18n';
 
 interface OutlinerPanelProps extends PanelProps {
   regions: any;
@@ -142,7 +143,7 @@ const OutlinerTreeComponent: FC<OutlinerTreeComponentProps> = observer(({ region
           />
         </>
       ) : (
-        <Elem name="empty">Regions not added</Elem>
+        <Elem name="empty">{t("AnnotationPage2")}</Elem>
       )}
     </>
   );

@@ -6,6 +6,7 @@ import { Oneof } from "../../../components/Oneof/Oneof";
 import { ApiContext } from "../../../providers/ApiProvider";
 import { Block, Elem } from "../../../utils/bem";
 import { isDefined } from "../../../utils/helpers";
+import { t } from '../../../../../../language/i18n'
 
 export const StorageForm = forwardRef(({ onSubmit, target, project, rootClass, storage, storageTypes }, ref) => {
   /**@type {import('react').RefObject<Form>} */
@@ -34,7 +35,7 @@ export const StorageForm = forwardRef(({ onSubmit, target, project, rootClass, s
         skip: true,
         type: "select",
         name: "storage_type",
-        label: "Storage Type",
+        label: t("StorageType"),
         disabled: !!storage,
         options: storageTypes.map(({ name, title }) => ({
           value: name,
@@ -115,10 +116,10 @@ export const StorageForm = forwardRef(({ onSubmit, target, project, rootClass, s
         <Input type="hidden" name="project" value={project} />
         <Button.Group className={rootClass.elem("buttons")}>
           <Button type="button" waiting={checking} onClick={validateStorageConnection}>
-            Check Connection
+            {t("CheckConnection")}
           </Button>
           <Button type="submit" look="primary">
-            {storage ? "Save" : "Add Storage"}
+            {storage ? t("Save") : t("AddStorage")}
           </Button>
         </Button.Group>
       </Form.Actions>

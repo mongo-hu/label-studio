@@ -1,4 +1,5 @@
 import type { TipsCollection } from "./types";
+import { t } from "../../../../../language/i18n";
 
 export const defaultTipsCollection: TipsCollection = {
   projectCreation: [
@@ -175,7 +176,7 @@ export const defaultTipsCollection: TipsCollection = {
     {
       title: "Save time with Auto-Labeling",
       content:
-        "Use automation to instantly label large-scale datasets without sacrificing quality in the Enterprise platform.",
+        t("UseAutoLabeling"),
       closable: true,
       link: {
         label: "Learn more",

@@ -984,3 +984,69 @@ msgstr "Create Account"
 
 msgid "Get the latest news from Heidi"
 msgstr "Get the latest news from Heidi"
+
+msgid "Retrieve Predictions"
+msgstr "Retrieve Predictions"
+
+msgid "Send the selected tasks to all ML backends connected to the project......"
+msgstr "Send the selected tasks to all ML backends connected to the project. This operation might be abruptly interrupted due to a timeout. The recommended way to get predictions is to update tasks using the Label Studio API. Please confirm your action."
+
+msgid "Delete Tasks"
+msgstr "Delete Tasks"
+
+msgid "You are going to delete the selected tasks. Please confirm your action"
+msgstr "You are going to delete the selected tasks. Please confirm your action."
+
+msgid "Delete Annotations"
+msgstr "Delete Annotations"
+
+msgid "You are going to delete all annotations from the selected tasks. Please confirm your action"
+msgstr "You are going to delete all annotations from the selected tasks. Please confirm your action."
+
+msgid "Delete Predictions"
+msgstr "Delete Predictions"
+
+msgid "You are going to delete all predictions from the selected tasks. Please confirm your action"
+msgstr "You are going to delete all predictions from the selected tasks. Please confirm your action."
+
+msgid "Create Annotations From Predictions"
+msgstr "Create Annotations From Predictions."
+
+msgid "Create annotations from predictions using selected predictions set......"
+msgstr "Create annotations from predictions using selected predictions set for each selected task. Your account will be assigned as an owner to those annotations."
+
+msgid "Remove Duplicated Tasks"
+msgstr "Remove Duplicated Tasks"
+
+msgid "Confirm that you want to remove duplicated tasks with the same data fields......"
+msgstr "Confirm that you want to remove duplicated tasks with the same data fields. Duplicated tasks will be deleted and all annotations will be moved to the first task from duplicated tasks. Also Source Storage Links will be restored if at least one duplicated task has a storage link. Warning: Task assignments (enterprise only) won't be saved."
+
+msgid "Choose predictions"
+msgstr "Choose predictions"
+
+msgid "Annotations"
+msgstr "Annotations"
+
+msgid "Annotated by"
+msgstr "Annotated by"
+
+msgid "Annotation results"
+msgstr "Annotation results"
+
+msgid "Annotation IDs"
+msgstr "Annotation IDs"
+
+msgid "Prediction score"
+msgstr "Prediction score"
+
+msgid "Prediction model versions"
+msgstr "Prediction model versions"
+
+msgid "Prediction results"
+msgstr "Prediction results"
+
+msgid "Upload filename"
+msgstr "Upload filename"
+
+msgid "Storage filename"
+msgstr "Storage filename"

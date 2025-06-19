@@ -76,13 +76,13 @@ const Footer = () => {
   return (
     <Modal.Footer>
       <IconInfo className={importClass.elem("info-icon")} width="20" height="20" />
-      See the&nbsp;documentation to{" "}
+      {t("DataImportPage5")}
       <a target="_blank" href="https://labelstud.io/guide/predictions.html" rel="noreferrer">
-        import preannotated data
+        {t("DataImportPage4")}
       </a>{" "}
-      or&nbsp;to{" "}
+      {t("DataImportPage6")}
       <a target="_blank" href="https://labelstud.io/guide/storage.html" rel="noreferrer">
-        sync data from a&nbsp;database or&nbsp;cloud storage
+      {t("DataImportPage7")}
       </a>
       .
     </Modal.Footer>
@@ -338,7 +338,7 @@ export const ImportPage = ({
           <input placeholder={t("DatasetURL")} name="url" ref={urlRef} />
           <button type="submit">{t("AddURL")}</button>
         </form>
-        <span>or</span>
+        <span>{t("Or")}</span>
         <button
           type="button"
           onClick={() => document.getElementById("file-input").click()}
@@ -350,16 +350,16 @@ export const ImportPage = ({
         <div
           className={importClass.elem("csv-handling").mod({ highlighted: highlightCsvHandling, hidden: !csvHandling })}
         >
-          <span>Treat CSV/TSV as</span>
+          <span>{t("DataImportPage8")}</span>
           <label>
             <input {...csvProps} value="tasks" checked={csvHandling === "tasks"} /> {t("Listoftasks")}
           </label>
           <label>
-            <input {...csvProps} value="ts" checked={csvHandling === "ts"} /> Time Series or Whole Text File
+            <input {...csvProps} value="ts" checked={csvHandling === "ts"} /> {t("DataImportPage9")}
           </label>
         </div>
         <div className={importClass.elem("status")}>
-          {files.uploaded.length ? `${files.uploaded.length} files uploaded` : ""}
+          {files.uploaded.length ? `${files.uploaded.length} ${t("DataImportPage10")}` : ""}
         </div>
       </header>
 
@@ -392,14 +392,14 @@ export const ImportPage = ({
                 </dl>
                 <b>
                  {t("Supportdependsonthebrowser")}
-                  <br />* – Direct media uploads have{" "}
-                  <a href="https://labelstud.io/guide/tasks.html#Import-data-from-the-Label-Studio-UI">limitations</a>{" "}
-                  and we strongly recommend using{" "}
+                  <br />* – {t("DataImportPage0")}
+                  <a href="https://labelstud.io/guide/tasks.html#Import-data-from-the-Label-Studio-UI">{t("DataImportPage1")}</a>
+                  {t("DataImportPage2")}
 
                   <a href="https://labelstud.io/guide/storage.html" target="_blank" rel="noreferrer">
-                    Cloud Storage
-                  </a>{" "}
-                  instead
+                    {t("StorageSettings0")}
+                  </a>
+                  {t("DataImportPage3")}
                 </b>
               </div>
             </label>

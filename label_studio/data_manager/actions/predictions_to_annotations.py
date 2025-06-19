@@ -8,6 +8,8 @@ from tasks.models import Annotation, Prediction, Task
 from tasks.serializers import TaskSerializerBulk
 from webhooks.models import WebhookAction
 from webhooks.utils import emit_webhooks_for_instance
+from django.utils.translation import gettext_lazy
+
 
 all_permissions = AllPermissions()
 logger = logging.getLogger(__name__)
@@ -81,7 +83,7 @@ def predictions_to_annotations_form(user, project):
                 {
                     'type': 'select',
                     'name': 'model_version',
-                    'label': 'Choose predictions',
+                    'label': gettext_lazy('Choose predictions'),
                     'options': versions,
                 }
             ],
@@ -93,13 +95,11 @@ actions = [
     {
         'entry_point': predictions_to_annotations,
         'permission': all_permissions.tasks_change,
-        'title': 'Create Annotations From Predictions',
+        'title': gettext_lazy('Create Annotations From Predictions'),
         'order': 91,
         'dialog': {
-            'title': 'Create Annotations From Predictions',
-            'text': 'Create annotations from predictions using selected predictions set '
-            'for each selected task.'
-            'Your account will be assigned as an owner to those annotations. ',
+            'title': gettext_lazy('Create Annotations From Predictions'),
+            'text': gettext_lazy('Create annotations from predictions using selected predictions set......'),
             'type': 'confirm',
             'form': predictions_to_annotations_form,
         },

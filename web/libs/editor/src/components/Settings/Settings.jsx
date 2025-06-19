@@ -14,6 +14,7 @@ import * as TagSettings from "./TagSettings";
 import { LsClose } from "../../assets/icons";
 import { Toggle } from "@humansignal/ui";
 import { FF_DEV_3873, isFF } from "../../utils/feature-flags";
+import { t } from '../../../../../language/i18n';
 
 const HotkeysDescription = () => {
   const columns = [
@@ -200,7 +201,7 @@ const DEFAULT_ACTIVE = Object.keys(Settings)[0];
 const DEFAULT_MODAL_SETTINGS = isFF(FF_DEV_3873)
   ? {
       name: "settings-modal",
-      title: "Labeling Interface Settings",
+      title: t("AnnotationSettings11"),
       closeIcon: <LsClose />,
     }
   : {

@@ -38,6 +38,8 @@ from ranged_fileresponse import RangedFileResponse
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
+from django.utils.translation import get_language
+
 
 logger = logging.getLogger(__name__)
 
@@ -174,7 +176,10 @@ def samples_paragraphs(request):
 
 def heidi_tips(request):
     """Fetch live tips from github raw liveContent.json to avoid caching and client side CORS issues"""
-    url = 'https://raw.githubusercontent.com/HumanSignal/label-studio/refs/heads/develop/web/apps/labelstudio/src/components/HeidiTips/liveContent.json'
+    if current_language.startswith('zh'):
+        url = 'https://raw.githubusercontent.com/mongo-hu/label-studio/refs/heads/niii2025/web/apps/labelstudio/src/components/HeidiTips/liveContent_zh.json'
+    else:
+        url = 'https://raw.githubusercontent.com/HumanSignal/label-studio/refs/heads/develop/web/apps/labelstudio/src/components/HeidiTips/liveContent.json'
 
     response = None
     try:

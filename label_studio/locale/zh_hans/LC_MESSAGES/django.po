@@ -1051,3 +1051,71 @@ msgstr "创建账号"
 msgid "Get the latest news from Heidi"
 msgstr "获取来自Heidi的最新消息"
 
+msgid "Retrieve Predictions"
+msgstr "获取预测结果"
+
+msgid "Send the selected tasks to all ML backends connected to the project......"
+msgstr "将选定任务发送至项目关联的所有ML后端。此操作可能因超时被中断。推荐通过Label Studio API更新任务来获取预测结果。请确认操作。"
+
+msgid "Delete Tasks"
+msgstr "删除任务"
+
+msgid "You are going to delete the selected tasks. Please confirm your action"
+msgstr "即将删除选定任务，请确认操作。"
+
+msgid "Delete Annotations"
+msgstr "删除标注"
+
+msgid "You are going to delete all annotations from the selected tasks. Please confirm your action"
+msgstr "即将删除选定任务的所有标注，请确认操作。"
+
+msgid "Delete Predictions"
+msgstr "删除预测结果"
+
+msgid "You are going to delete all predictions from the selected tasks. Please confirm your action"
+msgstr "即将删除选定任务的所有预测结果，请确认操作。"
+
+msgid "Create Annotations From Predictions"
+msgstr "基于预测结果创建标注"
+
+msgid "Create annotations from predictions using selected predictions set......"
+msgstr "基于选定任务的预测集生成标注，您的账户将被设为这些标注的所有者"
+
+msgid "Remove Duplicated Tasks"
+msgstr "删除重复任务"
+
+msgid "Confirm that you want to remove duplicated tasks with the same data fields......"
+msgstr "确认移除具有相同数据字段的重复任务。重复任务将被删除，所有标注将合并至第一个重复任务中。如果任一重复任务包含存储链接，源存储链接将被恢复。警告：任务分配信息（仅企业版功能）将不会被保留。"
+
+msgid "Choose predictions"
+msgstr "选择预测结果"
+
+msgid "Annotations"
+msgstr "标注结果"
+
+msgid "Cancelled"
+msgstr "标注结果"
+
+msgid "Annotated by"
+msgstr "标注人"
+
+msgid "Annotation results"
+msgstr "标注结果"
+
+msgid "Annotation IDs"
+msgstr "标注ID"
+
+msgid "Prediction score"
+msgstr "预测分数"
+
+msgid "Prediction model versions"
+msgstr "模型版本"
+
+msgid "Prediction results"
+msgstr "预测结果"
+
+msgid "Upload filename"
+msgstr "上传文件名"
+
+msgid "Storage filename"
+msgstr "存储文件名"

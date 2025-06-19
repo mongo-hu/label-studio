@@ -8,6 +8,7 @@ import { DynamicPreannotationsToggle } from "../AnnotationTab/DynamicPreannotati
 import { AutoAcceptToggle } from "../AnnotationTab/AutoAcceptToggle";
 import { GroundTruth } from "../CurrentEntity/GroundTruth";
 import { Tooltip } from "../../common/Tooltip/Tooltip";
+import { t } from '../../../../../language/i18n';
 
 export const Actions = ({ store }) => {
   const annotationStore = store.annotationStore;
@@ -39,7 +40,7 @@ export const Actions = ({ store }) => {
         <Button
           icon={<LsSettingsAlt />}
           type="text"
-          aria-label="Settings"
+          aria-label={t("Settings")}
           onClick={() => store.toggleSettings()}
           style={{
             height: 36,

@@ -15,7 +15,7 @@ export const StorageSettings = () => {
   return isAllowCloudStorage ? (
     <Block name="storage-settings">
       <Elem name={"wrapper"}>
-        <h1>Cloud Storage</h1>
+        <h1>{t("StorageSettings0")}</h1>
         <Description style={{ marginTop: 0 }}>
           {t("StorageSettings1")}
         </Description>

@@ -10,6 +10,7 @@ import { TabStore } from "./Tabs";
 import { CustomJSON } from "./types";
 import { User } from "./Users";
 import { ActivityObserver } from "../utils/ActivityObserver";
+import { t } from "../../../../language/i18n";
 
 /**
  * @type {ActivityObserver | null}
@@ -342,12 +343,12 @@ export const AppStore = types
     confirmLabelingConfigured() {
       if (!self.labelingIsConfigured) {
         Modal.confirm({
-          title: "You're almost there!",
-          body: "Before you can annotate the data, set up labeling configuration",
+          title: t("ConfirmPage0"),
+          body: t("ConfirmPage1"),
           onOk() {
             self.SDK.invoke("settingsClicked");
           },
-          okText: "Go to setup",
+          okText: t("ConfirmPage2"),
         });
         return false;
       }

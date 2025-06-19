@@ -26,7 +26,7 @@ import { Tooltip } from "./../../common/Tooltip/Tooltip";
 // @ts-ignore
 import { confirm } from "../../common/Modal/Modal";
 import { observer } from "mobx-react";
-
+import { t }from "../../../../../language/i18n";
 interface AnnotationButtonInterface {
   entity?: any;
   capabilities?: any;
@@ -169,7 +169,7 @@ export const AnnotationButton = observer(
                 <Elem name="icon">
                   <IconTrashRect width={14} height={18} />
                 </Elem>{" "}
-                Delete Annotation
+                {t("AnnotationButtons0")}
               </Elem>
             </>
           )}

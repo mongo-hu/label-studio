@@ -112,7 +112,7 @@ def get_all_columns(project, *_):
     result['columns'] += [
         {
             'id': 'completed_at',
-            'title': 'Completed',
+            'title': gettext_lazy('Completed'),
             'type': 'Datetime',
             'target': 'tasks',
             'help': gettext_lazy('Last annotation date'),
@@ -148,7 +148,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'annotators',
-            'title': 'Annotated by',
+            'title': gettext_lazy('Annotated by'),
             'type': 'List',
             'target': 'tasks',
             'help': gettext_lazy('All users who completed the task'),
@@ -158,7 +158,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'annotations_results',
-            'title': 'Annotation results',
+            'title': gettext_lazy('Annotation results'),
             'type': 'String',
             'target': 'tasks',
             'help': gettext_lazy('Annotation results stacked over all annotations'),
@@ -167,7 +167,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'annotations_ids',
-            'title': 'Annotation IDs',
+            'title': gettext_lazy('Annotation IDs'),
             'type': 'String',
             'target': 'tasks',
             'help': gettext_lazy('Annotation IDs stacked over all annotations'),
@@ -176,7 +176,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'predictions_score',
-            'title': 'Prediction score',
+            'title': gettext_lazy('Prediction score'),
             'type': 'Number',
             'target': 'tasks',
             'help': gettext_lazy('Average prediction score over all task predictions'),
@@ -185,7 +185,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'predictions_model_versions',
-            'title': 'Prediction model versions',
+            'title': gettext_lazy('Prediction model versions'),
             'type': 'List',
             'target': 'tasks',
             'help': gettext_lazy('Model versions aggregated over all predictions'),
@@ -195,7 +195,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'predictions_results',
-            'title': 'Prediction results',
+            'title': gettext_lazy('Prediction results'),
             'type': 'String',
             'target': 'tasks',
             'help': gettext_lazy('Prediction results stacked over all predictions'),
@@ -204,7 +204,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'file_upload',
-            'title': 'Upload filename',
+            'title': gettext_lazy('Upload filename'),
             'type': 'String',
             'target': 'tasks',
             'help': gettext_lazy('Filename of uploaded file'),
@@ -213,7 +213,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'storage_filename',
-            'title': 'Storage filename',
+            'title': gettext_lazy('Storage filename'),
             'type': 'String',
             'target': 'tasks',
             'help': gettext_lazy('Filename from import storage'),
@@ -222,7 +222,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'created_at',
-            'title': 'Created at',
+            'title': gettext_lazy('Created at'),
             'type': 'Datetime',
             'target': 'tasks',
             'help': gettext_lazy('Task creation time'),

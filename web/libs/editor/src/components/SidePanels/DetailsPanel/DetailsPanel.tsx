@@ -11,7 +11,7 @@ import { Relations as RelationsComponent } from "./Relations";
 // eslint-disable-next-line
 // @ts-ignore
 import { RelationsControls } from "./RelationsControls";
-
+import { t } from '../../../../../../language/i18n';
 interface DetailsPanelProps extends PanelProps {
   regions: any;
   selection: any;
@@ -94,7 +94,7 @@ const HistoryTab: FC<any> = inject("store")(
         <Block name="history">
           <Elem name="section-tab">
             <Elem name="section-head">
-              Annotation History
+              {t("AnnotationPage1")}
               <span>#{currentEntity.pk ?? currentEntity.id}</span>
             </Elem>
             <Elem name="section-content">
@@ -113,7 +113,7 @@ const InfoTab: FC<any> = inject("store")(
       <>
         <Block name="info">
           <Elem name="section-tab">
-            <Elem name="section-head">Selection Details</Elem>
+            <Elem name="section-head">{t("AnnotationPage0")}</Elem>
             <RegionsPanel regions={selection} />
           </Elem>
         </Block>
@@ -130,7 +130,7 @@ const GeneralPanel: FC<any> = inject("store")(
       <>
         <Elem name="section">
           <Elem name="section-head">
-            Annotation History
+            {t("AnnotationPage1")}
             <span>#{currentEntity.pk ?? currentEntity.id}</span>
           </Elem>
           <Elem name="section-content">

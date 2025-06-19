@@ -7,6 +7,7 @@ import { Block, Elem } from "../../../utils/bem";
 import { isDefined } from "../../../utils/helpers";
 import "./PeopleList.scss";
 import { CopyableTooltip } from "../../../components/CopyableTooltip/CopyableTooltip";
+import { t } from "../../../../../../language/i18n";
 
 export const PeopleList = ({ onSelect, selectedUser, defaultSelected }) => {
   const api = useAPI();
@@ -65,13 +66,13 @@ export const PeopleList = ({ onSelect, selectedUser, defaultSelected }) => {
               <Elem name="header">
                 <Elem name="column" mix="avatar" />
                 <Elem name="column" mix="email">
-                  Email
+                  {t("PeoplePage5")}
                 </Elem>
                 <Elem name="column" mix="name">
-                  Name
+                  {t("PeoplePage6")}
                 </Elem>
                 <Elem name="column" mix="last-activity">
-                  Last Activity
+                  {t("PeoplePage4")}
                 </Elem>
               </Elem>
               <Elem name="body">

@@ -23,8 +23,8 @@ export const GeneralSettings = () => {
   const colors = ["#FDFDFC", "#FF4C25", "#FF750F", "#ECB800", "#9AC422", "#34988D", "#617ADA", "#CC6FBE"];
 
   const samplings = [
-    { value: "Sequential", label: "Sequential", description: t("GeneralSettings7") },
-    { value: "Uniform", label: "Random", description: t("GeneralSettings9") },
+    { value: "Sequential", label: t("GeneralSettings6"), description: t("GeneralSettings7") },
+    { value: "Uniform", label: t("GeneralSettings8"), description: t("GeneralSettings9") },
   ];
 
   return (
@@ -40,12 +40,12 @@ export const GeneralSettings = () => {
               {isFF(FF_LSDV_E_297) && (
                 <Block name="workspace-placeholder">
                   <Elem name="badge-wrapper">
-                    <Elem name="title">Workspace</Elem>
+                    <Elem name="title">{t("Workspace")}</Elem>
                     <EnterpriseBadge />
                   </Elem>
                   <Select placeholder="Select an option" disabled options={[]} />
                   <Caption>
-                    Simplify project management by organizing projects into workspaces.{" "}
+                  {t("SimplifyProjectManagement")}{" "}
                     <a
                       target="_blank"
                       href={createURL(
@@ -57,7 +57,7 @@ export const GeneralSettings = () => {
                       )}
                       rel="noreferrer"
                     >
-                      Learn more
+                      {t("LearnMore")}
                     </a>
                   </Caption>
                 </Block>
@@ -74,8 +74,8 @@ export const GeneralSettings = () => {
                 {samplings.map(({ value, label, description }) => (
                   <RadioGroup.Button
                     key={value}
-                    value={`${value} sampling`}
-                    label={`${label} sampling`}
+                    value={`${value} `}
+                    label={`${label} `}
                     description={description}
                   />
                 ))}
@@ -85,13 +85,13 @@ export const GeneralSettings = () => {
                     value=""
                     label={
                       <>
-                        Uncertainty sampling <EnterpriseBadge />
+                        {t("GeneralSettings12")} <EnterpriseBadge />
                       </>
                     }
                     disabled
                     description={
                       <>
-                        Tasks are chosen according to model uncertainty score (active learning mode).{" "}
+                        {t("GeneralSettings11")}{" "}
                         <a
                           target="_blank"
                           href={createURL("https://docs.humansignal.com/guide/active_learning", {
@@ -100,7 +100,7 @@ export const GeneralSettings = () => {
                           })}
                           rel="noreferrer"
                         >
-                          Learn more
+                          {t("LearnMore")}
                         </a>
                       </>
                     }
@@ -114,7 +114,7 @@ export const GeneralSettings = () => {
                 <span case="success">Saved!</span>
               </Form.Indicator>
               <Button type="submit" look="primary" style={{ width: 120 }}>
-                Save
+                {t("Save")}
               </Button>
             </Form.Actions>
           </Form>

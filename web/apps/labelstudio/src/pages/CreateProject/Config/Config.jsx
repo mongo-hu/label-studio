@@ -333,7 +333,7 @@ const Configurator = ({
   warning,
   hasChanges,
 }) => {
-  const [configure, setConfigure] = React.useState(isEmptyConfig(config) ? "code" : "visual");
+  const [configure, setConfigure] = React.useState(isEmptyConfig(config) ? t("Code") : t("Visual"));
   const [visualLoaded, loadVisual] = React.useState(configure === "visual");
   const [waiting, setWaiting] = React.useState(false);
   const [saved, setSaved] = React.useState(false);
@@ -532,7 +532,7 @@ const Configurator = ({
               </Block>
             )}
             <Button look="primary" size="compact" style={{ width: 120 }} onClick={onSave} waiting={waiting}>
-              {waiting ? "Saving..." : "Save"}
+              {waiting ? t("Saving") : t("Save")}
             </Button>
             {isFF(FF_UNSAVED_CHANGES) && <UnsavedChanges hasChanges={hasChanges} onSave={onSave} />}
           </Form.Actions>

@@ -69,7 +69,7 @@ export const MachineLearningSettings = () => {
     (backend) => {
       const action = backend ? "updateMLBackend" : "addMLBackend";
       const modalProps = {
-        title: `${backend ? "Edit" : "Connect"} Model`,
+        title: `${backend ? t("Edit") : t("Connect")} ${t("MachineLearning0")}`,
         style: { width: 760 },
         closeOnClickOutside: false,
         body: (
@@ -112,10 +112,10 @@ export const MachineLearningSettings = () => {
             }
             footer={
               <div>
-                Need help?
+                {t("NeedHelp")}?
                 <br />
                 <a href="https://labelstud.io/guide/ml" target="_blank" rel="noreferrer">
-                  Learn more about connecting models in our docs
+                  {t("MachineLearning14")}
                 </a>
               </div>
             }

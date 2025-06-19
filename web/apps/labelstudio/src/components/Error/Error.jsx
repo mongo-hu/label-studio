@@ -6,6 +6,7 @@ import { absoluteURL, copyText } from "../../utils/helpers";
 import { Button } from "../Button/Button";
 import { Space } from "../Space/Space";
 import "./Error.scss";
+import { t } from "../../../../../language/i18n";
 
 const SLACK_INVITE_URL = "https://slack.labelstud.io/?source=product-error-msg";
 
@@ -88,7 +89,7 @@ export const ErrorWrapper = ({
       <Elem name="actions">
         <Space spread>
           <Elem tag={Button} name="action-slack" target="_blank" icon={<LsSlack />} href={SLACK_INVITE_URL}>
-            Ask on Slack
+            {t("AskOnSlack")}
           </Elem>
 
           <Space size="small">

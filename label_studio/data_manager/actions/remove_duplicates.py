@@ -15,6 +15,8 @@ from io_storages.localfiles.models import LocalFilesImportStorageLink
 from io_storages.redis.models import RedisImportStorageLink
 from io_storages.s3.models import S3ImportStorageLink
 from tasks.models import Task
+from django.utils.translation import gettext_lazy
+
 
 logger = logging.getLogger(__name__)
 all_permissions = AllPermissions()
@@ -212,16 +214,11 @@ actions = [
     {
         'entry_point': remove_duplicates,
         'permission': all_permissions.projects_change,
-        'title': 'Remove Duplicated Tasks',
+        'title': gettext_lazy('Remove Duplicated Tasks'),
         'order': 95,
         'experimental': False,
         'dialog': {
-            'text': (
-                'Confirm that you want to remove duplicated tasks with the same data fields. '
-                'Duplicated tasks will be deleted and all annotations will be moved to the first task from duplicated tasks. '
-                'Also Source Storage Links will be restored if at least one duplicated task has a storage link. '
-                "Warning: Task assignments (enterprise only) won't be saved."
-            ),
+            'text': gettext_lazy("Confirm that you want to remove duplicated tasks with the same data fields......"),
             'type': 'confirm',
         },
     },

@@ -64,10 +64,10 @@ export const PredictionsSettings = () => {
             description={t("PredictionsSettings2")}
             footer={
               <div>
-                Need help?
+                {t("NeedHelp")}?
                 <br />
                 <a href="https://labelstud.io/guide/predictions" target="_blank" rel="noreferrer">
-                  Learn more on how to upload predictions in our docs
+                  {t("PredictionsSettings3")}
                 </a>
               </div>
             }

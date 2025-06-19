@@ -4,6 +4,7 @@ import { IconCross } from "@humansignal/ui";
 import { Button, Userpic } from "../../../components";
 import { Block, Elem } from "../../../utils/bem";
 import "./SelectedUser.scss";
+import { t } from "../../../../../../language/i18n";
 
 const UserProjectsLinks = ({ projects }) => {
   return (
@@ -53,7 +54,7 @@ export const SelectedUser = ({ user, onClose }) => {
 
       {!!user.created_projects.length && (
         <Elem name="section">
-          <Elem name="section-title">Created Projects</Elem>
+          <Elem name="section-title">{t("PeoplePage7")}</Elem>
 
           <UserProjectsLinks projects={user.created_projects} />
         </Elem>
@@ -68,7 +69,7 @@ export const SelectedUser = ({ user, onClose }) => {
       )}
 
       <Elem tag="p" name="last-active">
-        Last activity on: {format(new Date(user.last_activity), "dd MMM yyyy, KK:mm a")}
+        {t("PeoplePage8")}: {format(new Date(user.last_activity), "dd MMM yyyy, KK:mm a")}
       </Elem>
     </Block>
   );

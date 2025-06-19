@@ -6,6 +6,7 @@ import { ApiContext } from "../../../providers/ApiProvider";
 import { useProject } from "../../../providers/ProjectProvider";
 import { StorageCard } from "./StorageCard";
 import { StorageForm } from "./StorageForm";
+import { t } from "../../../../../../language/i18n";
 
 export const StorageSet = ({ title, target, rootClass, buttonLabel }) => {
   const api = useContext(ApiContext);
@@ -59,9 +60,9 @@ export const StorageSet = ({ title, target, rootClass, buttonLabel }) => {
 
   const showStorageFormModal = useCallback(
     (storage) => {
-      const action = storage ? "Edit" : "Add";
-      const actionTarget = target === "export" ? "Target" : "Source";
-      const title = `${action} ${actionTarget} Storage`;
+      const action = storage ? t("Edit") : t("Add");
+      const actionTarget = target === "export" ? t("Target") : t("Source");
+      const title = `${action}${actionTarget}${t("Storage")}`;
 
       const modalRef = modal({
         title,
@@ -82,9 +83,9 @@ export const StorageSet = ({ title, target, rootClass, buttonLabel }) => {
         ),
         footer: (
           <>
-            Save completed annotations to Amazon S3, Google Cloud, Microsoft Azure, or Redis.
+            {t("StorageSettings6")}
             <br />
-            <a href="https://labelstud.io/guide/storage.html">See more in the documentation</a>.
+            <a href="https://labelstud.io/guide/storage.html">{t("StorageSettings7")}</a>.
           </>
         ),
       });
