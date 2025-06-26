@@ -8,6 +8,10 @@ import { Block, Elem } from "../utils/bem";
 import { FF_MULTI_OBJECT_HOTKEYS, isFF } from "../utils/feature-flags";
 import { isDefined, isMacOS } from "../utils/utilities";
 import defaultKeymap from "./settings/keymap.json";
+import defaultKeymap_zh from "./settings/keymap_zh.json"
+import { t } from '../../../../language/i18n';
+import i18n from 'i18next';
+const currentLanguage = i18n.language.split("-")[0] || "en";
 
 type Keymap = typeof defaultKeymap;
 
@@ -391,7 +395,11 @@ Hotkey.INPUT_SCOPE = INPUT_SCOPE;
 
 Hotkey.ALL_SCOPES = [DEFAULT_SCOPE, INPUT_SCOPE].join(",");
 
-Hotkey.keymap = { ...defaultKeymap } as Keymap;
+// Hotkey.keymap = { ...defaultKeymap } as Keymap;
+Hotkey.keymap = currentLanguage === "zh"
+  ? { ...defaultKeymap_zh }
+  : { ...defaultKeymap } as Keymap;
+
 
 Hotkey.setKeymap = (newKeymap: Keymap) => {
   validateKeymap(newKeymap);

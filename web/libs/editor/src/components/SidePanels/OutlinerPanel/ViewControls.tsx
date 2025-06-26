@@ -22,6 +22,7 @@ import { SidePanelsContext } from "../SidePanelsContext";
 import "./ViewControls.scss";
 import { FF_DEV_3873, FF_LSDV_4992, isFF } from "../../../utils/feature-flags";
 import { observer } from "mobx-react";
+import { t } from "../../../../../../language/i18n";
 
 const { Block, Elem } = BemWithSpecifiContext();
 
@@ -48,24 +49,24 @@ export const ViewControls: FC<ViewControlsProps> = observer(
       switch (value) {
         case "manual":
           return {
-            label: "Group Manually",
-            selectedLabel: isFF(FF_DEV_3873) ? "Manual" : "Manual Grouping",
+            label: t("AnnotationPage3"),
+            selectedLabel: isFF(FF_DEV_3873) ? t("AnnotationPage6") : "Manual Grouping",
             icon: <IconList />,
-            tooltip: "Manually Grouped",
+            tooltip: t("AnnotationPage15"),
           };
         case "label":
           return {
-            label: "Group by Label",
-            selectedLabel: isFF(FF_DEV_3873) ? (isFF(FF_LSDV_4992) ? "By Label" : "Label") : "Grouped by Label",
+            label: t("AnnotationPage4"),
+            selectedLabel: isFF(FF_DEV_3873) ? (isFF(FF_LSDV_4992) ? t("AnnotationPage12") : "Label") : "Grouped by Label",
             icon: <IconTagAlt />,
-            tooltip: "Grouped by Label",
+            tooltip: t("AnnotationPage16"),
           };
         case "type":
           return {
-            label: "Group by Tool",
-            selectedLabel: isFF(FF_DEV_3873) ? (isFF(FF_LSDV_4992) ? "By Tool" : "Tool") : "Grouped by Tool",
+            label: t("AnnotationPage5"),
+            selectedLabel: isFF(FF_DEV_3873) ? (isFF(FF_LSDV_4992) ? t("AnnotationPage11") : "Tool") : "Grouped by Tool",
             icon: <IconCursor />,
-            tooltip: "Grouped by Tool",
+            tooltip: t("AnnotationPage17"),
           };
       }
     }, []);
@@ -74,14 +75,14 @@ export const ViewControls: FC<ViewControlsProps> = observer(
       switch (value) {
         case "date":
           return {
-            label: "Order by Time",
-            selectedLabel: "By Time",
+            label: t("AnnotationPage9"),
+            selectedLabel: t("AnnotationPage7"),
             icon: <IconDetails />,
           };
         case "score":
           return {
-            label: "Order by Score",
-            selectedLabel: "By Score",
+            label: t("AnnotationPage10"),
+            selectedLabel: t("AnnotationPage8"),
             icon: <IconSpeed />,
           };
       }
@@ -279,7 +280,7 @@ const ToggleRegionsVisibilityButton = observer<FC<ToggleRegionsVisibilityButton>
       mod={{ hidden: isAllHidden }}
       aria-label={isAllHidden ? "Show all regions" : "Hide all regions"}
       icon={isAllHidden ? <IconOutlinerEyeClosed /> : <IconOutlinerEyeOpened />}
-      tooltip={isAllHidden ? "Show all regions" : "Hide all regions"}
+      tooltip={isAllHidden ? t("AnnotationPage13") : t("AnnotationPage14")}
       tooltipTheme="dark"
     />
   );

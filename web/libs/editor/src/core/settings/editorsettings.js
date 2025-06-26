@@ -1,8 +1,9 @@
+import { t } from '../../../../../language/i18n';
 export default {
   enableHotkeys: {
     newUI: {
-      title: "Labeling hotkeys",
-      description: "Enables quick selection of labels using hotkeys",
+      title: t("AnnotationUISettings1"),
+      description: t("AnnotationUISettings2"),
     },
     description: "Enable labeling hotkeys",
     onChangeEvent: "toggleHotkeys",
@@ -10,8 +11,8 @@ export default {
   },
   enableTooltips: {
     newUI: {
-      title: "Show hotkeys on tooltips",
-      description: "Displays keybindings on tools and actions tooltips",
+      title: t("AnnotationUISettings5"),
+      description: t("AnnotationUISettings6"),
     },
     description: "Show hotkey tooltips",
     onChangeEvent: "toggleTooltips",
@@ -20,8 +21,8 @@ export default {
   },
   enableLabelTooltips: {
     newUI: {
-      title: "Show hotkeys on labels",
-      description: "Displays keybindings on labels",
+      title: t("AnnotationUISettings3"),
+      description: t("AnnotationUISettings4"),
     },
     description: "Show labels hotkey tooltips",
     onChangeEvent: "toggleLabelTooltips",
@@ -29,8 +30,8 @@ export default {
   },
   showLabels: {
     newUI: {
-      title: "Show region labels",
-      description: "Display region label names",
+      title: t("AnnotationUISettings7"),
+      description: t("AnnotationUISettings8"),
     },
     description: "Show labels inside the regions",
     onChangeEvent: "toggleShowLabels",
@@ -38,8 +39,8 @@ export default {
   },
   continuousLabeling: {
     newUI: {
-      title: "Keep label selected after creating a region",
-      description: "Allows continuous region creation using the selected label",
+      title: t("AnnotationUISettings9"),
+      description: t("AnnotationUISettings10"),
     },
     description: "Keep label selected after creating a region",
     onChangeEvent: "toggleContinuousLabeling",
@@ -47,8 +48,8 @@ export default {
   },
   selectAfterCreate: {
     newUI: {
-      title: "Select region after creating it",
-      description: "Automatically selects newly created regions",
+      title: t("AnnotationUISettings11"),
+      description: t("AnnotationUISettings12"),
     },
     description: "Select regions after creating",
     onChangeEvent: "toggleSelectAfterCreate",
@@ -57,8 +58,8 @@ export default {
   showLineNumbers: {
     newUI: {
       tags: "Text Tag",
-      title: "Show line numbers",
-      description: "Identify and reference specific lines of text in your document",
+      title: t("AnnotationUISettings13"),
+      description: t("AnnotationUISettings37"),
     },
     description: "Show line numbers for Text",
     onChangeEvent: "toggleShowLineNumbers",
@@ -67,8 +68,8 @@ export default {
   preserveSelectedTool: {
     newUI: {
       tags: "Image Tag",
-      title: "Keep selected tool",
-      description: "Persists the selected tool across tasks",
+      title: t("AnnotationUISettings15"),
+      description: t("AnnotationUISettings16"),
     },
     description: "Remember Selected Tool",
     onChangeEvent: "togglepreserveSelectedTool",
@@ -77,8 +78,8 @@ export default {
   enableSmoothing: {
     newUI: {
       tags: "Image Tag",
-      title: "Pixel smoothing on zoom",
-      description: "Smooth image pixels when zoomed in",
+      title: t("AnnotationUISettings17"),
+      description: t("AnnotationUISettings18"),
     },
     description: "Enable image smoothing when zoom",
     onChangeEvent: "toggleSmoothing",

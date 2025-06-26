@@ -9,6 +9,7 @@ import { useProject } from "../../providers/ProjectProvider";
 import { Block, Elem } from "../../utils/bem";
 import { IconInfo } from "../../assets/icons";
 import { useHistory } from "react-router";
+import { t } from "../../../../../language/i18n";
 
 const Webhook = () => {
   const [activeWebhook, setActiveWebhook] = useState(null);
@@ -118,12 +119,11 @@ const Webhook = () => {
         </Elem>
         <Elem name="footer-text">
           <p>
-            Webhooks allow external services to be notified when certain events happen. When the specified events occur,
-            a POST request is sent to each of the URLs you provide.
+            {t("WebhooksPage0")}
           </p>
           <p>
             <a href="https://labelstud.io/guide/webhooks.html" target="_blank" rel="noreferrer">
-              Read more in the documentation
+              {t("WebhooksPage1")}
             </a>
             .
           </p>
@@ -134,7 +134,7 @@ const Webhook = () => {
 };
 
 export const WebhookPage = {
-  title: "Webhooks",
+  title: t("Webhooks"),
   path: "/webhooks",
   component: Webhook,
 };

@@ -57,6 +57,7 @@ from webhooks.models import WebhookAction
 from webhooks.utils import api_webhook, api_webhook_for_delete, emit_webhooks_for_instance
 
 from label_studio.core.utils.common import load_func
+from django.utils.translation import get_language
 
 logger = logging.getLogger(__name__)
 
@@ -789,7 +790,14 @@ class ProjectTaskListAPI(GetParentObjectMixin, generics.ListCreateAPIView, gener
 
 
 def read_templates_and_groups():
-    annotation_templates_dir = find_dir('annotation_templates')
+    current_language = get_language()
+    print("\n\nsyt: ", current_language, '\n\n\n')
+    if current_language.startswith('zh'):
+        annotation_templates_dir = find_dir('annotation_templates_zh')
+        template_groups_file = find_file(os.path.join('annotation_templates_zh', 'groups.txt'))
+    else:
+        annotation_templates_dir = find_dir('annotation_templates_zh')
+        template_groups_file = find_file(os.path.join('annotation_templates_zh', 'groups.txt'))
     configs = []
     for config_file in pathlib.Path(annotation_templates_dir).glob('**/*.yml'):
         config = read_yaml(config_file)
@@ -800,7 +808,7 @@ def read_templates_and_groups():
             # if hostname set manually, create full image urls
             config['image'] = settings.HOSTNAME + config['image']
         configs.append(config)
-    template_groups_file = find_file(os.path.join('annotation_templates', 'groups.txt'))
+    
     with open(template_groups_file, encoding='utf-8') as f:
         groups = f.read().splitlines()
     logger.debug(f'{len(configs)} templates found.')

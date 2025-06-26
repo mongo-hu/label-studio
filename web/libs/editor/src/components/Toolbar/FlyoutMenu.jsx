@@ -1,8 +1,9 @@
 import { Block, Elem } from "../../utils/bem";
 import { Fragment, useEffect, useState } from "react";
 import { Hotkey } from "../../core/Hotkey";
+import { t } from "../../../../../language/i18n";
 
-const hotkeys = Hotkey("SegmentationToolbar", "Segmentation Tools");
+const hotkeys = Hotkey("SegmentationToolbar", t("AnnotationUISettings30"));
 
 const keysDictionary = {
   plus: "+",
@@ -96,7 +97,7 @@ export const FlyoutMenu = ({ items, icon }) => {
         setClicked(!isClicked);
       }}
     >
-      <Elem name="icon" className={`${isClicked ? "isClicked" : ""}`} title="Zoom presets (click to see options)">
+      <Elem name="icon" className={`${isClicked ? "isClicked" : ""}`} title={t("AnnotationUISettings38")}>
         {icon}
       </Elem>
       <Block name="tooltips" tag="div">

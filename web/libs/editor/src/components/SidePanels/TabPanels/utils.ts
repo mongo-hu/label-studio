@@ -21,6 +21,7 @@ import {
   type StoredPanelState,
   type ViewportSize,
 } from "./types";
+import { t } from "../../../../../../language/i18n";
 
 export const determineLeftOrRight = (event: any, droppableElement?: ReactNode) => {
   const element = droppableElement || (event.target as HTMLElement);
@@ -130,26 +131,26 @@ export const panelComponents: { [key: string]: FC<PanelProps> } = {
 const panelViews = [
   {
     name: "regions",
-    title: "Regions",
+    title: t("Regions"),
     component: panelComponents.regions as FC<PanelProps>,
     active: true,
   },
   {
     name: "history",
-    title: "History",
+    title: t("History"),
     component: panelComponents.history as FC<PanelProps>,
     active: false,
   },
 
   {
     name: "relations",
-    title: "Relations",
+    title: t("Relations"),
     component: panelComponents.relations as FC<PanelProps>,
     active: false,
   },
   {
     name: "info",
-    title: "Info",
+    title: t("Info"),
     component: panelComponents.info as FC<PanelProps>,
     active: true,
   },

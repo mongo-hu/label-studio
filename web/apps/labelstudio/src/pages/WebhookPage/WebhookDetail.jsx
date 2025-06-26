@@ -10,6 +10,7 @@ import "./WebhookPage.scss";
 import { Space } from "../../components/Space/Space";
 import { useProject } from "../../providers/ProjectProvider";
 import { WebhookDeleteModal } from "./WebhookDeleteModal";
+import { t } from "../../../../../language/i18n";
 
 const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectActive }) => {
   // if webhook === null - create mod
@@ -93,9 +94,9 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               onSelectActive(null);
             }}
           >
-            Webhooks
+            {t("Webhooks")}
           </Elem>{" "}
-          / {webhook === null ? "New Webhook" : "Edit Webhook"}
+          / {webhook === null ? t("WebhooksPage2") : t("WebhooksPage3")}
         </>
       </Elem>
       <Elem name="content">
@@ -123,7 +124,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
             }}
           >
             <Form.Row columnCount={1}>
-              <Label text="Payload URL" large />
+              <Label text={t("WebhooksPage4")}  large />
               <Space className={rootClass.elem("url-space")}>
                 <Input name="url" className={rootClass.elem("url-input")} placeholder="URL" />
                 <Space align="end" className={rootClass.elem("activator")}>
@@ -142,7 +143,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               <div className={rootClass.elem("headers")}>
                 <div className={rootClass.elem("headers-content")}>
                   <Space spread className={rootClass.elem("headers-control")}>
-                    <Label text="Headers" large />
+                    <Label text={t("WebhooksPage9") } large />
                     <Button
                       type="button"
                       onClick={onAddHeaderClick}
@@ -183,7 +184,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
             </Form.Row>
             <Block name="webhook-payload">
               <Elem name="title">
-                <Label text="Payload" large />
+                <Label text={t("WebhooksPage5") } large />
               </Elem>
               <Elem name="content">
                 <Elem name="content-row">
@@ -193,14 +194,14 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                     onChange={(e) => {
                       setSendPayload(e.target.checked);
                     }}
-                    label="Send payload"
+                    label={t("WebhooksPage6") }
                   />
                 </Elem>
                 <Elem name="content-row">
                   <Toggle
                     skip
                     checked={sendForAllActions}
-                    label="Send for all actions"
+                    label={t("WebhooksPage7")}
                     onChange={(e) => {
                       setSendForAllActions(e.target.checked);
                     }}
@@ -261,7 +262,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                 Cancel
               </Button>
               <Button primary className={rootClass.elem("save-button")}>
-                {webhook === null ? "Add Webhook" : "Save"}
+                {webhook === null ? t("WebhooksPage8")  : t("Save") }
               </Button>
             </Elem>
           </Form>

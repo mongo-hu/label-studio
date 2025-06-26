@@ -671,7 +671,7 @@ msgid "Deleted review"
 msgstr "删除的审查"
 
 #: .\label_studio\tasks\models.py:88 .\label_studio\tasks\models.py:602
-msgid "updated by"
+msgid "Updated by"
 msgstr "更新者"
 
 #: .\label_studio\tasks\models.py:92
@@ -723,7 +723,7 @@ msgid "draft created at"
 msgstr "草稿创建于"
 
 #: .\label_studio\tasks\models.py:617 .\label_studio\tasks\models.py:782
-msgid "lead time"
+msgid "Lead time"
 msgstr "处理时间"
 
 #: .\label_studio\tasks\models.py:623
@@ -1030,7 +1030,7 @@ msgstr "查看用例"
 msgid "See all templates"
 msgstr "查看所有模板"
 
-msgid "Sign Up"
+msgid "Sign up"
 msgstr "注册"
 
 msgid "How did you hear about Label Studio?"
@@ -1119,3 +1119,63 @@ msgstr "上传文件名"
 
 msgid "Storage filename"
 msgstr "存储文件名"
+
+msgid "E-mail"
+msgstr "邮箱"
+
+msgid "Registered"
+msgstr "已注册"
+
+msgid "user ID"
+msgstr "用户ID"
+
+msgid "Access Token"
+msgstr "访问Token"
+
+msgid "Use this token to authenticate with our API:"
+msgstr "使用此Token通过我们的API进行身份验证："
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "Renew"
+msgstr "刷新"
+
+msgid "Documentation"
+msgstr "文档"
+
+msgid "Your active organization"
+msgstr "您的活跃组织"
+
+msgid "Annotations completed by you"
+msgstr "您完成的注释"
+
+msgid "Projects contributed by you"
+msgstr "您参与的项目"
+
+msgid "Organization ID"
+msgstr "组织ID"
+
+msgid "Organization owner"
+msgstr "组织所有者"
+
+msgid "Organization created at"
+msgstr "组织创建时间"
+
+msgid "Notifications"
+msgstr "通知"
+
+msgid "Email and other notifications"
+msgstr "电子邮件和其他通知"
+
+msgid "Get the latest news & tips from Heidi"
+msgstr "从Heidi获取最新的消息和提示"
+
+msgid "Example fetch projects data:"
+msgstr "获取项目数据的示例:"
+
+msgid "Don't have an account?"
+msgstr "没有账号？"
+
+msgid "Drafts"
+msgstr "草稿"

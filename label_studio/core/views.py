@@ -175,6 +175,8 @@ def samples_paragraphs(request):
 
 
 def heidi_tips(request):
+    current_language = get_language()
+    print("\n\n\nsyt heidi: ", current_language, "\n\n\n")
     """Fetch live tips from github raw liveContent.json to avoid caching and client side CORS issues"""
     if current_language.startswith('zh'):
         url = 'https://raw.githubusercontent.com/mongo-hu/label-studio/refs/heads/niii2025/web/apps/labelstudio/src/components/HeidiTips/liveContent_zh.json'

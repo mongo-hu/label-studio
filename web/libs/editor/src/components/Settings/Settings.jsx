@@ -18,8 +18,8 @@ import { t } from '../../../../../language/i18n';
 
 const HotkeysDescription = () => {
   const columns = [
-    { title: "Shortcut", dataIndex: "combo", key: "combo" },
-    { title: "Description", dataIndex: "descr", key: "descr" },
+    { title: t("AnnotationUISettings32"), dataIndex: "combo", key: "combo" },
+    { title: t("AnnotationUISettings19"), dataIndex: "descr", key: "descr" },
   ];
 
   const keyNamespaces = Hotkey.namespaces();
@@ -188,8 +188,8 @@ const LayoutSettings = observer(({ store }) => {
 });
 
 const Settings = {
-  General: { name: "General", component: GeneralSettings },
-  Hotkeys: { name: "Hotkeys", component: HotkeysDescription },
+  General: { name: t("GeneralSettings0"), component: GeneralSettings },
+  Hotkeys: { name: t("AnnotationUISettings1"), component: HotkeysDescription },
 };
 
 if (!isFF(FF_DEV_3873)) {

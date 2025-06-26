@@ -4,6 +4,7 @@ import { useAPI } from "../../../providers/ApiProvider";
 import { cn } from "../../../utils/bem";
 import "./Config.scss";
 import { IconInfo } from "../../../assets/icons";
+import { t } from "../../../../../../language/i18n";
 
 const listClass = cn("templates-list");
 
@@ -68,7 +69,7 @@ export const TemplatesList = ({ selectedGroup, selectedRecipe, onCustomTemplate,
           ))}
         </ul>
         <button type="button" onClick={onCustomTemplate} className={listClass.elem("custom-template")}>
-          Custom template
+          {t("AnnotationSettings12")}
         </button>
       </aside>
       <main>
@@ -77,9 +78,9 @@ export const TemplatesList = ({ selectedGroup, selectedRecipe, onCustomTemplate,
       </main>
       <footer>
         <IconInfo className={listClass.elem("info-icon")} width="20" height="20" />
-        See the documentation to{" "}
+        {t("AnnotationSettings14")}
         <a href="https://labelstud.io/guide" target="_blank" rel="noreferrer">
-          contribute a template
+          {t("AnnotationSettings13")}
         </a>
         .
       </footer>

@@ -106,19 +106,19 @@
       <header>{% translate "Account info" %}</header>
       <ul>
         <li class="field">
-          <label for="">E-mail</label>
+          <label for="">{% translate "E-mail" %}</label>
           <input type="text" class="lsf-input-ls" value="{{user.email}}" disabled />
         </li>
         <li class="field">
-          <label for="">First Name</label>
+          <label for="">{% translate "first name" %}</label>
           <input type="text" class="lsf-input-ls" name="first_name" value="{{user.first_name}}" />
         </li>
         <li class="field">
-          <label for="">Last Name</label>
+          <label for="">{% translate "last name" %}</label>
           <input type="text" class="lsf-input-ls" name="last_name" value="{{user.last_name}}" />
         </li>
         <li class="field">
-          <label for="">Phone</label>
+          <label for="">{% translate "phone" %}</label>
           <input type="text" class="lsf-input-ls" name="phone" value="{{user.phone}}" />
           <!-- <span>We'll send you sms with code if you change your number</span>
           <span class="error">Incorrect phone number!</span> -->
@@ -153,14 +153,14 @@
         </div> -->
       </div>
       <footer>
-        <p class="secondary">Registered {{ user.date_joined|date:"M j, Y" }}, user ID {{ user.id }}</p>
+        <p class="secondary">{% translate "Registered" %} {{ user.date_joined|date:"M j, Y" }}, {% translate "user ID" %} {{ user.id }}</p>
         <button class="lsf-button-ls lsf-button-ls_look_primary" onclick="smart_submit()">{% translate "Save" %}</button>
       </footer>
     </form>
 
     <!-- Token -->
     <form action="" class="access_token__info">
-      <header>Access Token</header>
+      <header>{% translate "Access Token" %}</header>
       <div class="field field--wide">
         <label for="access_token">{% translate "Use this token to authenticate with our API:" %}</label>
         <input id="access_token" class="lsf-input-ls" name="access_token" type="text" value="{{token}}" readonly />
@@ -171,7 +171,7 @@
       </div>
       <!-- Example -->
       <div class="field field--wide">
-        <label for="example_fetch">Example fetch projects data:</label>
+        <label for="example_fetch">{% translate "Example fetch projects data:" %}</label>
         <textarea id="example_fetch" class="example_code ls-textarea" type="text" readonly
                   style="height: 92px; font-size: 14px">
           {% if settings.HOSTNAME %}
@@ -181,7 +181,7 @@
           {% endif %}
         </textarea>
         <p class="actions">
-          <button type="button" class="blinking-status lsf-button-ls" data-copy="example_fetch">Copy</button>
+          <button type="button" class="blinking-status lsf-button-ls" data-copy="example_fetch">{% translate "Copy" %}</button>
 
           {% block api_docs %}
           <a
@@ -189,7 +189,7 @@
             href="https://labelstud.io/guide/api.html"
             target="_blank"
           >
-            Documentation
+          {% translate "Documentation" %}
           </a>
           {% endblock %}
         </p>
@@ -202,7 +202,7 @@
       <header>
         {{ user.active_organization.title }}
         <br>
-        <sub>Your active organization</sub>
+        <sub>{% translate "Your active organization" %}</sub>
       </header>
 
       <table>
@@ -211,12 +211,12 @@
             <tr><td>Your role</td><td>{{ user.get_pretty_role }}</td></tr>
           {% endif %}
         {% endwith %}
-        <tr><td>Annotations completed by you</td><td>{{ user.active_organization_annotations.count }}</td></tr>
-        <tr><td>Projects contributed by you</td><td>{{ user.active_organization_contributed_project_number }}</td></tr>
+        <tr><td>{% translate "Annotations completed by you" %}</td><td>{{ user.active_organization_annotations.count }}</td></tr>
+        <tr><td>{% translate "Projects contributed by you" %}</td><td>{{ user.active_organization_contributed_project_number }}</td></tr>
         <tr><td></td><td></td></tr>
-        <tr><td style="min-width: 75px">Organization ID</td><td>{{ user.active_organization.id }}</td></tr>
-        <tr><td>Organization owner</td><td>{{ user.active_organization.created_by }}</td></tr>
-        <tr><td>Organization created at</td><td>{{ user.active_organization.created_at }}</td></tr>
+        <tr><td style="min-width: 75px">{% translate "Organization ID" %}</td><td>{{ user.active_organization.id }}</td></tr>
+        <tr><td>{% translate "Organization owner" %}</td><td>{{ user.active_organization.created_by }}</td></tr>
+        <tr><td>{% translate "Organization created at" %}</td><td>{{ user.active_organization.created_at }}</td></tr>
       </table>
 
     </form>
@@ -225,9 +225,9 @@
     {% block notifications %}
     <form action="{% url 'user-detail' pk=user.pk %}?update-notifications=1" method="patch" class="notifications block-info" id="notifications">
       <header>
-        Notifications
+        {% translate "Notifications" %}
         <br>
-        <sub>Email and other notifications</sub>
+        <sub>{% translate "Email and other notifications" %}</sub>
       </header>
 
       <table>
@@ -242,7 +242,7 @@
                  onclick="smart_submit()">
 
           <label for="allow_newsletters_visual" style="display: inline-block; cursor: pointer; margin-top: -10px">
-            Get the latest news & tips from Heidi
+            {% translate "Get the latest news & tips from Heidi" %}
             <img src="{{ settings.HOSTNAME }}{% static 'images/heidi.png' %}" alt="Heidi"
                  width="25" style="display: inline; margin: 0; position: relative; top: 5px; left: 0">
           </label>

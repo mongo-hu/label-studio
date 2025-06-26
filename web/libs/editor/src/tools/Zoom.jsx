@@ -7,6 +7,7 @@ import ToolMixin from "../mixins/Tool";
 import { Tool } from "../components/Toolbar/Tool";
 import { FlyoutMenu } from "../components/Toolbar/FlyoutMenu";
 import { IconExpand, IconHandTool, IconZoomIn, IconZoomOut } from "../assets/icons";
+import  { t } from "../../../../language/i18n";
 
 const ToolView = observer(({ item }) => {
   return (
@@ -15,7 +16,7 @@ const ToolView = observer(({ item }) => {
         active={item.selected}
         icon={<IconHandTool />}
         ariaLabel="pan"
-        label="Pan Image"
+        label={t("AnnotationUISettings34")}
         shortcut="H"
         onClick={() => {
           const sel = item.selected;
@@ -26,7 +27,7 @@ const ToolView = observer(({ item }) => {
       <Tool
         icon={<IconZoomIn />}
         ariaLabel="zoom-in"
-        label="Zoom In"
+        label={t("AnnotationUISettings35")}
         shortcut="ctrl+plus"
         onClick={() => {
           item.handleZoom(1);
@@ -36,14 +37,14 @@ const ToolView = observer(({ item }) => {
         icon={<IconExpand />}
         items={[
           {
-            label: "Zoom to fit",
+            label: t("AnnotationUISettings39"),
             shortcut: "shift+1",
             onClick: () => {
               item.sizeToFit();
             },
           },
           {
-            label: "Zoom to actual size",
+            label: t("AnnotationUISettings40"),
             shortcut: "shift+2",
             onClick: () => {
               item.sizeToOriginal();
@@ -54,7 +55,7 @@ const ToolView = observer(({ item }) => {
       <Tool
         icon={<IconZoomOut />}
         ariaLabel="zoom-out"
-        label="Zoom Out"
+        label={t("AnnotationUISettings36")}
         shortcut="ctrl+minus"
         onClick={() => {
           item.handleZoom(-1);

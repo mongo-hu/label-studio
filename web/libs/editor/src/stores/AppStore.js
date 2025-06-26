@@ -28,8 +28,9 @@ import {
 } from "../utils/feature-flags";
 import { CommentStore } from "./Comment/CommentStore";
 import { CustomButton } from "./CustomButton";
+import { t } from "../../../../language/i18n";
 
-const hotkeys = Hotkey("AppStore", "Global Hotkeys");
+const hotkeys = Hotkey("AppStore", t("AnnotationUISettings31"));
 
 export default types
   .model("AppStore", {

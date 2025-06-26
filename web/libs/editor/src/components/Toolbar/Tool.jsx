@@ -4,8 +4,9 @@ import { useContext, useEffect, useMemo, useState } from "react";
 import { Fragment } from "react";
 import { Hotkey } from "../../core/Hotkey";
 import { ToolbarContext } from "./ToolbarContext";
+import { t } from "../../../../../language/i18n";
 
-const hotkeys = Hotkey("SegmentationToolbar", "Segmentation Tools");
+const hotkeys = Hotkey("SegmentationToolbar", t("AnnotationUISettings30"));
 
 const keysDictionary = {
   plus: "+",
