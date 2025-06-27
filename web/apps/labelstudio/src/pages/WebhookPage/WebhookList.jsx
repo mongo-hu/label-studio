@@ -8,6 +8,7 @@ import "./WebhookPage.scss";
 import { format } from "date-fns";
 import { useAPI } from "../../providers/ApiProvider";
 import { WebhookDeleteModal } from "./WebhookDeleteModal";
+import { t } from "../../../../../language/i18n";
 
 const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) => {
   const api = useAPI();
@@ -30,9 +31,9 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
 
   return (
     <Block name="webhook">
-      <h1>Webhooks</h1>
+      <h1>{t("Webhooks")}</h1>
       <Elem name="controls">
-        <Button onClick={onAddWebhook}>Add Webhook</Button>
+        <Button onClick={onAddWebhook}>{t("WebhooksPage8")}</Button>
       </Elem>
       <Elem>
         {webhooks.length === 0 ? null : (
@@ -48,11 +49,11 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
                       {obj.url}
                     </Elem>
                   </Elem>
-                  <Elem name="item-date">Created {format(new Date(obj.created_at), "dd MMM yyyy, HH:mm")}</Elem>
+                  <Elem name="item-date">{t("Created")} {format(new Date(obj.created_at), "dd MMM yyyy, HH:mm")}</Elem>
                 </Elem>
                 <Elem name="item-control">
                   <Button onClick={() => onSelectActive(obj.id)} icon={<LsPencil />}>
-                    Edit
+                    {t("Edit")}
                   </Button>
                   <Button
                     onClick={() =>
@@ -66,7 +67,7 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
                     look="danger"
                     icon={<IconCross />}
                   >
-                    Delete
+                    {t("Delete")}
                   </Button>
                 </Elem>
               </Elem>

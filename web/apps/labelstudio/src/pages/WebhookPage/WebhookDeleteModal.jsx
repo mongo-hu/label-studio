@@ -3,17 +3,18 @@ import { modal } from "../../components/Modal/Modal";
 import { useModalControls } from "../../components/Modal/ModalPopup";
 import { Space } from "../../components/Space/Space";
 import { cn } from "../../utils/bem";
+import { t } from "../../../../../language/i18n";
 
 export const WebhookDeleteModal = ({ onDelete }) => {
   return modal({
-    title: "Delete",
+    title: t("Delete"),
     body: () => {
       const ctrl = useModalControls();
       const rootClass = cn("webhook-delete-modal");
       return (
         <div className={rootClass}>
           <div className={rootClass.elem("modal-text")}>
-            Are you sure you want to delete the webhook? This action cannot be undone.
+            {t("WebhooksPage11")}
           </div>
         </div>
       );
@@ -29,7 +30,7 @@ export const WebhookDeleteModal = ({ onDelete }) => {
               ctrl.hide();
             }}
           >
-            Cancel
+            {t("Cancel")}
           </Button>
           <Button
             look="destructive"
@@ -39,7 +40,7 @@ export const WebhookDeleteModal = ({ onDelete }) => {
               ctrl.hide();
             }}
           >
-            Delete
+            {t("Delete")}
           </Button>
         </Space>
       );

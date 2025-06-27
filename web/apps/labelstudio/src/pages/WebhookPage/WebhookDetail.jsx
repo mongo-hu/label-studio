@@ -128,7 +128,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               <Space className={rootClass.elem("url-space")}>
                 <Input name="url" className={rootClass.elem("url-input")} placeholder="URL" />
                 <Space align="end" className={rootClass.elem("activator")}>
-                  <span className={rootClass.elem("black-text")}>Is Active</span>
+                  <span className={rootClass.elem("black-text")}>{t("WebhooksPage10")}</span>
                   <Toggle
                     skip
                     checked={isActive}
@@ -252,14 +252,14 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                     })
                   }
                 >
-                  Delete Webhook
+                  {t("WebhooksPage12")}
                 </Button>
               )}
               <div className={rootClass.elem("status")}>
                 <Form.Indicator />
               </div>
               <Button type="button" className={rootClass.elem("cancel-button")} onClick={onBack}>
-                Cancel
+                {t("Cancel")}
               </Button>
               <Button primary className={rootClass.elem("save-button")}>
                 {webhook === null ? t("WebhooksPage8")  : t("Save") }
