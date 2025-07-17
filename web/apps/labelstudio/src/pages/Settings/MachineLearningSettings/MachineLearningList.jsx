@@ -9,6 +9,7 @@ import { Oneof } from "../../../components/Oneof/Oneof";
 import { Tooltip } from "../../../components/Tooltip/Tooltip";
 import { ApiContext } from "../../../providers/ApiProvider";
 import { Block, cn } from "../../../utils/bem";
+import { t } from '../../../../../../language/i18n'
 
 import "./MachineLearningList.scss";
 
@@ -47,8 +48,8 @@ const BackendCard = ({ backend, onStartTrain, onEdit, onDelete, onTestRequest })
   const confirmDelete = useCallback(
     (backend) => {
       confirm({
-        title: "Delete ML Backend",
-        body: "This action cannot be undone. Are you sure?",
+        title: t("MachineLearning26"),
+        body: t("MachineLearning27"),
         buttonLook: "destructive",
         onOk() {
           onDelete?.(backend);
@@ -73,12 +74,12 @@ const BackendCard = ({ backend, onStartTrain, onEdit, onDelete, onTestRequest })
             align="right"
             content={
               <Menu size="medium" contextual>
-                <Menu.Item onClick={() => onEdit(backend)}>Edit</Menu.Item>
-                <Menu.Item onClick={() => onTestRequest(backend)}>Send Test Request</Menu.Item>
-                <Menu.Item onClick={() => onStartTrain(backend)}>Start Training</Menu.Item>
+                <Menu.Item onClick={() => onEdit(backend)}>{t("Edit")}</Menu.Item>
+                <Menu.Item onClick={() => onTestRequest(backend)}>{t("MachineLearning24")}</Menu.Item>
+                <Menu.Item onClick={() => onStartTrain(backend)}>{t("MachineLearning25")}</Menu.Item>
                 <Menu.Divider />
                 <Menu.Item onClick={() => confirmDelete(backend)} isDangerous>
-                  Delete
+                  {t("Delete")}
                 </Menu.Item>
               </Menu>
             }

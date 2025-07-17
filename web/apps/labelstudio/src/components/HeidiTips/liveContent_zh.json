@@ -54,7 +54,7 @@
   ],
   "organizationPage": [
     {
-      "title": "It looks like your team is growing!",
+      "title": "看起来你的团队正在壮大!",
       "content": "使用Label Studio Enterprise为您的团队分配角色，并在项目和工作区级别控制对敏感数据的访问。",
       "closable": true,
       "link": {

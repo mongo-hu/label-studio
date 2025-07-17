@@ -2,19 +2,19 @@
 title_bucket_prefix: &title_bucket_prefix
   - type: text
     name: title
-    label: Storage Title
+    label: 存储标题
   - type: text
     name: bucket
-    label: Bucket Name
+    label: 存储桶名称
     required: true
   - type: text
     name: prefix
-    label: Bucket Prefix
+    label: 存储桶前缀
 
 gcs_credentials: &gcs_credentials
   - type: password
     name: google_application_credentials
-    label: Google Application Credentials, leave blank to use default credentials (ADC)
+    label: Google应用程序凭据，留空以使用默认凭据（ADC）
     placeholder: Paste the contents of credentials.json here OR leave blank to use ADC
     autoComplete: "new-password"
     skipAutofill: true
@@ -25,8 +25,8 @@ gcs_credentials: &gcs_credentials
 project_id: &project_id
   - type: text
     name: google_project_id
-    label: Google Project ID
-    placeholder: 'Leave blank to inherit from the Google Application Credentials...'
+    label: 谷歌项目ID
+    placeholder: '留空以继承Google应用程序凭据...'
 
 ImportStorage:
   # Title, Bucket, Prefix
@@ -37,7 +37,7 @@ ImportStorage:
     fields:
       - type: text
         name: regex_filter
-        label: File Filter Regex
+        label: 文件筛选器正则表达式
         placeholder: '.*csv or .*(jpe?g|png|tiff) or .\w+-\d+.text'
         validators:
           - regexp
@@ -49,16 +49,16 @@ ImportStorage:
         fields:
           - type: toggle
             name: use_blob_urls
-            label: Treat every bucket object as a source file
-            description: If unchecked, treat every bucket object as a JSON-formatted task. Optional
+            label: 将每个bucket对象视为源文件
+            description: 如果未选中，则将每个bucket对象视为JSON格式的任务。可选
       - fields:
           - type: toggle
             name: presign
-            label: Use pre-signed URLs
+            label: 使用预签名URL
             value: true
           - type: counter
             name: presign_ttl
-            label: Expiration minutes
+            label: 过期时间（分钟）
             min: 1
             value: 15
             dependency: presign

@@ -143,8 +143,20 @@ msgid "created by"
 msgstr "Created by"
 
 #: .\label_studio\data_manager\models.py:10
-msgid "data"
+msgid "Data"
 msgstr "Data"
+
+msgid "data"
+msgstr "data"
+
+msgid "Predictions"
+msgstr "Predictions"
+
+msgid "Cancelled"
+msgstr "Cancelled"
+
+msgid "Drafts"
+msgstr "Drafts"
 
 #: .\label_studio\data_manager\models.py:11
 msgid "ordering"
@@ -671,7 +683,7 @@ msgid "Deleted review"
 msgstr "Deleted review"
 
 #: .\label_studio\tasks\models.py:88 .\label_studio\tasks\models.py:602
-msgid "updated by"
+msgid "Updated by"
 msgstr "Updated by"
 
 #: .\label_studio\tasks\models.py:92

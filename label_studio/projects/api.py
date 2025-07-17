@@ -791,7 +791,7 @@ class ProjectTaskListAPI(GetParentObjectMixin, generics.ListCreateAPIView, gener
 
 def read_templates_and_groups():
     current_language = get_language()
-    print("\n\nsyt: ", current_language, '\n\n\n')
+    # print("\n\nsyt: ", current_language, '\n\n\n')
     if current_language.startswith('zh'):
         annotation_templates_dir = find_dir('annotation_templates_zh')
         template_groups_file = find_file(os.path.join('annotation_templates_zh', 'groups.txt'))

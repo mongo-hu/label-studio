@@ -143,8 +143,17 @@ msgid "created by"
 msgstr "创建者"
 
 #: .\label_studio\data_manager\models.py:10
+msgid "Data"
+msgstr "数据"
+
 msgid "data"
 msgstr "数据"
+
+msgid "Predictions"
+msgstr "预测"
+
+msgid "Cancelled"
+msgstr "已取消"
 
 #: .\label_studio\data_manager\models.py:11
 msgid "ordering"
@@ -726,6 +735,9 @@ msgstr "草稿创建于"
 msgid "Lead time"
 msgstr "处理时间"
 
+msgid "lead time"
+msgstr "处理时间"
+
 #: .\label_studio\tasks\models.py:623
 msgid "prediction"
 msgstr "预测"
@@ -1091,9 +1103,6 @@ msgid "Choose predictions"
 msgstr "选择预测结果"
 
 msgid "Annotations"
-msgstr "标注结果"
-
-msgid "Cancelled"
 msgstr "标注结果"
 
 msgid "Annotated by"

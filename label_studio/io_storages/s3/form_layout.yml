@@ -2,14 +2,14 @@
 title_bucket_prefix: &title_bucket_prefix
   - type: text
     name: title
-    label: Storage Title
+    label: 存储标题
   - type: text
     name: bucket
-    label: Bucket Name
+    label: 存储桶名称
     required: true
   - type: text
     name: prefix
-    label: Bucket Prefix
+    label: 存储桶前缀
 
 # 2x3 grid
 aws_params_import: &aws_params_import
@@ -47,24 +47,24 @@ aws_params_import: &aws_params_import
 aws_params_export: &aws_params_export
   - type: text
     name: region_name
-    label: Region Name
+    label: 域名称
     placeholder: us-east-1
   - type: text
     name: s3_endpoint
-    label: S3 Endpoint
+    label: S3终端节点
   - type: text
     name: aws_sse_kms_key_id
     label: SSE KMS Key ID
   - type: password
     name: aws_access_key_id
-    label: Access Key ID
+    label: 访问密钥ID
     autoComplete: "off"
     skipAutofill: true
     allowEmpty: false
     protectedValue: true
   - type: password
     name: aws_secret_access_key
-    label: Secret Access Key
+    label: 密码
     autoComplete: "new-password"
     skipAutofill: true
     allowEmpty: false
@@ -72,7 +72,7 @@ aws_params_export: &aws_params_export
   - type: password
     name: aws_session_token
     autoComplete: "new-password"
-    label: Session Token
+    label: 会话Token
     skipAutofill: true
     allowEmpty: true
     protectedValue: true
@@ -87,7 +87,7 @@ ImportStorage:
     fields:
       - type: text
         name: regex_filter
-        label: File Filter Regex
+        label: 文件筛选器正则表达式
         placeholder: '.*csv or .*(jpe?g|png|tiff) or .\w+-\d+.text'
         validators:
           - regexp
@@ -102,20 +102,20 @@ ImportStorage:
         fields:
           - type: toggle
             name: use_blob_urls
-            label: Treat every bucket object as a source file
-            description: If unchecked, treat every bucket object as a JSON-formatted task. Optional
+            label: 将每个bucket对象视为源文件
+            description: 如果未选中，则将每个bucket对象视为JSON格式的任务。可选
           - type: toggle
             name: recursive_scan
-            label: Recursive scan
-            description: Perform recursive scan over the bucket content
+            label: 递归扫描
+            description: 对存储桶内容执行递归扫描
       - fields:
           - type: toggle
             name: presign
-            label: Use pre-signed URLs
+            label: 使用预签名URL
             value: true
           - type: counter
             name: presign_ttl
-            label: Expiration minutes
+            label: 过期时间（分钟）
             min: 1
             value: 15
             dependency: presign

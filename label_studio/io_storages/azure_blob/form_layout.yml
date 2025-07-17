@@ -2,27 +2,27 @@
 title_container_prefix: &title_container_prefix
   - type: text
     name: title
-    label: Storage Title
+    label: 存储标题
   - type: text
     name: container
-    label: Container Name
+    label: 容器名称
     required: true
   - type: text
     name: prefix
-    label: Container Prefix
+    label: 容器前缀
 
 # 1x3 grid
 azure_params: &azure_params
   - type: password
     name: account_name
-    label: Account Name
+    label: 用户名
     autoComplete: "off"
     skipAutofill: true
     allowEmpty: false
     protectedValue: true
   - type: password
     name: account_key
-    label: Account Key
+    label: 密码
     autoComplete: "new-password"
     skipAutofill: true
     allowEmpty: false
@@ -38,7 +38,7 @@ ImportStorage:
     fields:
       - type: text
         name: regex_filter
-        label: File Filter Regex
+        label: 文件筛选器正则表达式
         placeholder: '.*csv or .*(jpe?g|png|tiff) or .\w+-\d+.text'
         validators:
           - regexp
@@ -53,16 +53,16 @@ ImportStorage:
         fields:
           - type: toggle
             name: use_blob_urls
-            label: Treat every bucket object as a source file
-            description: If unchecked, treat every bucket object as a JSON-formatted task. Optional
+            label: 将每个bucket对象视为源文件
+            description: 如果未选中，则将每个bucket对象视为JSON格式的任务。可选
       - fields:
           - type: toggle
             name: presign
-            label: Use pre-signed URLs
+            label: 使用预签名URL
             value: true
           - type: counter
             name: presign_ttl
-            label: Expiration minutes
+            label: 过期时间（分钟）
             min: 1
             value: 15
             dependency: presign

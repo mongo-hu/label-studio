@@ -55,7 +55,7 @@ def get_all_columns(project, *_):
     for key, data_type in list(data_types.items()):  # make data types from labeling config first
         column = {
             'id': key,
-            'title': key if key != settings.DATA_UNDEFINED_NAME else 'data',
+            'title': key if key != settings.DATA_UNDEFINED_NAME else gettext_lazy('data'),
             'type': data_type if data_type in ['Image', 'Audio', 'AudioPlus', 'Video', 'Unknown'] else 'String',
             'target': 'tasks',
             'parent': 'data',
@@ -95,7 +95,7 @@ def get_all_columns(project, *_):
     result['columns'] += [
         {
             'id': 'inner_id',
-            'title': 'Inner ID',
+            'title': gettext_lazy('inner id'),
             'type': 'Number',
             'help': gettext_lazy('Task IDs start 1'),
             'target': 'tasks',
@@ -121,7 +121,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'total_annotations',
-            'title': 'Annotations',
+            'title': gettext_lazy('Annotations'),
             'type': 'Number',
             'target': 'tasks',
             'help': gettext_lazy('Total annotations per task'),
@@ -130,7 +130,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'cancelled_annotations',
-            'title': 'Cancelled',
+            'title': gettext_lazy('Cancelled'),
             'type': 'Number',
             'target': 'tasks',
             'help': gettext_lazy('Total cancelled (skipped) annotations'),
@@ -139,7 +139,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'total_predictions',
-            'title': 'Predictions',
+            'title': gettext_lazy('Predictions'),
             'type': 'Number',
             'target': 'tasks',
             'help': gettext_lazy('Total predictions per task'),
@@ -231,7 +231,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'updated_at',
-            'title': 'Updated at',
+            'title': gettext_lazy('Updated at'),
             'type': 'Datetime',
             'target': 'tasks',
             'help': gettext_lazy('Task update time'),
@@ -240,7 +240,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'updated_by',
-            'title': 'Updated by',
+            'title': gettext_lazy('Updated by'),
             'type': 'List',
             'target': 'tasks',
             'help': gettext_lazy('User who did the last task update'),
@@ -250,7 +250,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'avg_lead_time',
-            'title': 'Lead Time',
+            'title': gettext_lazy('lead time'),
             'type': 'Number',
             'help': gettext_lazy('Average lead time over all annotations (seconds)'),
             'target': 'tasks',
@@ -259,7 +259,7 @@ def get_all_columns(project, *_):
         },
         {
             'id': 'draft_exists',
-            'title': 'Drafts',
+            'title': gettext_lazy('Drafts'),
             'type': 'Boolean',
             'help': gettext_lazy('True if at least one draft exists for the task'),
             'target': 'tasks',

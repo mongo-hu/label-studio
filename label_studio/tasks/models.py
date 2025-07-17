@@ -86,7 +86,7 @@ class Task(TaskMixin, models.Model):
         related_name='updated_tasks',
         on_delete=models.SET_NULL,
         null=True,
-        verbose_name=_('updated by'),
+        verbose_name=_('Updated by'),
         help_text='Last annotator or reviewer who updated this task',
     )
     is_labeled = models.BooleanField(
@@ -618,7 +618,7 @@ class Annotation(AnnotationMixin, models.Model):
         related_name='updated_annotations',
         on_delete=models.SET_NULL,
         null=True,
-        verbose_name=_('updated by'),
+        verbose_name=_('Updated by'),
         help_text='Last user who updated this annotation',
     )
     was_cancelled = models.BooleanField(_('was cancelled'), default=False, help_text='User skipped the task')

@@ -132,18 +132,17 @@ export const MachineLearningSettings = () => {
         {backends.length > 0 && (
           <>
             <Description>
-              A connected model has been detected! If you wish to fetch predictions from this model, please follow these
-              steps:
+              {t("MachineLearning15")}
               <br />
               <br />
-              1. Navigate to the <i>Data Manager</i>.<br />
-              2. Select the desired tasks.
+              1. {t("MachineLearning16")}<br />
+              2. {t("MachineLearning17")}
               <br />
-              3. Click on <i>Retrieve predictions</i> from the <i>Actions</i> menu.
+              3. {t("MachineLearning18")}
             </Description>
             <Description>
-              If you want to use the model predictions for prelabeling, please configure this in the{" "}
-              <NavLink to="annotation">Annotation settings</NavLink>.
+              {t("MachineLearning19")}{" "}
+              <NavLink to="annotation">{t("MachineLearning20")}</NavLink>.
             </Description>
           </>
         )}
@@ -156,12 +155,12 @@ export const MachineLearningSettings = () => {
         >
           {backends.length > 0 && (
             <Form.Row columnCount={1}>
-              <Label text="Configuration" large />
+              <Label text={t("MachineLearning16")} large />
 
               <div>
                 <Toggle
-                  label="Start model training on annotation submission"
-                  description="This option will send a request to /train with information about annotations. You can use this to enable an Active Learning loop. You can also manually start training through model menu in its card."
+                  label={t("MachineLearning21")}
+                  description={t("MachineLearning22")}
                   name="start_training_on_annotation_update"
                 />
               </div>

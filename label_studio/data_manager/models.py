@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class ViewBaseModel(models.Model):
-    data = models.JSONField(_('data'), default=dict, null=True, help_text='Custom view data')
+    data = models.JSONField(_('Data'), default=dict, null=True, help_text='Custom view data')
     ordering = models.JSONField(_('ordering'), default=dict, null=True, help_text='Ordering parameters')
     order = models.IntegerField(
         _('order'),
